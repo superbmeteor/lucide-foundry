@@ -1,0 +1,18 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Installs the tools in mise.toml (Bun), at the versions used locally.
+      - uses: jdx/mise-action@v2
+      - run: bun install --frozen-lockfile
+      # Type-checks and tests the generator, and fails if dist/ or LICENSE-LUCIDE is not
+      # what the pinned Lucide releases generate.
+      - run: bun run check

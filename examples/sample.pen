@@ -1,0 +1,1111 @@
+{
+  "version": "2.22",
+  "children": [
+    {
+      "type": "frame",
+      "id": "S0n7A",
+      "x": 236,
+      "y": -47.5,
+      "name": "Lucide Pen sample",
+      "width": 760,
+      "fill": "#FFFFFF",
+      "cornerRadius": 16,
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 48,
+      "children": [
+        {
+          "type": "frame",
+          "id": "z7bkAk",
+          "name": "Header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "I2rkpx",
+              "name": "Title",
+              "fill": "#1c1c1e",
+              "content": "Lucide icons as Pen components",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "OA38M",
+              "name": "Subtitle",
+              "fill": "#6b6b70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Instances of lucide.lib.pen and lucide-lab.lib.pen. Each icon is a filled outline, so its line weight scales with its size.",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "r5X9Yz",
+          "name": "Core icons",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "S41iJ",
+              "name": "Core icons heading",
+              "fill": "#1c1c1e",
+              "content": "Core icons",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "zLjo7",
+              "name": "Core icons caption",
+              "fill": "#6b6b70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "From lucide.lib.pen (Lucide 1.73.0).",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "iHA5s",
+              "name": "Core icons icons",
+              "gap": 24,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "UHZ8D",
+                  "name": "activity",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "sDIY3",
+                      "type": "ref",
+                      "ref": "n:activity",
+                      "name": "activity icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "N7rCb6",
+                      "name": "activity label",
+                      "fill": "#6b6b70",
+                      "content": "activity",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "X2v6Zp",
+                  "name": "circle-exclamation-point",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "qkmES",
+                      "type": "ref",
+                      "ref": "n:circle-exclamation-point",
+                      "name": "circle-exclamation-point icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "jNRIe",
+                      "name": "circle-exclamation-point label",
+                      "fill": "#6b6b70",
+                      "content": "circle-exclamation-point",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YdUF2",
+                  "name": "chart-radar",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "wfMbi",
+                      "type": "ref",
+                      "ref": "n:chart-radar",
+                      "name": "chart-radar icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "T6G8b",
+                      "name": "chart-radar label",
+                      "fill": "#6b6b70",
+                      "content": "chart-radar",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gvkuC",
+                  "name": "hot-air-balloon",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "egVRU",
+                      "type": "ref",
+                      "ref": "n:hot-air-balloon",
+                      "name": "hot-air-balloon icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "o34mF",
+                      "name": "hot-air-balloon label",
+                      "fill": "#6b6b70",
+                      "content": "hot-air-balloon",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NbXkQ",
+                  "name": "shield-house",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "g3Jn4",
+                      "type": "ref",
+                      "ref": "n:shield-house",
+                      "name": "shield-house icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "F6RGje",
+                      "name": "shield-house label",
+                      "fill": "#6b6b70",
+                      "content": "shield-house",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "IENgD",
+                  "name": "users-collaboration",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "x4m2Hs",
+                      "type": "ref",
+                      "ref": "n:users-collaboration",
+                      "name": "users-collaboration icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "IwnpB",
+                      "name": "users-collaboration label",
+                      "fill": "#6b6b70",
+                      "content": "users-collaboration",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jnTUO",
+          "name": "Lab icons",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "kwB53",
+              "name": "Lab icons heading",
+              "fill": "#1c1c1e",
+              "content": "Lab icons",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "n5h5Sf",
+              "name": "Lab icons caption",
+              "fill": "#6b6b70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "From lucide-lab.lib.pen (@lucide/lab 0.13.0).",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "SZBxu",
+              "name": "Lab icons icons",
+              "gap": 24,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "oMz23",
+                  "name": "burger",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "CBhd1",
+                      "type": "ref",
+                      "ref": "4:burger",
+                      "name": "burger icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "Set60",
+                      "name": "burger label",
+                      "fill": "#6b6b70",
+                      "content": "burger",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "e4Ko9",
+                  "name": "owl",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "Gke8H",
+                      "type": "ref",
+                      "ref": "4:owl",
+                      "name": "owl icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "NBwR3",
+                      "name": "owl label",
+                      "fill": "#6b6b70",
+                      "content": "owl",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xXx4B",
+                  "name": "bee",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "fWGjg",
+                      "type": "ref",
+                      "ref": "4:bee",
+                      "name": "bee icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "a1MJcd",
+                      "name": "bee label",
+                      "fill": "#6b6b70",
+                      "content": "bee",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NmxjX",
+                  "name": "yin-yang",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "UfWBf",
+                      "type": "ref",
+                      "ref": "4:yin-yang",
+                      "name": "yin-yang icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "kX0f3",
+                      "name": "yin-yang label",
+                      "fill": "#6b6b70",
+                      "content": "yin-yang",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wRmtV",
+                  "name": "whale",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "tcNnB",
+                      "type": "ref",
+                      "ref": "4:whale",
+                      "name": "whale icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "U3BzS6",
+                      "name": "whale label",
+                      "fill": "#6b6b70",
+                      "content": "whale",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "V1N1rF",
+                  "name": "trap",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "Lihgu",
+                      "type": "ref",
+                      "ref": "4:trap",
+                      "name": "trap icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "dZRMW",
+                      "name": "trap label",
+                      "fill": "#6b6b70",
+                      "content": "trap",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HmBA2",
+          "name": "Renamed ids keep working",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "RO3bH",
+              "name": "Renamed ids keep working heading",
+              "fill": "#1c1c1e",
+              "content": "Renamed ids keep working",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "R1fbJ",
+              "name": "Renamed ids keep working caption",
+              "fill": "#6b6b70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Ids are permanent. circle-alert and bold are Lucide's old names, kept as aliases that draw the icons they were renamed to.",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "nqWcn",
+              "name": "Renamed ids keep working icons",
+              "gap": 24,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Dhk32",
+                  "name": "circle-alert (alias)",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "eLf6R",
+                      "type": "ref",
+                      "ref": "n:circle-alert",
+                      "name": "circle-alert (alias) icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "N1OqB7",
+                      "name": "circle-alert (alias) label",
+                      "fill": "#6b6b70",
+                      "content": "circle-alert (alias)",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DCv3q",
+                  "name": "circle-exclamation-point",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "mhI7r",
+                      "type": "ref",
+                      "ref": "n:circle-exclamation-point",
+                      "name": "circle-exclamation-point icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "Xxo1b",
+                      "name": "circle-exclamation-point label",
+                      "fill": "#6b6b70",
+                      "content": "circle-exclamation-point",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JnMdj",
+                  "name": "bold (alias)",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "zj770",
+                      "type": "ref",
+                      "ref": "n:bold",
+                      "name": "bold (alias) icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "ltvPf",
+                      "name": "bold (alias) label",
+                      "fill": "#6b6b70",
+                      "content": "bold (alias)",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "p2LFJN",
+                  "name": "letter-b",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "dFvIA",
+                      "type": "ref",
+                      "ref": "n:letter-b",
+                      "name": "letter-b icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "x4E4y",
+                      "name": "letter-b label",
+                      "fill": "#6b6b70",
+                      "content": "letter-b",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WpH1G",
+          "name": "Same name, different icon",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "IZJFd",
+              "name": "Same name, different icon heading",
+              "fill": "#1c1c1e",
+              "content": "Same name, different icon",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "cZlaA",
+              "name": "Same name, different icon caption",
+              "fill": "#6b6b70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Lab and Lucide both have a layout-grid-plus, drawn differently, which is why lab is a separate library.",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "k9yT9x",
+              "name": "Same name, different icon icons",
+              "gap": 24,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ZKmo4",
+                  "name": "core layout-grid-plus",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "B5ZlRO",
+                      "type": "ref",
+                      "ref": "n:layout-grid-plus",
+                      "name": "core layout-grid-plus icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "qAEXo",
+                      "name": "core layout-grid-plus label",
+                      "fill": "#6b6b70",
+                      "content": "core layout-grid-plus",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jAirn",
+                  "name": "lab layout-grid-plus",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "PdvfO",
+                      "type": "ref",
+                      "ref": "4:layout-grid-plus",
+                      "name": "lab layout-grid-plus icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "oaJxd",
+                      "name": "lab layout-grid-plus label",
+                      "fill": "#6b6b70",
+                      "content": "lab layout-grid-plus",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GAr1j",
+          "name": "Weight scales with size",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "OpRp5",
+              "name": "Weight scales with size heading",
+              "fill": "#1c1c1e",
+              "content": "Weight scales with size",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "M6VfY",
+              "name": "Weight scales with size caption",
+              "fill": "#6b6b70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "One icon from 16 to 96 points. The stroke stays 1/12 of the icon's size, as in Lucide.",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "U1966",
+              "name": "Weight scales with size icons",
+              "gap": 24,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "C2RKs",
+                  "name": "16 pt",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "NXFp6",
+                      "type": "ref",
+                      "ref": "n:hot-air-balloon",
+                      "name": "16 pt icon",
+                      "width": 16,
+                      "height": 16
+                    },
+                    {
+                      "type": "text",
+                      "id": "VaSih",
+                      "name": "16 pt label",
+                      "fill": "#6b6b70",
+                      "content": "16 pt",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SG1Tb",
+                  "name": "24 pt",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "OwQrN",
+                      "type": "ref",
+                      "ref": "n:hot-air-balloon",
+                      "name": "24 pt icon",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "text",
+                      "id": "E0Du1",
+                      "name": "24 pt label",
+                      "fill": "#6b6b70",
+                      "content": "24 pt",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Q2DGVE",
+                  "name": "32 pt",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "dR33m",
+                      "type": "ref",
+                      "ref": "n:hot-air-balloon",
+                      "name": "32 pt icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "Tm91l",
+                      "name": "32 pt label",
+                      "fill": "#6b6b70",
+                      "content": "32 pt",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pg2iU",
+                  "name": "48 pt",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "PedBl",
+                      "type": "ref",
+                      "ref": "n:hot-air-balloon",
+                      "name": "48 pt icon",
+                      "width": 48,
+                      "height": 48
+                    },
+                    {
+                      "type": "text",
+                      "id": "FPVIk",
+                      "name": "48 pt label",
+                      "fill": "#6b6b70",
+                      "content": "48 pt",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "sjBRv",
+                  "name": "64 pt",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "Sqi3j",
+                      "type": "ref",
+                      "ref": "n:hot-air-balloon",
+                      "name": "64 pt icon",
+                      "width": 64,
+                      "height": 64
+                    },
+                    {
+                      "type": "text",
+                      "id": "Tg7VM",
+                      "name": "64 pt label",
+                      "fill": "#6b6b70",
+                      "content": "64 pt",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qh8QK",
+                  "name": "96 pt",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "zLcHv",
+                      "type": "ref",
+                      "ref": "n:hot-air-balloon",
+                      "name": "96 pt icon",
+                      "width": 96,
+                      "height": 96
+                    },
+                    {
+                      "type": "text",
+                      "id": "Yxm5X",
+                      "name": "96 pt label",
+                      "fill": "#6b6b70",
+                      "content": "96 pt",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lYU2o",
+          "name": "Colour",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "tEn4U",
+              "name": "Colour heading",
+              "fill": "#1c1c1e",
+              "content": "Colour",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "ScXMY",
+              "name": "Colour caption",
+              "fill": "#6b6b70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Override an instance's fill, or change the library's icon variable.",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Nztxy",
+              "name": "Colour icons",
+              "gap": 24,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OvpqH",
+                  "name": "default",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "KNdVX",
+                      "type": "ref",
+                      "ref": "n:heart",
+                      "name": "default icon",
+                      "width": 32,
+                      "height": 32
+                    },
+                    {
+                      "type": "text",
+                      "id": "nnnnD",
+                      "name": "default label",
+                      "fill": "#6b6b70",
+                      "content": "default",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "A6LFx",
+                  "name": "#2563eb",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "OVS4E",
+                      "type": "ref",
+                      "ref": "n:heart",
+                      "name": "#2563eb icon",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#2563eb"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bpqcx",
+                      "name": "#2563eb label",
+                      "fill": "#6b6b70",
+                      "content": "#2563eb",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "E6rbqq",
+                  "name": "#16a34a",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "c8tGr",
+                      "type": "ref",
+                      "ref": "n:heart",
+                      "name": "#16a34a icon",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#16a34a"
+                    },
+                    {
+                      "type": "text",
+                      "id": "abPrw",
+                      "name": "#16a34a label",
+                      "fill": "#6b6b70",
+                      "content": "#16a34a",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eiTnq",
+                  "name": "#dc2626",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "VWmpl",
+                      "type": "ref",
+                      "ref": "n:heart",
+                      "name": "#dc2626 icon",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#dc2626"
+                    },
+                    {
+                      "type": "text",
+                      "id": "f2YCw4",
+                      "name": "#dc2626 label",
+                      "fill": "#6b6b70",
+                      "content": "#dc2626",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "QuT4P",
+      "type": "ref",
+      "ref": "4:About",
+      "x": 236,
+      "y": -263
+    },
+    {
+      "id": "gspR5",
+      "type": "ref",
+      "ref": "n:About",
+      "x": 236,
+      "y": -457
+    }
+  ],
+  "imports": {
+    "4": "../dist/lucide-lab.lib.pen",
+    "n": "../dist/lucide.lib.pen"
+  },
+  "fileToken": "8a6c02bb-d397-4641-9d43-c2fec4bcc1a0"
+}

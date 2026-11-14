@@ -1,0 +1,8 @@
+{
+  "name": "@superbmeteor/lucide-pen",
+  "version": "0.1.0",
+  "description": "Lucide icons as a pen.dev component library (lucide.lib.pen), drawn as filled outlines",
+  "private": true,
+  "files": ["lucide.lib.pen", "LICENSE-LUCIDE", "README.md"],
+  "lucide": { "release": "1.48.0" }
+}

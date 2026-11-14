@@ -1087,6 +1087,119 @@
           ]
         }
       ]
+    },
+    {
+      "id": "QuT4P",
+      "type": "ref",
+      "ref": "4:About",
+      "x": 236,
+      "y": -263
+    },
+    {
+      "id": "gspR5",
+      "type": "ref",
+      "ref": "n:About",
+      "x": 236,
+      "y": -457
+    },
+    {
+      "type": "frame",
+      "id": "KOazP",
+      "x": 1036,
+      "y": -457,
+      "name": "Accordion/Open",
+      "width": 480,
+      "stroke": "#e5e5e5",
+      "strokeWidth": {
+        "bottom": 1
+      },
+      "strokeAlignment": "inner",
+      "strokeLinejoin": "round",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Zyd1I",
+          "name": "Accordion Trigger",
+          "width": "fill_container",
+          "gap": 18,
+          "padding": [
+            16,
+            0
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "y9dWoC",
+              "name": "Accordion Trigger",
+              "fill": "#0a0a0a",
+              "content": "What is a micro-interaction?",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "iNoUW",
+              "name": "chevron-down",
+              "width": 16,
+              "height": 16,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "mR9dh",
+                  "x": 4,
+                  "y": 6,
+                  "name": "Vector",
+                  "geometry": "M0 0l6 6 6-6",
+                  "width": 8,
+                  "height": 4,
+                  "stroke": "#0a0a0a",
+                  "strokeWidth": 1.5,
+                  "strokeLinejoin": "round",
+                  "strokeLinecap": "round"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "My2cg",
+          "x": 0,
+          "y": 56,
+          "name": "Accordion Content",
+          "enabled": false,
+          "clip": true,
+          "width": "fill_container(480)",
+          "layout": "vertical",
+          "padding": [
+            0,
+            0,
+            16,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "X2htA",
+              "name": "Accordion Contnet",
+              "fill": "#737373",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Micro-interactions are events which have one main task — a single purpose — and they are found all over your device and within apps.",
+              "lineHeight": 1.4285714285714286,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
     }
   ],
   "imports": {

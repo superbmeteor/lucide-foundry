@@ -28,6 +28,10 @@ Then import the libraries from a Pen file with paths relative to that file:
 
 Refer to an icon as `f:<lucide-name>` or `lab:<lab-name>`. Pen reads libraries only when a file opens, so reopen importing files after upgrading the package.
 
+Pen's components panel lists every imported library's components in one list, sorted by name. So that ours stay together, they're named by group: `Lucide / activity`, `Lucide Aliases / circle-alert`, `Lucide Lab / burger`. Names are only labels; instances refer to the permanent ids, so names can change between releases without breaking anything.
+
+To see which release a file is using, place an instance of a library's About component, which is first in its group: `Lucide` (id `f:About`) or `Lucide Lab` (id `lab:About`). It shows the lucide-pen version, the Lucide package and version with the date npm published it, and how many icons and aliases the library holds, and it updates when the library does.
+
 [`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and colour overrides. Pen named its imports `n` (core) and `4` (lab) there; an alias is whatever the importing file chooses.
 
 ## Rules
@@ -38,7 +42,9 @@ Refer to an icon as `f:<lucide-name>` or `lab:<lab-name>`. Pen reads libraries o
   - An icon dropped with no successor is retired: it keeps the outline it last had.
 - **Releases are never deleted or unpublished**, because a consumer's old commits pin them.
 
-Each library has an ids file beside it in `dist/`, `lucide.ids.json` and `lucide-lab.ids.json`. It records the release the library was built from, the aliases (old id → Lucide icon) and the retired ids. On the canvas, the release's icons come first in a grid, then, after a blank row, the aliases, then the retired ids.
+Each library has an ids file beside it in `dist/`, `lucide.ids.json` and `lucide-lab.ids.json`. It records the release the library was built from and the date npm published it, the aliases (old id → Lucide icon) and the retired ids. On the canvas, the `About` component comes first, then a white sheet with the release's icons in a grid, then, after a blank row, the aliases, then the retired ids.
+
+`generate` asks the npm registry for a release's publish date the first time it builds that release, and keeps it in the ids file, so later runs, including `check`, work offline.
 
 ## Updating to new Lucide releases
 

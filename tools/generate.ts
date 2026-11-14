@@ -51,6 +51,9 @@ const VARIABLES = { icon: { type: "color", value: "#000000" } };
 // The icons sit on a white sheet, so black icons stay visible on Pen's dark canvas. Its id has
 // a capital letter, which no Lucide name has, so it cannot collide with an icon's id.
 const SHEET_ID = "Sheet", SHEET_FILL = "#FFFFFF", SHEET_PADDING = 24;
+// The About component, first in each library, says which release an importing file has: an
+// instance of it shows the version of the library the file imports. The sheet sits below it.
+const ABOUT_ID = "About", SHEET_TOP = 120;
 const DEFAULT_DOC = { version: "2.22", children: [] as PenChild[] };
 
 type Attributes = Record<string, string>;
@@ -60,16 +63,21 @@ type PenNode = {
   width: number; height: number; viewBox: number[]; fill: string; geometry: string;
 };
 type PenFrame = {
-  type: "frame"; id: string; name: string; x: number; y: number; width: number; height: number;
-  fill: string; layout: "none"; children: PenChild[];
+  type: "frame"; id: string; name: string; x: number; y: number; width?: number; height?: number;
+  fill: string; layout: "none" | "vertical"; children: PenChild[];
+  reusable?: boolean; gap?: number; padding?: number; cornerRadius?: number;
 };
-type PenChild = PenNode | PenFrame;
+type PenText = {
+  type: "text"; id: string; name: string; content: string; fontFamily: string; fontSize: number;
+  fontWeight?: string; fill: string;
+};
+type PenChild = PenNode | PenFrame | PenText;
 type PenDoc = { version: string; children: PenChild[]; variables?: Record<string, unknown>; fileToken?: string };
 
 /** Every icon component in `nodes`, however deep: older libraries have them at the top level. */
 const icons = (nodes: PenChild[]): PenNode[] =>
   nodes.flatMap((n) => (n.type === "frame" ? icons(n.children) : n.type === "path" ? [n] : []));
-type Ids = { package?: string; aliases: Record<string, string>; retired: string[] };
+type Ids = { package?: string; released?: string; aliases: Record<string, string>; retired: string[] };
 
 /** A problem a person has to fix, reported without a stack trace. */
 export class GenerateError extends Error {}
@@ -91,10 +99,27 @@ function readPackage(dir: string) {
   }
   const meta = readJson<{ name: string; version: string }>(join(dir, "package.json"));
   return {
+    name: meta.name,
+    version: meta.version,
     release: `${meta.name}@${meta.version}`,
     icons: readJson<IconNodes>(join(dir, "icon-nodes.json")),
     licence: readFileSync(join(dir, "LICENSE"), "utf8"),
   };
+}
+
+/** The day npm published `name`@`version`, as YYYY-MM-DD. The ids file keeps it, so only the
+ * first run on a new release needs the network, and a regenerate always writes the same date. */
+async function releaseDate(name: string, version: string, idsPath: string): Promise<string> {
+  const ids = existsSync(idsPath) ? readJson<Partial<Ids>>(idsPath) : {};
+  if (ids.package === `${name}@${version}` && ids.released) return ids.released;
+  const url = `https://registry.npmjs.org/${name.replace("/", "%2F")}`;
+  try {
+    const response = await fetch(url);
+    const time = ((await response.json()) as { time?: Record<string, string> }).time?.[version];
+    if (time) return time.slice(0, 10);
+  } catch {}
+  fail(`could not read when ${name}@${version} was published from ${url}; it needs the network ` +
+    "once per new release");
 }
 
 /** A kebab-case name as Lucide spells its components (lucide's toPascalCase). */
@@ -302,23 +327,32 @@ export function resolve(
   return { aliases, retired };
 }
 
-const component = (name: string, x: number, y: number, geometry: string): PenNode => ({
-  type: "path", id: name, name, reusable: true, x, y, width: 24, height: 24,
+const component = (id: string, name: string, x: number, y: number, geometry: string): PenNode => ({
+  type: "path", id, name, reusable: true, x, y, width: 24, height: 24,
   viewBox: [0, 0, 24, 24], fill: FILL, geometry,
 });
 
-/** Components for `names` on the sheet's grid from row `row`, and the row after the last. */
-function grid(names: string[], row: number, geometry: (name: string) => string) {
-  const nodes = names.map((n, k) => component(n,
+/** Components for `ids` on the sheet's grid from row `row`, named `group / id`, and the row
+ * after the last. */
+function grid(ids: string[], row: number, group: string, geometry: (id: string) => string) {
+  const nodes = ids.map((n, k) => component(n, `${group} / ${n}`,
     SHEET_PADDING + (k % COLUMNS) * PITCH, SHEET_PADDING + (row + Math.floor(k / COLUMNS)) * PITCH, geometry(n)));
-  return { nodes, next: row + Math.ceil(names.length / COLUMNS) };
+  return { nodes, next: row + Math.ceil(ids.length / COLUMNS) };
 }
 
 /** The text of a library and of its ids file: the release's icons, `outlines` of them, plus
- * every id the current library has released. Aliases copy `targets` outlines. */
+ * every id the current library has released. Aliases copy `targets` outlines.
+ *
+ * Instances find a component by its id, which is permanent; its name is only what Pen's
+ * components panel shows, which lists every imported library's components together in one
+ * list sorted by name, ignoring case. So the names start with `title`, to keep each library's
+ * components together: the About component is `title` itself, which sorts before every longer
+ * name starting with it; the icons are `title / id`; aliases and retired ids are in groups
+ * of their own, `title Aliases / id` and `title Retired / id`. (With no spaces around the
+ * slash, `title Lab` and `title Aliases` would sort before the icons: a space sorts before /.) */
 function library(
-  libraryPath: string, idsPath: string, release: string, outlines: Record<string, string>,
-  targets: Record<string, string>, follow: Record<string, string>,
+  libraryPath: string, idsPath: string, title: string, release: string, published: string, version: string,
+  outlines: Record<string, string>, targets: Record<string, string>, follow: Record<string, string>,
 ): Record<string, string> {
   const fileName = libraryPath.slice(ROOT.length + 1);
   const oldDoc: PenDoc = existsSync(libraryPath) ? readJson(libraryPath) : DEFAULT_DOC;
@@ -332,20 +366,35 @@ function library(
   if (missing.length) fail(`no outline to keep for retired ${missing.join(", ")} in ${fileName}`);
 
   // The release's icons in a grid, then after a blank row the aliases, then the retired ids.
-  const own = grid(sorted(Object.keys(outlines)), 0, (n) => outlines[n]!);
-  const copies = grid(sorted(Object.keys(aliases)), own.next + 1, (n) => targets[aliases[n]!]!);
-  const kept = grid(retired, copies.next + 1, (n) => old.get(n)!.geometry);
+  const own = grid(sorted(Object.keys(outlines)), 0, title, (n) => outlines[n]!);
+  const copies = grid(sorted(Object.keys(aliases)), own.next + 1, `${title} Aliases`, (n) => targets[aliases[n]!]!);
+  const kept = grid(retired, copies.next + 1, `${title} Retired`, (n) => old.get(n)!.geometry);
   const children = [...own.nodes, ...copies.nodes, ...kept.nodes];
   const sheet: PenFrame = {
-    type: "frame", id: SHEET_ID, name: release, x: 0, y: 0,
+    type: "frame", id: SHEET_ID, name: release, x: 0, y: SHEET_TOP,
     width: 2 * SHEET_PADDING + (COLUMNS - 1) * PITCH + 24,
     height: SHEET_PADDING + Math.max(...children.map((c) => c.y)) + 24,
     fill: SHEET_FILL, layout: "none", children,
   };
+  const count = (n: number, one: string, many: string) => `${n.toLocaleString("en-US")} ${n === 1 ? one : many}`;
+  const contents = [count(Object.keys(outlines).length, "icon", "icons"),
+    ...(Object.keys(aliases).length ? [count(Object.keys(aliases).length, "alias", "aliases")] : []),
+    ...(retired.length ? [`${retired.length} retired`] : [])];
+  const text = (id: string, name: string, content: string, fontSize: number, fill: string, fontWeight?: string): PenText =>
+    ({ type: "text", id: `${ABOUT_ID}-${id}`, name, content, fontFamily: "Inter", fontSize, fill, ...(fontWeight ? { fontWeight } : {}) });
+  const about: PenFrame = {
+    type: "frame", id: ABOUT_ID, name: title, reusable: true, x: 0, y: 0,
+    fill: SHEET_FILL, cornerRadius: 8, layout: "vertical", gap: 4, padding: 16,
+    children: [
+      text("version", "Version", `lucide-pen ${version}`, 16, "#000000", "600"),
+      text("release", "Release", `${release.replace(/@(?=[^@]*$)/, " ")}, published ${published}`, 13, "#5f5f66"),
+      text("contents", "Contents", contents.join(", "), 13, "#5f5f66"),
+    ],
+  };
 
   const doc: PenDoc = {
     version: oldDoc.version ?? DEFAULT_DOC.version,
-    children: [sheet],
+    children: [about, sheet],
     variables: VARIABLES,
     fileToken: oldDoc.fileToken ?? crypto.randomUUID(), // keep the file's identity across releases
   };
@@ -368,7 +417,7 @@ function library(
   const json = (value: unknown) => JSON.stringify(value, null, 2) + "\n";
   return {
     [libraryPath]: json(doc),
-    [idsPath]: json({ package: release, aliases, retired }),
+    [idsPath]: json({ package: release, released: published, aliases, retired }),
   };
 }
 
@@ -394,11 +443,14 @@ async function main() {
   const outlines = outline(ck, lucide.icons);
   const labOutlines = outline(ck, lab.icons);
 
+  const version = readJson<{ version: string }>(join(ROOT, "package.json")).version;
+  const [lucideIds, labIds] = [join(DIST, "lucide.ids.json"), join(DIST, "lucide-lab.ids.json")];
   const outputs: Record<string, string> = {
-    ...library(join(DIST, "lucide.lib.pen"), join(DIST, "lucide.ids.json"), lucide.release,
-      outlines, outlines, renamed),
+    ...library(join(DIST, "lucide.lib.pen"), lucideIds, "Lucide", lucide.release,
+      await releaseDate(lucide.name, lucide.version, lucideIds), version, outlines, outlines, renamed),
     // A lab id that leaves lab follows the Lucide icon of its name, wherever Lucide has it.
-    ...library(join(DIST, "lucide-lab.lib.pen"), join(DIST, "lucide-lab.ids.json"), lab.release,
+    ...library(join(DIST, "lucide-lab.lib.pen"), labIds, "Lucide Lab", lab.release,
+      await releaseDate(lab.name, lab.version, labIds), version,
       labOutlines, outlines, { ...Object.fromEntries(Object.keys(lucide.icons).map((n) => [n, n])), ...renamed }),
     [LICENSE]: lucide.licence,
   };

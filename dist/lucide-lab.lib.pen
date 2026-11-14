@@ -3,10 +3,53 @@
   "children": [
     {
       "type": "frame",
+      "id": "About",
+      "name": "Lucide Lab",
+      "reusable": true,
+      "x": 0,
+      "y": 0,
+      "fill": "#FFFFFF",
+      "cornerRadius": 8,
+      "layout": "vertical",
+      "gap": 4,
+      "padding": 16,
+      "children": [
+        {
+          "type": "text",
+          "id": "About-version",
+          "name": "Version",
+          "content": "lucide-pen 0.2.0",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fill": "#000000",
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "About-release",
+          "name": "Release",
+          "content": "@lucide/lab 0.13.0, published 2026-11-12",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fill": "#5f5f66"
+        },
+        {
+          "type": "text",
+          "id": "About-contents",
+          "name": "Contents",
+          "content": "357 icons",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fill": "#5f5f66"
+        }
+      ]
+    },
+    {
+      "type": "frame",
       "id": "Sheet",
       "name": "@lucide/lab@0.13.0",
       "x": 0,
-      "y": 0,
+      "y": 120,
       "width": 1944,
       "height": 456,
       "fill": "#FFFFFF",
@@ -15,7 +58,7 @@
         {
           "type": "path",
           "id": "ampersand-square",
-          "name": "ampersand-square",
+          "name": "Lucide Lab / ampersand-square",
           "reusable": true,
           "x": 24,
           "y": 24,
@@ -33,7 +76,7 @@
         {
           "type": "path",
           "id": "apple-core",
-          "name": "apple-core",
+          "name": "Lucide Lab / apple-core",
           "reusable": true,
           "x": 72,
           "y": 24,
@@ -51,7 +94,7 @@
         {
           "type": "path",
           "id": "arrows-up-down-square",
-          "name": "arrows-up-down-square",
+          "name": "Lucide Lab / arrows-up-down-square",
           "reusable": true,
           "x": 120,
           "y": 24,
@@ -69,7 +112,7 @@
         {
           "type": "path",
           "id": "astronaut-helmet",
-          "name": "astronaut-helmet",
+          "name": "Lucide Lab / astronaut-helmet",
           "reusable": true,
           "x": 168,
           "y": 24,
@@ -87,7 +130,7 @@
         {
           "type": "path",
           "id": "at-sign-circle",
-          "name": "at-sign-circle",
+          "name": "Lucide Lab / at-sign-circle",
           "reusable": true,
           "x": 216,
           "y": 24,
@@ -105,7 +148,7 @@
         {
           "type": "path",
           "id": "at-sign-square",
-          "name": "at-sign-square",
+          "name": "Lucide Lab / at-sign-square",
           "reusable": true,
           "x": 264,
           "y": 24,
@@ -123,7 +166,7 @@
         {
           "type": "path",
           "id": "baby-pacifier",
-          "name": "baby-pacifier",
+          "name": "Lucide Lab / baby-pacifier",
           "reusable": true,
           "x": 312,
           "y": 24,
@@ -141,7 +184,7 @@
         {
           "type": "path",
           "id": "bag-hand",
-          "name": "bag-hand",
+          "name": "Lucide Lab / bag-hand",
           "reusable": true,
           "x": 360,
           "y": 24,
@@ -159,7 +202,7 @@
         {
           "type": "path",
           "id": "barbecue",
-          "name": "barbecue",
+          "name": "Lucide Lab / barbecue",
           "reusable": true,
           "x": 408,
           "y": 24,
@@ -177,7 +220,7 @@
         {
           "type": "path",
           "id": "barber-pole",
-          "name": "barber-pole",
+          "name": "Lucide Lab / barber-pole",
           "reusable": true,
           "x": 456,
           "y": 24,
@@ -195,7 +238,7 @@
         {
           "type": "path",
           "id": "barn",
-          "name": "barn",
+          "name": "Lucide Lab / barn",
           "reusable": true,
           "x": 504,
           "y": 24,
@@ -213,7 +256,7 @@
         {
           "type": "path",
           "id": "baseball",
-          "name": "baseball",
+          "name": "Lucide Lab / baseball",
           "reusable": true,
           "x": 552,
           "y": 24,
@@ -231,7 +274,7 @@
         {
           "type": "path",
           "id": "baseline-square",
-          "name": "baseline-square",
+          "name": "Lucide Lab / baseline-square",
           "reusable": true,
           "x": 600,
           "y": 24,
@@ -249,7 +292,7 @@
         {
           "type": "path",
           "id": "basketball",
-          "name": "basketball",
+          "name": "Lucide Lab / basketball",
           "reusable": true,
           "x": 648,
           "y": 24,
@@ -267,7 +310,7 @@
         {
           "type": "path",
           "id": "bat",
-          "name": "bat",
+          "name": "Lucide Lab / bat",
           "reusable": true,
           "x": 696,
           "y": 24,
@@ -285,7 +328,7 @@
         {
           "type": "path",
           "id": "bat-ball",
-          "name": "bat-ball",
+          "name": "Lucide Lab / bat-ball",
           "reusable": true,
           "x": 744,
           "y": 24,
@@ -303,7 +346,7 @@
         {
           "type": "path",
           "id": "bath-bubble",
-          "name": "bath-bubble",
+          "name": "Lucide Lab / bath-bubble",
           "reusable": true,
           "x": 792,
           "y": 24,
@@ -321,7 +364,7 @@
         {
           "type": "path",
           "id": "beach-ball",
-          "name": "beach-ball",
+          "name": "Lucide Lab / beach-ball",
           "reusable": true,
           "x": 840,
           "y": 24,
@@ -339,7 +382,7 @@
         {
           "type": "path",
           "id": "bear-face",
-          "name": "bear-face",
+          "name": "Lucide Lab / bear-face",
           "reusable": true,
           "x": 888,
           "y": 24,
@@ -357,7 +400,7 @@
         {
           "type": "path",
           "id": "bed-bunk",
-          "name": "bed-bunk",
+          "name": "Lucide Lab / bed-bunk",
           "reusable": true,
           "x": 936,
           "y": 24,
@@ -375,7 +418,7 @@
         {
           "type": "path",
           "id": "bee",
-          "name": "bee",
+          "name": "Lucide Lab / bee",
           "reusable": true,
           "x": 984,
           "y": 24,
@@ -393,7 +436,7 @@
         {
           "type": "path",
           "id": "bee-hive",
-          "name": "bee-hive",
+          "name": "Lucide Lab / bee-hive",
           "reusable": true,
           "x": 1032,
           "y": 24,
@@ -411,7 +454,7 @@
         {
           "type": "path",
           "id": "beetle-scarab",
-          "name": "beetle-scarab",
+          "name": "Lucide Lab / beetle-scarab",
           "reusable": true,
           "x": 1080,
           "y": 24,
@@ -429,7 +472,7 @@
         {
           "type": "path",
           "id": "bell-concierge-dot",
-          "name": "bell-concierge-dot",
+          "name": "Lucide Lab / bell-concierge-dot",
           "reusable": true,
           "x": 1128,
           "y": 24,
@@ -447,7 +490,7 @@
         {
           "type": "path",
           "id": "bell-concierge-off",
-          "name": "bell-concierge-off",
+          "name": "Lucide Lab / bell-concierge-off",
           "reusable": true,
           "x": 1176,
           "y": 24,
@@ -465,7 +508,7 @@
         {
           "type": "path",
           "id": "belt",
-          "name": "belt",
+          "name": "Lucide Lab / belt",
           "reusable": true,
           "x": 1224,
           "y": 24,
@@ -483,7 +526,7 @@
         {
           "type": "path",
           "id": "bold-square",
-          "name": "bold-square",
+          "name": "Lucide Lab / bold-square",
           "reusable": true,
           "x": 1272,
           "y": 24,
@@ -501,7 +544,7 @@
         {
           "type": "path",
           "id": "bottle-baby",
-          "name": "bottle-baby",
+          "name": "Lucide Lab / bottle-baby",
           "reusable": true,
           "x": 1320,
           "y": 24,
@@ -519,7 +562,7 @@
         {
           "type": "path",
           "id": "bottle-champagne",
-          "name": "bottle-champagne",
+          "name": "Lucide Lab / bottle-champagne",
           "reusable": true,
           "x": 1368,
           "y": 24,
@@ -537,7 +580,7 @@
         {
           "type": "path",
           "id": "bottle-dispenser",
-          "name": "bottle-dispenser",
+          "name": "Lucide Lab / bottle-dispenser",
           "reusable": true,
           "x": 1416,
           "y": 24,
@@ -555,7 +598,7 @@
         {
           "type": "path",
           "id": "bottle-plastic",
-          "name": "bottle-plastic",
+          "name": "Lucide Lab / bottle-plastic",
           "reusable": true,
           "x": 1464,
           "y": 24,
@@ -573,7 +616,7 @@
         {
           "type": "path",
           "id": "bottle-spray",
-          "name": "bottle-spray",
+          "name": "Lucide Lab / bottle-spray",
           "reusable": true,
           "x": 1512,
           "y": 24,
@@ -591,7 +634,7 @@
         {
           "type": "path",
           "id": "bottle-toothbrush-comb",
-          "name": "bottle-toothbrush-comb",
+          "name": "Lucide Lab / bottle-toothbrush-comb",
           "reusable": true,
           "x": 1560,
           "y": 24,
@@ -609,7 +652,7 @@
         {
           "type": "path",
           "id": "bowl-chopsticks",
-          "name": "bowl-chopsticks",
+          "name": "Lucide Lab / bowl-chopsticks",
           "reusable": true,
           "x": 1608,
           "y": 24,
@@ -627,7 +670,7 @@
         {
           "type": "path",
           "id": "bowl-overflow",
-          "name": "bowl-overflow",
+          "name": "Lucide Lab / bowl-overflow",
           "reusable": true,
           "x": 1656,
           "y": 24,
@@ -645,7 +688,7 @@
         {
           "type": "path",
           "id": "bowling",
-          "name": "bowling",
+          "name": "Lucide Lab / bowling",
           "reusable": true,
           "x": 1704,
           "y": 24,
@@ -663,7 +706,7 @@
         {
           "type": "path",
           "id": "bra-sports",
-          "name": "bra-sports",
+          "name": "Lucide Lab / bra-sports",
           "reusable": true,
           "x": 1752,
           "y": 24,
@@ -681,7 +724,7 @@
         {
           "type": "path",
           "id": "bucket",
-          "name": "bucket",
+          "name": "Lucide Lab / bucket",
           "reusable": true,
           "x": 1800,
           "y": 24,
@@ -699,7 +742,7 @@
         {
           "type": "path",
           "id": "bull-head",
-          "name": "bull-head",
+          "name": "Lucide Lab / bull-head",
           "reusable": true,
           "x": 1848,
           "y": 24,
@@ -717,7 +760,7 @@
         {
           "type": "path",
           "id": "burger",
-          "name": "burger",
+          "name": "Lucide Lab / burger",
           "reusable": true,
           "x": 1896,
           "y": 24,
@@ -735,7 +778,7 @@
         {
           "type": "path",
           "id": "butterfly",
-          "name": "butterfly",
+          "name": "Lucide Lab / butterfly",
           "reusable": true,
           "x": 24,
           "y": 72,
@@ -753,7 +796,7 @@
         {
           "type": "path",
           "id": "cabin",
-          "name": "cabin",
+          "name": "Lucide Lab / cabin",
           "reusable": true,
           "x": 72,
           "y": 72,
@@ -771,7 +814,7 @@
         {
           "type": "path",
           "id": "cabinet-filing",
-          "name": "cabinet-filing",
+          "name": "Lucide Lab / cabinet-filing",
           "reusable": true,
           "x": 120,
           "y": 72,
@@ -789,7 +832,7 @@
         {
           "type": "path",
           "id": "cactus",
-          "name": "cactus",
+          "name": "Lucide Lab / cactus",
           "reusable": true,
           "x": 168,
           "y": 72,
@@ -807,7 +850,7 @@
         {
           "type": "path",
           "id": "candle-holder",
-          "name": "candle-holder",
+          "name": "Lucide Lab / candle-holder",
           "reusable": true,
           "x": 216,
           "y": 72,
@@ -825,7 +868,7 @@
         {
           "type": "path",
           "id": "candle-holder-lit",
-          "name": "candle-holder-lit",
+          "name": "Lucide Lab / candle-holder-lit",
           "reusable": true,
           "x": 264,
           "y": 72,
@@ -843,7 +886,7 @@
         {
           "type": "path",
           "id": "candle-tealight",
-          "name": "candle-tealight",
+          "name": "Lucide Lab / candle-tealight",
           "reusable": true,
           "x": 312,
           "y": 72,
@@ -861,7 +904,7 @@
         {
           "type": "path",
           "id": "candle-tealight-lit",
-          "name": "candle-tealight-lit",
+          "name": "Lucide Lab / candle-tealight-lit",
           "reusable": true,
           "x": 360,
           "y": 72,
@@ -879,7 +922,7 @@
         {
           "type": "path",
           "id": "candlestick",
-          "name": "candlestick",
+          "name": "Lucide Lab / candlestick",
           "reusable": true,
           "x": 408,
           "y": 72,
@@ -897,7 +940,7 @@
         {
           "type": "path",
           "id": "candlestick-big",
-          "name": "candlestick-big",
+          "name": "Lucide Lab / candlestick-big",
           "reusable": true,
           "x": 456,
           "y": 72,
@@ -915,7 +958,7 @@
         {
           "type": "path",
           "id": "candlestick-big-lit",
-          "name": "candlestick-big-lit",
+          "name": "Lucide Lab / candlestick-big-lit",
           "reusable": true,
           "x": 504,
           "y": 72,
@@ -933,7 +976,7 @@
         {
           "type": "path",
           "id": "candlestick-lit",
-          "name": "candlestick-lit",
+          "name": "Lucide Lab / candlestick-lit",
           "reusable": true,
           "x": 552,
           "y": 72,
@@ -951,7 +994,7 @@
         {
           "type": "path",
           "id": "card-credit",
-          "name": "card-credit",
+          "name": "Lucide Lab / card-credit",
           "reusable": true,
           "x": 600,
           "y": 72,
@@ -969,7 +1012,7 @@
         {
           "type": "path",
           "id": "card-sd",
-          "name": "card-sd",
+          "name": "Lucide Lab / card-sd",
           "reusable": true,
           "x": 648,
           "y": 72,
@@ -987,7 +1030,7 @@
         {
           "type": "path",
           "id": "case-camel",
-          "name": "case-camel",
+          "name": "Lucide Lab / case-camel",
           "reusable": true,
           "x": 696,
           "y": 72,
@@ -1005,7 +1048,7 @@
         {
           "type": "path",
           "id": "case-kebab",
-          "name": "case-kebab",
+          "name": "Lucide Lab / case-kebab",
           "reusable": true,
           "x": 744,
           "y": 72,
@@ -1023,7 +1066,7 @@
         {
           "type": "path",
           "id": "case-snake",
-          "name": "case-snake",
+          "name": "Lucide Lab / case-snake",
           "reusable": true,
           "x": 792,
           "y": 72,
@@ -1041,7 +1084,7 @@
         {
           "type": "path",
           "id": "case-snake-upper",
-          "name": "case-snake-upper",
+          "name": "Lucide Lab / case-snake-upper",
           "reusable": true,
           "x": 840,
           "y": 72,
@@ -1059,7 +1102,7 @@
         {
           "type": "path",
           "id": "cat-big",
-          "name": "cat-big",
+          "name": "Lucide Lab / cat-big",
           "reusable": true,
           "x": 888,
           "y": 72,
@@ -1077,7 +1120,7 @@
         {
           "type": "path",
           "id": "cauldron",
-          "name": "cauldron",
+          "name": "Lucide Lab / cauldron",
           "reusable": true,
           "x": 936,
           "y": 72,
@@ -1095,7 +1138,7 @@
         {
           "type": "path",
           "id": "cent",
-          "name": "cent",
+          "name": "Lucide Lab / cent",
           "reusable": true,
           "x": 984,
           "y": 72,
@@ -1113,7 +1156,7 @@
         {
           "type": "path",
           "id": "cent-circle",
-          "name": "cent-circle",
+          "name": "Lucide Lab / cent-circle",
           "reusable": true,
           "x": 1032,
           "y": 72,
@@ -1131,7 +1174,7 @@
         {
           "type": "path",
           "id": "cent-square",
-          "name": "cent-square",
+          "name": "Lucide Lab / cent-square",
           "reusable": true,
           "x": 1080,
           "y": 72,
@@ -1149,7 +1192,7 @@
         {
           "type": "path",
           "id": "chairs-table-parasol",
-          "name": "chairs-table-parasol",
+          "name": "Lucide Lab / chairs-table-parasol",
           "reusable": true,
           "x": 1128,
           "y": 72,
@@ -1167,7 +1210,7 @@
         {
           "type": "path",
           "id": "chairs-table-platter",
-          "name": "chairs-table-platter",
+          "name": "Lucide Lab / chairs-table-platter",
           "reusable": true,
           "x": 1176,
           "y": 72,
@@ -1185,7 +1228,7 @@
         {
           "type": "path",
           "id": "chameleon",
-          "name": "chameleon",
+          "name": "Lucide Lab / chameleon",
           "reusable": true,
           "x": 1224,
           "y": 72,
@@ -1203,7 +1246,7 @@
         {
           "type": "path",
           "id": "check-x",
-          "name": "check-x",
+          "name": "Lucide Lab / check-x",
           "reusable": true,
           "x": 1272,
           "y": 72,
@@ -1221,7 +1264,7 @@
         {
           "type": "path",
           "id": "chest",
-          "name": "chest",
+          "name": "Lucide Lab / chest",
           "reusable": true,
           "x": 1320,
           "y": 72,
@@ -1239,7 +1282,7 @@
         {
           "type": "path",
           "id": "chevrons-up-down-square",
-          "name": "chevrons-up-down-square",
+          "name": "Lucide Lab / chevrons-up-down-square",
           "reusable": true,
           "x": 1368,
           "y": 72,
@@ -1257,7 +1300,7 @@
         {
           "type": "path",
           "id": "chinese-character",
-          "name": "chinese-character",
+          "name": "Lucide Lab / chinese-character",
           "reusable": true,
           "x": 1416,
           "y": 72,
@@ -1275,7 +1318,7 @@
         {
           "type": "path",
           "id": "circuit-resistor",
-          "name": "circuit-resistor",
+          "name": "Lucide Lab / circuit-resistor",
           "reusable": true,
           "x": 1464,
           "y": 72,
@@ -1293,7 +1336,7 @@
         {
           "type": "path",
           "id": "cloth",
-          "name": "cloth",
+          "name": "Lucide Lab / cloth",
           "reusable": true,
           "x": 1512,
           "y": 72,
@@ -1311,7 +1354,7 @@
         {
           "type": "path",
           "id": "coat-hanger",
-          "name": "coat-hanger",
+          "name": "Lucide Lab / coat-hanger",
           "reusable": true,
           "x": 1560,
           "y": 72,
@@ -1329,7 +1372,7 @@
         {
           "type": "path",
           "id": "cocktail",
-          "name": "cocktail",
+          "name": "Lucide Lab / cocktail",
           "reusable": true,
           "x": 1608,
           "y": 72,
@@ -1347,7 +1390,7 @@
         {
           "type": "path",
           "id": "coconut",
-          "name": "coconut",
+          "name": "Lucide Lab / coconut",
           "reusable": true,
           "x": 1656,
           "y": 72,
@@ -1365,7 +1408,7 @@
         {
           "type": "path",
           "id": "coffee-bean",
-          "name": "coffee-bean",
+          "name": "Lucide Lab / coffee-bean",
           "reusable": true,
           "x": 1704,
           "y": 72,
@@ -1383,7 +1426,7 @@
         {
           "type": "path",
           "id": "coffeemaker",
-          "name": "coffeemaker",
+          "name": "Lucide Lab / coffeemaker",
           "reusable": true,
           "x": 1752,
           "y": 72,
@@ -1401,7 +1444,7 @@
         {
           "type": "path",
           "id": "coins-exchange",
-          "name": "coins-exchange",
+          "name": "Lucide Lab / coins-exchange",
           "reusable": true,
           "x": 1800,
           "y": 72,
@@ -1419,7 +1462,7 @@
         {
           "type": "path",
           "id": "coins-stack",
-          "name": "coins-stack",
+          "name": "Lucide Lab / coins-stack",
           "reusable": true,
           "x": 1848,
           "y": 72,
@@ -1437,7 +1480,7 @@
         {
           "type": "path",
           "id": "copy-code",
-          "name": "copy-code",
+          "name": "Lucide Lab / copy-code",
           "reusable": true,
           "x": 1896,
           "y": 72,
@@ -1455,7 +1498,7 @@
         {
           "type": "path",
           "id": "copy-down",
-          "name": "copy-down",
+          "name": "Lucide Lab / copy-down",
           "reusable": true,
           "x": 24,
           "y": 120,
@@ -1473,7 +1516,7 @@
         {
           "type": "path",
           "id": "copy-file-path",
-          "name": "copy-file-path",
+          "name": "Lucide Lab / copy-file-path",
           "reusable": true,
           "x": 72,
           "y": 120,
@@ -1491,7 +1534,7 @@
         {
           "type": "path",
           "id": "copy-image",
-          "name": "copy-image",
+          "name": "Lucide Lab / copy-image",
           "reusable": true,
           "x": 120,
           "y": 120,
@@ -1509,7 +1552,7 @@
         {
           "type": "path",
           "id": "copy-text",
-          "name": "copy-text",
+          "name": "Lucide Lab / copy-text",
           "reusable": true,
           "x": 168,
           "y": 120,
@@ -1527,7 +1570,7 @@
         {
           "type": "path",
           "id": "copy-type",
-          "name": "copy-type",
+          "name": "Lucide Lab / copy-type",
           "reusable": true,
           "x": 216,
           "y": 120,
@@ -1545,7 +1588,7 @@
         {
           "type": "path",
           "id": "cow-head",
-          "name": "cow-head",
+          "name": "Lucide Lab / cow-head",
           "reusable": true,
           "x": 264,
           "y": 120,
@@ -1563,7 +1606,7 @@
         {
           "type": "path",
           "id": "cow-udder-droplets",
-          "name": "cow-udder-droplets",
+          "name": "Lucide Lab / cow-udder-droplets",
           "reusable": true,
           "x": 312,
           "y": 120,
@@ -1581,7 +1624,7 @@
         {
           "type": "path",
           "id": "crab",
-          "name": "crab",
+          "name": "Lucide Lab / crab",
           "reusable": true,
           "x": 360,
           "y": 120,
@@ -1599,7 +1642,7 @@
         {
           "type": "path",
           "id": "cricket-ball",
-          "name": "cricket-ball",
+          "name": "Lucide Lab / cricket-ball",
           "reusable": true,
           "x": 408,
           "y": 120,
@@ -1617,7 +1660,7 @@
         {
           "type": "path",
           "id": "cricket-wicket",
-          "name": "cricket-wicket",
+          "name": "Lucide Lab / cricket-wicket",
           "reusable": true,
           "x": 456,
           "y": 120,
@@ -1635,7 +1678,7 @@
         {
           "type": "path",
           "id": "cross-square",
-          "name": "cross-square",
+          "name": "Lucide Lab / cross-square",
           "reusable": true,
           "x": 504,
           "y": 120,
@@ -1653,7 +1696,7 @@
         {
           "type": "path",
           "id": "crosshair-2",
-          "name": "crosshair-2",
+          "name": "Lucide Lab / crosshair-2",
           "reusable": true,
           "x": 552,
           "y": 120,
@@ -1671,7 +1714,7 @@
         {
           "type": "path",
           "id": "crosshair-2-dot",
-          "name": "crosshair-2-dot",
+          "name": "Lucide Lab / crosshair-2-dot",
           "reusable": true,
           "x": 600,
           "y": 120,
@@ -1689,7 +1732,7 @@
         {
           "type": "path",
           "id": "crosshair-plus",
-          "name": "crosshair-plus",
+          "name": "Lucide Lab / crosshair-plus",
           "reusable": true,
           "x": 648,
           "y": 120,
@@ -1707,7 +1750,7 @@
         {
           "type": "path",
           "id": "crosshair-plus-dot",
-          "name": "crosshair-plus-dot",
+          "name": "Lucide Lab / crosshair-plus-dot",
           "reusable": true,
           "x": 696,
           "y": 120,
@@ -1725,7 +1768,7 @@
         {
           "type": "path",
           "id": "crosshair-square",
-          "name": "crosshair-square",
+          "name": "Lucide Lab / crosshair-square",
           "reusable": true,
           "x": 744,
           "y": 120,
@@ -1743,7 +1786,7 @@
         {
           "type": "path",
           "id": "cup-bubble-tea",
-          "name": "cup-bubble-tea",
+          "name": "Lucide Lab / cup-bubble-tea",
           "reusable": true,
           "x": 792,
           "y": 120,
@@ -1761,7 +1804,7 @@
         {
           "type": "path",
           "id": "cup-saucer",
-          "name": "cup-saucer",
+          "name": "Lucide Lab / cup-saucer",
           "reusable": true,
           "x": 840,
           "y": 120,
@@ -1779,7 +1822,7 @@
         {
           "type": "path",
           "id": "cup-to-go",
-          "name": "cup-to-go",
+          "name": "Lucide Lab / cup-to-go",
           "reusable": true,
           "x": 888,
           "y": 120,
@@ -1797,7 +1840,7 @@
         {
           "type": "path",
           "id": "currency-square",
-          "name": "currency-square",
+          "name": "Lucide Lab / currency-square",
           "reusable": true,
           "x": 936,
           "y": 120,
@@ -1815,7 +1858,7 @@
         {
           "type": "path",
           "id": "desk-lamp",
-          "name": "desk-lamp",
+          "name": "Lucide Lab / desk-lamp",
           "reusable": true,
           "x": 984,
           "y": 120,
@@ -1833,7 +1876,7 @@
         {
           "type": "path",
           "id": "diaper",
-          "name": "diaper",
+          "name": "Lucide Lab / diaper",
           "reusable": true,
           "x": 1032,
           "y": 120,
@@ -1851,7 +1894,7 @@
         {
           "type": "path",
           "id": "dishwasher",
-          "name": "dishwasher",
+          "name": "Lucide Lab / dishwasher",
           "reusable": true,
           "x": 1080,
           "y": 120,
@@ -1869,7 +1912,7 @@
         {
           "type": "path",
           "id": "dollar-sign-square",
-          "name": "dollar-sign-square",
+          "name": "Lucide Lab / dollar-sign-square",
           "reusable": true,
           "x": 1128,
           "y": 120,
@@ -1887,7 +1930,7 @@
         {
           "type": "path",
           "id": "doorbell-intercom",
-          "name": "doorbell-intercom",
+          "name": "Lucide Lab / doorbell-intercom",
           "reusable": true,
           "x": 1176,
           "y": 120,
@@ -1905,7 +1948,7 @@
         {
           "type": "path",
           "id": "dress",
-          "name": "dress",
+          "name": "Lucide Lab / dress",
           "reusable": true,
           "x": 1224,
           "y": 120,
@@ -1923,7 +1966,7 @@
         {
           "type": "path",
           "id": "egg-cup",
-          "name": "egg-cup",
+          "name": "Lucide Lab / egg-cup",
           "reusable": true,
           "x": 1272,
           "y": 120,
@@ -1941,7 +1984,7 @@
         {
           "type": "path",
           "id": "elephant",
-          "name": "elephant",
+          "name": "Lucide Lab / elephant",
           "reusable": true,
           "x": 1320,
           "y": 120,
@@ -1959,7 +2002,7 @@
         {
           "type": "path",
           "id": "elephant-face",
-          "name": "elephant-face",
+          "name": "Lucide Lab / elephant-face",
           "reusable": true,
           "x": 1368,
           "y": 120,
@@ -1977,7 +2020,7 @@
         {
           "type": "path",
           "id": "escalator-arrow-down-left",
-          "name": "escalator-arrow-down-left",
+          "name": "Lucide Lab / escalator-arrow-down-left",
           "reusable": true,
           "x": 1416,
           "y": 120,
@@ -1995,7 +2038,7 @@
         {
           "type": "path",
           "id": "escalator-arrow-up-right",
-          "name": "escalator-arrow-up-right",
+          "name": "Lucide Lab / escalator-arrow-up-right",
           "reusable": true,
           "x": 1464,
           "y": 120,
@@ -2013,7 +2056,7 @@
         {
           "type": "path",
           "id": "euro-circle",
-          "name": "euro-circle",
+          "name": "Lucide Lab / euro-circle",
           "reusable": true,
           "x": 1512,
           "y": 120,
@@ -2031,7 +2074,7 @@
         {
           "type": "path",
           "id": "euro-square",
-          "name": "euro-square",
+          "name": "Lucide Lab / euro-square",
           "reusable": true,
           "x": 1560,
           "y": 120,
@@ -2049,7 +2092,7 @@
         {
           "type": "path",
           "id": "face-alien",
-          "name": "face-alien",
+          "name": "Lucide Lab / face-alien",
           "reusable": true,
           "x": 1608,
           "y": 120,
@@ -2067,7 +2110,7 @@
         {
           "type": "path",
           "id": "fan-handheld",
-          "name": "fan-handheld",
+          "name": "Lucide Lab / fan-handheld",
           "reusable": true,
           "x": 1656,
           "y": 120,
@@ -2085,7 +2128,7 @@
         {
           "type": "path",
           "id": "farm",
-          "name": "farm",
+          "name": "Lucide Lab / farm",
           "reusable": true,
           "x": 1704,
           "y": 120,
@@ -2103,7 +2146,7 @@
         {
           "type": "path",
           "id": "feather-plus",
-          "name": "feather-plus",
+          "name": "Lucide Lab / feather-plus",
           "reusable": true,
           "x": 1752,
           "y": 120,
@@ -2121,7 +2164,7 @@
         {
           "type": "path",
           "id": "feather-square",
-          "name": "feather-square",
+          "name": "Lucide Lab / feather-square",
           "reusable": true,
           "x": 1800,
           "y": 120,
@@ -2139,7 +2182,7 @@
         {
           "type": "path",
           "id": "feather-text",
-          "name": "feather-text",
+          "name": "Lucide Lab / feather-text",
           "reusable": true,
           "x": 1848,
           "y": 120,
@@ -2157,7 +2200,7 @@
         {
           "type": "path",
           "id": "flask-conical-titration",
-          "name": "flask-conical-titration",
+          "name": "Lucide Lab / flask-conical-titration",
           "reusable": true,
           "x": 1896,
           "y": 120,
@@ -2175,7 +2218,7 @@
         {
           "type": "path",
           "id": "flippers",
-          "name": "flippers",
+          "name": "Lucide Lab / flippers",
           "reusable": true,
           "x": 24,
           "y": 168,
@@ -2193,7 +2236,7 @@
         {
           "type": "path",
           "id": "floor-plan",
-          "name": "floor-plan",
+          "name": "Lucide Lab / floor-plan",
           "reusable": true,
           "x": 72,
           "y": 168,
@@ -2211,7 +2254,7 @@
         {
           "type": "path",
           "id": "floppy-disk-2",
-          "name": "floppy-disk-2",
+          "name": "Lucide Lab / floppy-disk-2",
           "reusable": true,
           "x": 120,
           "y": 168,
@@ -2229,7 +2272,7 @@
         {
           "type": "path",
           "id": "floppy-disk-rear",
-          "name": "floppy-disk-rear",
+          "name": "Lucide Lab / floppy-disk-rear",
           "reusable": true,
           "x": 168,
           "y": 168,
@@ -2247,7 +2290,7 @@
         {
           "type": "path",
           "id": "floppy-disks-2",
-          "name": "floppy-disks-2",
+          "name": "Lucide Lab / floppy-disks-2",
           "reusable": true,
           "x": 216,
           "y": 168,
@@ -2265,7 +2308,7 @@
         {
           "type": "path",
           "id": "floppy-disks-rear",
-          "name": "floppy-disks-rear",
+          "name": "Lucide Lab / floppy-disks-rear",
           "reusable": true,
           "x": 264,
           "y": 168,
@@ -2283,7 +2326,7 @@
         {
           "type": "path",
           "id": "flower-lotus",
-          "name": "flower-lotus",
+          "name": "Lucide Lab / flower-lotus",
           "reusable": true,
           "x": 312,
           "y": 168,
@@ -2301,7 +2344,7 @@
         {
           "type": "path",
           "id": "flower-pot",
-          "name": "flower-pot",
+          "name": "Lucide Lab / flower-pot",
           "reusable": true,
           "x": 360,
           "y": 168,
@@ -2319,7 +2362,7 @@
         {
           "type": "path",
           "id": "flower-rose",
-          "name": "flower-rose",
+          "name": "Lucide Lab / flower-rose",
           "reusable": true,
           "x": 408,
           "y": 168,
@@ -2337,7 +2380,7 @@
         {
           "type": "path",
           "id": "flower-rose-single",
-          "name": "flower-rose-single",
+          "name": "Lucide Lab / flower-rose-single",
           "reusable": true,
           "x": 456,
           "y": 168,
@@ -2355,7 +2398,7 @@
         {
           "type": "path",
           "id": "flower-tulip",
-          "name": "flower-tulip",
+          "name": "Lucide Lab / flower-tulip",
           "reusable": true,
           "x": 504,
           "y": 168,
@@ -2373,7 +2416,7 @@
         {
           "type": "path",
           "id": "football",
-          "name": "football",
+          "name": "Lucide Lab / football",
           "reusable": true,
           "x": 552,
           "y": 168,
@@ -2391,7 +2434,7 @@
         {
           "type": "path",
           "id": "football-goal",
-          "name": "football-goal",
+          "name": "Lucide Lab / football-goal",
           "reusable": true,
           "x": 600,
           "y": 168,
@@ -2409,7 +2452,7 @@
         {
           "type": "path",
           "id": "football-helmet",
-          "name": "football-helmet",
+          "name": "Lucide Lab / football-helmet",
           "reusable": true,
           "x": 648,
           "y": 168,
@@ -2427,7 +2470,7 @@
         {
           "type": "path",
           "id": "fox-face-tail",
-          "name": "fox-face-tail",
+          "name": "Lucide Lab / fox-face-tail",
           "reusable": true,
           "x": 696,
           "y": 168,
@@ -2445,7 +2488,7 @@
         {
           "type": "path",
           "id": "frog-face",
-          "name": "frog-face",
+          "name": "Lucide Lab / frog-face",
           "reusable": true,
           "x": 744,
           "y": 168,
@@ -2463,7 +2506,7 @@
         {
           "type": "path",
           "id": "fruit",
-          "name": "fruit",
+          "name": "Lucide Lab / fruit",
           "reusable": true,
           "x": 792,
           "y": 168,
@@ -2481,7 +2524,7 @@
         {
           "type": "path",
           "id": "garlic",
-          "name": "garlic",
+          "name": "Lucide Lab / garlic",
           "reusable": true,
           "x": 840,
           "y": 168,
@@ -2499,7 +2542,7 @@
         {
           "type": "path",
           "id": "gearbox",
-          "name": "gearbox",
+          "name": "Lucide Lab / gearbox",
           "reusable": true,
           "x": 888,
           "y": 168,
@@ -2517,7 +2560,7 @@
         {
           "type": "path",
           "id": "gearbox-square",
-          "name": "gearbox-square",
+          "name": "Lucide Lab / gearbox-square",
           "reusable": true,
           "x": 936,
           "y": 168,
@@ -2535,7 +2578,7 @@
         {
           "type": "path",
           "id": "gem-ring",
-          "name": "gem-ring",
+          "name": "Lucide Lab / gem-ring",
           "reusable": true,
           "x": 984,
           "y": 168,
@@ -2553,7 +2596,7 @@
         {
           "type": "path",
           "id": "glasses-square",
-          "name": "glasses-square",
+          "name": "Lucide Lab / glasses-square",
           "reusable": true,
           "x": 1032,
           "y": 168,
@@ -2571,7 +2614,7 @@
         {
           "type": "path",
           "id": "glasses-sun",
-          "name": "glasses-sun",
+          "name": "Lucide Lab / glasses-sun",
           "reusable": true,
           "x": 1080,
           "y": 168,
@@ -2589,7 +2632,7 @@
         {
           "type": "path",
           "id": "goal-net",
-          "name": "goal-net",
+          "name": "Lucide Lab / goal-net",
           "reusable": true,
           "x": 1128,
           "y": 168,
@@ -2607,7 +2650,7 @@
         {
           "type": "path",
           "id": "goblet",
-          "name": "goblet",
+          "name": "Lucide Lab / goblet",
           "reusable": true,
           "x": 1176,
           "y": 168,
@@ -2625,7 +2668,7 @@
         {
           "type": "path",
           "id": "goblet-crack",
-          "name": "goblet-crack",
+          "name": "Lucide Lab / goblet-crack",
           "reusable": true,
           "x": 1224,
           "y": 168,
@@ -2643,7 +2686,7 @@
         {
           "type": "path",
           "id": "golf-driver",
-          "name": "golf-driver",
+          "name": "Lucide Lab / golf-driver",
           "reusable": true,
           "x": 1272,
           "y": 168,
@@ -2661,7 +2704,7 @@
         {
           "type": "path",
           "id": "grid-lines",
-          "name": "grid-lines",
+          "name": "Lucide Lab / grid-lines",
           "reusable": true,
           "x": 1320,
           "y": 168,
@@ -2679,7 +2722,7 @@
         {
           "type": "path",
           "id": "grid-lines-offset",
-          "name": "grid-lines-offset",
+          "name": "Lucide Lab / grid-lines-offset",
           "reusable": true,
           "x": 1368,
           "y": 168,
@@ -2697,7 +2740,7 @@
         {
           "type": "path",
           "id": "hairdryer",
-          "name": "hairdryer",
+          "name": "Lucide Lab / hairdryer",
           "reusable": true,
           "x": 1416,
           "y": 168,
@@ -2715,7 +2758,7 @@
         {
           "type": "path",
           "id": "hand-gear",
-          "name": "hand-gear",
+          "name": "Lucide Lab / hand-gear",
           "reusable": true,
           "x": 1464,
           "y": 168,
@@ -2733,7 +2776,7 @@
         {
           "type": "path",
           "id": "hat-baseball",
-          "name": "hat-baseball",
+          "name": "Lucide Lab / hat-baseball",
           "reusable": true,
           "x": 1512,
           "y": 168,
@@ -2751,7 +2794,7 @@
         {
           "type": "path",
           "id": "hat-beanie",
-          "name": "hat-beanie",
+          "name": "Lucide Lab / hat-beanie",
           "reusable": true,
           "x": 1560,
           "y": 168,
@@ -2769,7 +2812,7 @@
         {
           "type": "path",
           "id": "hat-bowler",
-          "name": "hat-bowler",
+          "name": "Lucide Lab / hat-bowler",
           "reusable": true,
           "x": 1608,
           "y": 168,
@@ -2787,7 +2830,7 @@
         {
           "type": "path",
           "id": "hat-top",
-          "name": "hat-top",
+          "name": "Lucide Lab / hat-top",
           "reusable": true,
           "x": 1656,
           "y": 168,
@@ -2805,7 +2848,7 @@
         {
           "type": "path",
           "id": "heading-circle",
-          "name": "heading-circle",
+          "name": "Lucide Lab / heading-circle",
           "reusable": true,
           "x": 1704,
           "y": 168,
@@ -2823,7 +2866,7 @@
         {
           "type": "path",
           "id": "heading-square",
-          "name": "heading-square",
+          "name": "Lucide Lab / heading-square",
           "reusable": true,
           "x": 1752,
           "y": 168,
@@ -2841,7 +2884,7 @@
         {
           "type": "path",
           "id": "hedgehog",
-          "name": "hedgehog",
+          "name": "Lucide Lab / hedgehog",
           "reusable": true,
           "x": 1800,
           "y": 168,
@@ -2859,7 +2902,7 @@
         {
           "type": "path",
           "id": "helmet-diving",
-          "name": "helmet-diving",
+          "name": "Lucide Lab / helmet-diving",
           "reusable": true,
           "x": 1848,
           "y": 168,
@@ -2877,7 +2920,7 @@
         {
           "type": "path",
           "id": "hexagons-3",
-          "name": "hexagons-3",
+          "name": "Lucide Lab / hexagons-3",
           "reusable": true,
           "x": 1896,
           "y": 168,
@@ -2895,7 +2938,7 @@
         {
           "type": "path",
           "id": "hexagons-7",
-          "name": "hexagons-7",
+          "name": "Lucide Lab / hexagons-7",
           "reusable": true,
           "x": 24,
           "y": 216,
@@ -2913,7 +2956,7 @@
         {
           "type": "path",
           "id": "high-heel",
-          "name": "high-heel",
+          "name": "Lucide Lab / high-heel",
           "reusable": true,
           "x": 72,
           "y": 216,
@@ -2931,7 +2974,7 @@
         {
           "type": "path",
           "id": "hockey",
-          "name": "hockey",
+          "name": "Lucide Lab / hockey",
           "reusable": true,
           "x": 120,
           "y": 216,
@@ -2949,7 +2992,7 @@
         {
           "type": "path",
           "id": "hockey-mask",
-          "name": "hockey-mask",
+          "name": "Lucide Lab / hockey-mask",
           "reusable": true,
           "x": 168,
           "y": 216,
@@ -2967,7 +3010,7 @@
         {
           "type": "path",
           "id": "horse-head",
-          "name": "horse-head",
+          "name": "Lucide Lab / horse-head",
           "reusable": true,
           "x": 216,
           "y": 216,
@@ -2985,7 +3028,7 @@
         {
           "type": "path",
           "id": "hot-dog",
-          "name": "hot-dog",
+          "name": "Lucide Lab / hot-dog",
           "reusable": true,
           "x": 264,
           "y": 216,
@@ -3003,7 +3046,7 @@
         {
           "type": "path",
           "id": "house-manor",
-          "name": "house-manor",
+          "name": "Lucide Lab / house-manor",
           "reusable": true,
           "x": 312,
           "y": 216,
@@ -3021,7 +3064,7 @@
         {
           "type": "path",
           "id": "house-off",
-          "name": "house-off",
+          "name": "Lucide Lab / house-off",
           "reusable": true,
           "x": 360,
           "y": 216,
@@ -3039,7 +3082,7 @@
         {
           "type": "path",
           "id": "house-roof",
-          "name": "house-roof",
+          "name": "Lucide Lab / house-roof",
           "reusable": true,
           "x": 408,
           "y": 216,
@@ -3057,7 +3100,7 @@
         {
           "type": "path",
           "id": "house-roof-off",
-          "name": "house-roof-off",
+          "name": "Lucide Lab / house-roof-off",
           "reusable": true,
           "x": 456,
           "y": 216,
@@ -3075,7 +3118,7 @@
         {
           "type": "path",
           "id": "ice-hockey",
-          "name": "ice-hockey",
+          "name": "Lucide Lab / ice-hockey",
           "reusable": true,
           "x": 504,
           "y": 216,
@@ -3093,7 +3136,7 @@
         {
           "type": "path",
           "id": "ice-skate",
-          "name": "ice-skate",
+          "name": "Lucide Lab / ice-skate",
           "reusable": true,
           "x": 552,
           "y": 216,
@@ -3111,7 +3154,7 @@
         {
           "type": "path",
           "id": "igloo",
-          "name": "igloo",
+          "name": "Lucide Lab / igloo",
           "reusable": true,
           "x": 600,
           "y": 216,
@@ -3129,7 +3172,7 @@
         {
           "type": "path",
           "id": "indian-rupee-circle",
-          "name": "indian-rupee-circle",
+          "name": "Lucide Lab / indian-rupee-circle",
           "reusable": true,
           "x": 648,
           "y": 216,
@@ -3147,7 +3190,7 @@
         {
           "type": "path",
           "id": "indian-rupee-square",
-          "name": "indian-rupee-square",
+          "name": "Lucide Lab / indian-rupee-square",
           "reusable": true,
           "x": 696,
           "y": 216,
@@ -3165,7 +3208,7 @@
         {
           "type": "path",
           "id": "intercom",
-          "name": "intercom",
+          "name": "Lucide Lab / intercom",
           "reusable": true,
           "x": 744,
           "y": 216,
@@ -3183,7 +3226,7 @@
         {
           "type": "path",
           "id": "iron",
-          "name": "iron",
+          "name": "Lucide Lab / iron",
           "reusable": true,
           "x": 792,
           "y": 216,
@@ -3201,7 +3244,7 @@
         {
           "type": "path",
           "id": "iron-off",
-          "name": "iron-off",
+          "name": "Lucide Lab / iron-off",
           "reusable": true,
           "x": 840,
           "y": 216,
@@ -3219,7 +3262,7 @@
         {
           "type": "path",
           "id": "ironing-board",
-          "name": "ironing-board",
+          "name": "Lucide Lab / ironing-board",
           "reusable": true,
           "x": 888,
           "y": 216,
@@ -3237,7 +3280,7 @@
         {
           "type": "path",
           "id": "italic-square",
-          "name": "italic-square",
+          "name": "Lucide Lab / italic-square",
           "reusable": true,
           "x": 936,
           "y": 216,
@@ -3255,7 +3298,7 @@
         {
           "type": "path",
           "id": "jacket",
-          "name": "jacket",
+          "name": "Lucide Lab / jacket",
           "reusable": true,
           "x": 984,
           "y": 216,
@@ -3273,7 +3316,7 @@
         {
           "type": "path",
           "id": "jacket-sports",
-          "name": "jacket-sports",
+          "name": "Lucide Lab / jacket-sports",
           "reusable": true,
           "x": 1032,
           "y": 216,
@@ -3291,7 +3334,7 @@
         {
           "type": "path",
           "id": "japanese-yen-circle",
-          "name": "japanese-yen-circle",
+          "name": "Lucide Lab / japanese-yen-circle",
           "reusable": true,
           "x": 1080,
           "y": 216,
@@ -3309,7 +3352,7 @@
         {
           "type": "path",
           "id": "japanese-yen-square",
-          "name": "japanese-yen-square",
+          "name": "Lucide Lab / japanese-yen-square",
           "reusable": true,
           "x": 1128,
           "y": 216,
@@ -3327,7 +3370,7 @@
         {
           "type": "path",
           "id": "jar",
-          "name": "jar",
+          "name": "Lucide Lab / jar",
           "reusable": true,
           "x": 1176,
           "y": 216,
@@ -3345,7 +3388,7 @@
         {
           "type": "path",
           "id": "jug",
-          "name": "jug",
+          "name": "Lucide Lab / jug",
           "reusable": true,
           "x": 1224,
           "y": 216,
@@ -3363,7 +3406,7 @@
         {
           "type": "path",
           "id": "kebab",
-          "name": "kebab",
+          "name": "Lucide Lab / kebab",
           "reusable": true,
           "x": 1272,
           "y": 216,
@@ -3381,7 +3424,7 @@
         {
           "type": "path",
           "id": "kettle",
-          "name": "kettle",
+          "name": "Lucide Lab / kettle",
           "reusable": true,
           "x": 1320,
           "y": 216,
@@ -3399,7 +3442,7 @@
         {
           "type": "path",
           "id": "kettle-electric",
-          "name": "kettle-electric",
+          "name": "Lucide Lab / kettle-electric",
           "reusable": true,
           "x": 1368,
           "y": 216,
@@ -3417,7 +3460,7 @@
         {
           "type": "path",
           "id": "kiwi",
-          "name": "kiwi",
+          "name": "Lucide Lab / kiwi",
           "reusable": true,
           "x": 1416,
           "y": 216,
@@ -3435,7 +3478,7 @@
         {
           "type": "path",
           "id": "layout-grid-move-horizontal",
-          "name": "layout-grid-move-horizontal",
+          "name": "Lucide Lab / layout-grid-move-horizontal",
           "reusable": true,
           "x": 1464,
           "y": 216,
@@ -3453,7 +3496,7 @@
         {
           "type": "path",
           "id": "layout-grid-move-vertical",
-          "name": "layout-grid-move-vertical",
+          "name": "Lucide Lab / layout-grid-move-vertical",
           "reusable": true,
           "x": 1512,
           "y": 216,
@@ -3471,7 +3514,7 @@
         {
           "type": "path",
           "id": "layout-grid-plus",
-          "name": "layout-grid-plus",
+          "name": "Lucide Lab / layout-grid-plus",
           "reusable": true,
           "x": 1560,
           "y": 216,
@@ -3489,7 +3532,7 @@
         {
           "type": "path",
           "id": "layout-list-move",
-          "name": "layout-list-move",
+          "name": "Lucide Lab / layout-list-move",
           "reusable": true,
           "x": 1608,
           "y": 216,
@@ -3507,7 +3550,7 @@
         {
           "type": "path",
           "id": "lemon",
-          "name": "lemon",
+          "name": "Lucide Lab / lemon",
           "reusable": true,
           "x": 1656,
           "y": 216,
@@ -3525,7 +3568,7 @@
         {
           "type": "path",
           "id": "life-jacket",
-          "name": "life-jacket",
+          "name": "Lucide Lab / life-jacket",
           "reusable": true,
           "x": 1704,
           "y": 216,
@@ -3543,7 +3586,7 @@
         {
           "type": "path",
           "id": "ligature-square",
-          "name": "ligature-square",
+          "name": "Lucide Lab / ligature-square",
           "reusable": true,
           "x": 1752,
           "y": 216,
@@ -3561,7 +3604,7 @@
         {
           "type": "path",
           "id": "light-switch",
-          "name": "light-switch",
+          "name": "Lucide Lab / light-switch",
           "reusable": true,
           "x": 1800,
           "y": 216,
@@ -3579,7 +3622,7 @@
         {
           "type": "path",
           "id": "lingerie",
-          "name": "lingerie",
+          "name": "Lucide Lab / lingerie",
           "reusable": true,
           "x": 1848,
           "y": 216,
@@ -3597,7 +3640,7 @@
         {
           "type": "path",
           "id": "locate-square",
-          "name": "locate-square",
+          "name": "Lucide Lab / locate-square",
           "reusable": true,
           "x": 1896,
           "y": 216,
@@ -3615,7 +3658,7 @@
         {
           "type": "path",
           "id": "luggage-cabin",
-          "name": "luggage-cabin",
+          "name": "Lucide Lab / luggage-cabin",
           "reusable": true,
           "x": 24,
           "y": 264,
@@ -3633,7 +3676,7 @@
         {
           "type": "path",
           "id": "lunch-box",
-          "name": "lunch-box",
+          "name": "Lucide Lab / lunch-box",
           "reusable": true,
           "x": 72,
           "y": 264,
@@ -3651,7 +3694,7 @@
         {
           "type": "path",
           "id": "mailbox-flag",
-          "name": "mailbox-flag",
+          "name": "Lucide Lab / mailbox-flag",
           "reusable": true,
           "x": 120,
           "y": 264,
@@ -3669,7 +3712,7 @@
         {
           "type": "path",
           "id": "map-pin-laptop",
-          "name": "map-pin-laptop",
+          "name": "Lucide Lab / map-pin-laptop",
           "reusable": true,
           "x": 168,
           "y": 264,
@@ -3687,7 +3730,7 @@
         {
           "type": "path",
           "id": "mask-snorkel",
-          "name": "mask-snorkel",
+          "name": "Lucide Lab / mask-snorkel",
           "reusable": true,
           "x": 216,
           "y": 264,
@@ -3705,7 +3748,7 @@
         {
           "type": "path",
           "id": "meal-box",
-          "name": "meal-box",
+          "name": "Lucide Lab / meal-box",
           "reusable": true,
           "x": 264,
           "y": 264,
@@ -3723,7 +3766,7 @@
         {
           "type": "path",
           "id": "monstera-leaf",
-          "name": "monstera-leaf",
+          "name": "Lucide Lab / monstera-leaf",
           "reusable": true,
           "x": 312,
           "y": 264,
@@ -3741,7 +3784,7 @@
         {
           "type": "path",
           "id": "mortar-pestle",
-          "name": "mortar-pestle",
+          "name": "Lucide Lab / mortar-pestle",
           "reusable": true,
           "x": 360,
           "y": 264,
@@ -3759,7 +3802,7 @@
         {
           "type": "path",
           "id": "motor-racing-helmet",
-          "name": "motor-racing-helmet",
+          "name": "Lucide Lab / motor-racing-helmet",
           "reusable": true,
           "x": 408,
           "y": 264,
@@ -3777,7 +3820,7 @@
         {
           "type": "path",
           "id": "mug-teabag",
-          "name": "mug-teabag",
+          "name": "Lucide Lab / mug-teabag",
           "reusable": true,
           "x": 456,
           "y": 264,
@@ -3795,7 +3838,7 @@
         {
           "type": "path",
           "id": "mustache",
-          "name": "mustache",
+          "name": "Lucide Lab / mustache",
           "reusable": true,
           "x": 504,
           "y": 264,
@@ -3813,7 +3856,7 @@
         {
           "type": "path",
           "id": "olive",
-          "name": "olive",
+          "name": "Lucide Lab / olive",
           "reusable": true,
           "x": 552,
           "y": 264,
@@ -3831,7 +3874,7 @@
         {
           "type": "path",
           "id": "onion",
-          "name": "onion",
+          "name": "Lucide Lab / onion",
           "reusable": true,
           "x": 600,
           "y": 264,
@@ -3849,7 +3892,7 @@
         {
           "type": "path",
           "id": "owl",
-          "name": "owl",
+          "name": "Lucide Lab / owl",
           "reusable": true,
           "x": 648,
           "y": 264,
@@ -3867,7 +3910,7 @@
         {
           "type": "path",
           "id": "pac-man",
-          "name": "pac-man",
+          "name": "Lucide Lab / pac-man",
           "reusable": true,
           "x": 696,
           "y": 264,
@@ -3885,7 +3928,7 @@
         {
           "type": "path",
           "id": "pac-man-ghost",
-          "name": "pac-man-ghost",
+          "name": "Lucide Lab / pac-man-ghost",
           "reusable": true,
           "x": 744,
           "y": 264,
@@ -3903,7 +3946,7 @@
         {
           "type": "path",
           "id": "pancakes",
-          "name": "pancakes",
+          "name": "Lucide Lab / pancakes",
           "reusable": true,
           "x": 792,
           "y": 264,
@@ -3921,7 +3964,7 @@
         {
           "type": "path",
           "id": "peace",
-          "name": "peace",
+          "name": "Lucide Lab / peace",
           "reusable": true,
           "x": 840,
           "y": 264,
@@ -3939,7 +3982,7 @@
         {
           "type": "path",
           "id": "peace-sign",
-          "name": "peace-sign",
+          "name": "Lucide Lab / peace-sign",
           "reusable": true,
           "x": 888,
           "y": 264,
@@ -3957,7 +4000,7 @@
         {
           "type": "path",
           "id": "peach",
-          "name": "peach",
+          "name": "Lucide Lab / peach",
           "reusable": true,
           "x": 936,
           "y": 264,
@@ -3975,7 +4018,7 @@
         {
           "type": "path",
           "id": "pear",
-          "name": "pear",
+          "name": "Lucide Lab / pear",
           "reusable": true,
           "x": 984,
           "y": 264,
@@ -3993,7 +4036,7 @@
         {
           "type": "path",
           "id": "penguin",
-          "name": "penguin",
+          "name": "Lucide Lab / penguin",
           "reusable": true,
           "x": 1032,
           "y": 264,
@@ -4011,7 +4054,7 @@
         {
           "type": "path",
           "id": "pepper-chilli",
-          "name": "pepper-chilli",
+          "name": "Lucide Lab / pepper-chilli",
           "reusable": true,
           "x": 1080,
           "y": 264,
@@ -4029,7 +4072,7 @@
         {
           "type": "path",
           "id": "pie",
-          "name": "pie",
+          "name": "Lucide Lab / pie",
           "reusable": true,
           "x": 1128,
           "y": 264,
@@ -4047,7 +4090,7 @@
         {
           "type": "path",
           "id": "pig",
-          "name": "pig",
+          "name": "Lucide Lab / pig",
           "reusable": true,
           "x": 1176,
           "y": 264,
@@ -4065,7 +4108,7 @@
         {
           "type": "path",
           "id": "pig-head",
-          "name": "pig-head",
+          "name": "Lucide Lab / pig-head",
           "reusable": true,
           "x": 1224,
           "y": 264,
@@ -4083,7 +4126,7 @@
         {
           "type": "path",
           "id": "pillow",
-          "name": "pillow",
+          "name": "Lucide Lab / pillow",
           "reusable": true,
           "x": 1272,
           "y": 264,
@@ -4101,7 +4144,7 @@
         {
           "type": "path",
           "id": "pilot",
-          "name": "pilot",
+          "name": "Lucide Lab / pilot",
           "reusable": true,
           "x": 1320,
           "y": 264,
@@ -4119,7 +4162,7 @@
         {
           "type": "path",
           "id": "pin-safety",
-          "name": "pin-safety",
+          "name": "Lucide Lab / pin-safety",
           "reusable": true,
           "x": 1368,
           "y": 264,
@@ -4137,7 +4180,7 @@
         {
           "type": "path",
           "id": "pin-safety-open",
-          "name": "pin-safety-open",
+          "name": "Lucide Lab / pin-safety-open",
           "reusable": true,
           "x": 1416,
           "y": 264,
@@ -4155,7 +4198,7 @@
         {
           "type": "path",
           "id": "pineapple-ring",
-          "name": "pineapple-ring",
+          "name": "Lucide Lab / pineapple-ring",
           "reusable": true,
           "x": 1464,
           "y": 264,
@@ -4173,7 +4216,7 @@
         {
           "type": "path",
           "id": "planet",
-          "name": "planet",
+          "name": "Lucide Lab / planet",
           "reusable": true,
           "x": 1512,
           "y": 264,
@@ -4191,7 +4234,7 @@
         {
           "type": "path",
           "id": "police-cap",
-          "name": "police-cap",
+          "name": "Lucide Lab / police-cap",
           "reusable": true,
           "x": 1560,
           "y": 264,
@@ -4209,7 +4252,7 @@
         {
           "type": "path",
           "id": "pond",
-          "name": "pond",
+          "name": "Lucide Lab / pond",
           "reusable": true,
           "x": 1608,
           "y": 264,
@@ -4227,7 +4270,7 @@
         {
           "type": "path",
           "id": "pound-sterling-circle",
-          "name": "pound-sterling-circle",
+          "name": "Lucide Lab / pound-sterling-circle",
           "reusable": true,
           "x": 1656,
           "y": 264,
@@ -4245,7 +4288,7 @@
         {
           "type": "path",
           "id": "pound-sterling-square",
-          "name": "pound-sterling-square",
+          "name": "Lucide Lab / pound-sterling-square",
           "reusable": true,
           "x": 1704,
           "y": 264,
@@ -4263,7 +4306,7 @@
         {
           "type": "path",
           "id": "pram",
-          "name": "pram",
+          "name": "Lucide Lab / pram",
           "reusable": true,
           "x": 1752,
           "y": 264,
@@ -4281,7 +4324,7 @@
         {
           "type": "path",
           "id": "pretzel",
-          "name": "pretzel",
+          "name": "Lucide Lab / pretzel",
           "reusable": true,
           "x": 1800,
           "y": 264,
@@ -4299,7 +4342,7 @@
         {
           "type": "path",
           "id": "pumpkin",
-          "name": "pumpkin",
+          "name": "Lucide Lab / pumpkin",
           "reusable": true,
           "x": 1848,
           "y": 264,
@@ -4317,7 +4360,7 @@
         {
           "type": "path",
           "id": "razor",
-          "name": "razor",
+          "name": "Lucide Lab / razor",
           "reusable": true,
           "x": 1896,
           "y": 264,
@@ -4335,7 +4378,7 @@
         {
           "type": "path",
           "id": "razor-blade",
-          "name": "razor-blade",
+          "name": "Lucide Lab / razor-blade",
           "reusable": true,
           "x": 24,
           "y": 312,
@@ -4353,7 +4396,7 @@
         {
           "type": "path",
           "id": "reel-thread",
-          "name": "reel-thread",
+          "name": "Lucide Lab / reel-thread",
           "reusable": true,
           "x": 72,
           "y": 312,
@@ -4371,7 +4414,7 @@
         {
           "type": "path",
           "id": "refrigerator-freezer",
-          "name": "refrigerator-freezer",
+          "name": "Lucide Lab / refrigerator-freezer",
           "reusable": true,
           "x": 120,
           "y": 312,
@@ -4389,7 +4432,7 @@
         {
           "type": "path",
           "id": "remove-formatting-square",
-          "name": "remove-formatting-square",
+          "name": "Lucide Lab / remove-formatting-square",
           "reusable": true,
           "x": 168,
           "y": 312,
@@ -4407,7 +4450,7 @@
         {
           "type": "path",
           "id": "rugby",
-          "name": "rugby",
+          "name": "Lucide Lab / rugby",
           "reusable": true,
           "x": 216,
           "y": 312,
@@ -4425,7 +4468,7 @@
         {
           "type": "path",
           "id": "russian-ruble-circle",
-          "name": "russian-ruble-circle",
+          "name": "Lucide Lab / russian-ruble-circle",
           "reusable": true,
           "x": 264,
           "y": 312,
@@ -4443,7 +4486,7 @@
         {
           "type": "path",
           "id": "russian-ruble-square",
-          "name": "russian-ruble-square",
+          "name": "Lucide Lab / russian-ruble-square",
           "reusable": true,
           "x": 312,
           "y": 312,
@@ -4461,7 +4504,7 @@
         {
           "type": "path",
           "id": "sausage",
-          "name": "sausage",
+          "name": "Lucide Lab / sausage",
           "reusable": true,
           "x": 360,
           "y": 312,
@@ -4479,7 +4522,7 @@
         {
           "type": "path",
           "id": "scarf",
-          "name": "scarf",
+          "name": "Lucide Lab / scarf",
           "reusable": true,
           "x": 408,
           "y": 312,
@@ -4497,7 +4540,7 @@
         {
           "type": "path",
           "id": "scissors-hair-comb",
-          "name": "scissors-hair-comb",
+          "name": "Lucide Lab / scissors-hair-comb",
           "reusable": true,
           "x": 456,
           "y": 312,
@@ -4515,7 +4558,7 @@
         {
           "type": "path",
           "id": "shark",
-          "name": "shark",
+          "name": "Lucide Lab / shark",
           "reusable": true,
           "x": 504,
           "y": 312,
@@ -4533,7 +4576,7 @@
         {
           "type": "path",
           "id": "shave-face",
-          "name": "shave-face",
+          "name": "Lucide Lab / shave-face",
           "reusable": true,
           "x": 552,
           "y": 312,
@@ -4551,7 +4594,7 @@
         {
           "type": "path",
           "id": "shirt-folded-buttons",
-          "name": "shirt-folded-buttons",
+          "name": "Lucide Lab / shirt-folded-buttons",
           "reusable": true,
           "x": 600,
           "y": 312,
@@ -4569,7 +4612,7 @@
         {
           "type": "path",
           "id": "shirt-long-sleeve",
-          "name": "shirt-long-sleeve",
+          "name": "Lucide Lab / shirt-long-sleeve",
           "reusable": true,
           "x": 648,
           "y": 312,
@@ -4587,7 +4630,7 @@
         {
           "type": "path",
           "id": "shirt-t-ruler",
-          "name": "shirt-t-ruler",
+          "name": "Lucide Lab / shirt-t-ruler",
           "reusable": true,
           "x": 696,
           "y": 312,
@@ -4605,7 +4648,7 @@
         {
           "type": "path",
           "id": "shirt-t-v-neck",
-          "name": "shirt-t-v-neck",
+          "name": "Lucide Lab / shirt-t-v-neck",
           "reusable": true,
           "x": 744,
           "y": 312,
@@ -4623,7 +4666,7 @@
         {
           "type": "path",
           "id": "shorts",
-          "name": "shorts",
+          "name": "Lucide Lab / shorts",
           "reusable": true,
           "x": 792,
           "y": 312,
@@ -4641,7 +4684,7 @@
         {
           "type": "path",
           "id": "shorts-boxer",
-          "name": "shorts-boxer",
+          "name": "Lucide Lab / shorts-boxer",
           "reusable": true,
           "x": 840,
           "y": 312,
@@ -4659,7 +4702,7 @@
         {
           "type": "path",
           "id": "shovel-dig",
-          "name": "shovel-dig",
+          "name": "Lucide Lab / shovel-dig",
           "reusable": true,
           "x": 888,
           "y": 312,
@@ -4677,7 +4720,7 @@
         {
           "type": "path",
           "id": "shower",
-          "name": "shower",
+          "name": "Lucide Lab / shower",
           "reusable": true,
           "x": 936,
           "y": 312,
@@ -4695,7 +4738,7 @@
         {
           "type": "path",
           "id": "skirt",
-          "name": "skirt",
+          "name": "Lucide Lab / skirt",
           "reusable": true,
           "x": 984,
           "y": 312,
@@ -4713,7 +4756,7 @@
         {
           "type": "path",
           "id": "skis",
-          "name": "skis",
+          "name": "Lucide Lab / skis",
           "reusable": true,
           "x": 1032,
           "y": 312,
@@ -4731,7 +4774,7 @@
         {
           "type": "path",
           "id": "slot-card",
-          "name": "slot-card",
+          "name": "Lucide Lab / slot-card",
           "reusable": true,
           "x": 1080,
           "y": 312,
@@ -4749,7 +4792,7 @@
         {
           "type": "path",
           "id": "slot-card-credit",
-          "name": "slot-card-credit",
+          "name": "Lucide Lab / slot-card-credit",
           "reusable": true,
           "x": 1128,
           "y": 312,
@@ -4767,7 +4810,7 @@
         {
           "type": "path",
           "id": "slot-disc",
-          "name": "slot-disc",
+          "name": "Lucide Lab / slot-disc",
           "reusable": true,
           "x": 1176,
           "y": 312,
@@ -4785,7 +4828,7 @@
         {
           "type": "path",
           "id": "sneaker",
-          "name": "sneaker",
+          "name": "Lucide Lab / sneaker",
           "reusable": true,
           "x": 1224,
           "y": 312,
@@ -4803,7 +4846,7 @@
         {
           "type": "path",
           "id": "snowboard",
-          "name": "snowboard",
+          "name": "Lucide Lab / snowboard",
           "reusable": true,
           "x": 1272,
           "y": 312,
@@ -4821,7 +4864,7 @@
         {
           "type": "path",
           "id": "snowman",
-          "name": "snowman",
+          "name": "Lucide Lab / snowman",
           "reusable": true,
           "x": 1320,
           "y": 312,
@@ -4839,7 +4882,7 @@
         {
           "type": "path",
           "id": "soap-bar",
-          "name": "soap-bar",
+          "name": "Lucide Lab / soap-bar",
           "reusable": true,
           "x": 1368,
           "y": 312,
@@ -4857,7 +4900,7 @@
         {
           "type": "path",
           "id": "soccer-ball",
-          "name": "soccer-ball",
+          "name": "Lucide Lab / soccer-ball",
           "reusable": true,
           "x": 1416,
           "y": 312,
@@ -4875,7 +4918,7 @@
         {
           "type": "path",
           "id": "soccer-pitch",
-          "name": "soccer-pitch",
+          "name": "Lucide Lab / soccer-pitch",
           "reusable": true,
           "x": 1464,
           "y": 312,
@@ -4893,7 +4936,7 @@
         {
           "type": "path",
           "id": "socket-eu",
-          "name": "socket-eu",
+          "name": "Lucide Lab / socket-eu",
           "reusable": true,
           "x": 1512,
           "y": 312,
@@ -4911,7 +4954,7 @@
         {
           "type": "path",
           "id": "socket-uk",
-          "name": "socket-uk",
+          "name": "Lucide Lab / socket-uk",
           "reusable": true,
           "x": 1560,
           "y": 312,
@@ -4929,7 +4972,7 @@
         {
           "type": "path",
           "id": "socket-usa",
-          "name": "socket-usa",
+          "name": "Lucide Lab / socket-usa",
           "reusable": true,
           "x": 1608,
           "y": 312,
@@ -4947,7 +4990,7 @@
         {
           "type": "path",
           "id": "socks",
-          "name": "socks",
+          "name": "Lucide Lab / socks",
           "reusable": true,
           "x": 1656,
           "y": 312,
@@ -4965,7 +5008,7 @@
         {
           "type": "path",
           "id": "soldering-iron",
-          "name": "soldering-iron",
+          "name": "Lucide Lab / soldering-iron",
           "reusable": true,
           "x": 1704,
           "y": 312,
@@ -4983,7 +5026,7 @@
         {
           "type": "path",
           "id": "spider",
-          "name": "spider",
+          "name": "Lucide Lab / spider",
           "reusable": true,
           "x": 1752,
           "y": 312,
@@ -5001,7 +5044,7 @@
         {
           "type": "path",
           "id": "spider-web",
-          "name": "spider-web",
+          "name": "Lucide Lab / spider-web",
           "reusable": true,
           "x": 1800,
           "y": 312,
@@ -5019,7 +5062,7 @@
         {
           "type": "path",
           "id": "stairs",
-          "name": "stairs",
+          "name": "Lucide Lab / stairs",
           "reusable": true,
           "x": 1848,
           "y": 312,
@@ -5037,7 +5080,7 @@
         {
           "type": "path",
           "id": "stairs-arch",
-          "name": "stairs-arch",
+          "name": "Lucide Lab / stairs-arch",
           "reusable": true,
           "x": 1896,
           "y": 312,
@@ -5055,7 +5098,7 @@
         {
           "type": "path",
           "id": "stairs-arrow-down-left",
-          "name": "stairs-arrow-down-left",
+          "name": "Lucide Lab / stairs-arrow-down-left",
           "reusable": true,
           "x": 24,
           "y": 360,
@@ -5073,7 +5116,7 @@
         {
           "type": "path",
           "id": "stairs-arrow-up-right",
-          "name": "stairs-arrow-up-right",
+          "name": "Lucide Lab / stairs-arrow-up-right",
           "reusable": true,
           "x": 72,
           "y": 360,
@@ -5091,7 +5134,7 @@
         {
           "type": "path",
           "id": "star-north",
-          "name": "star-north",
+          "name": "Lucide Lab / star-north",
           "reusable": true,
           "x": 120,
           "y": 360,
@@ -5109,7 +5152,7 @@
         {
           "type": "path",
           "id": "steering-wheel",
-          "name": "steering-wheel",
+          "name": "Lucide Lab / steering-wheel",
           "reusable": true,
           "x": 168,
           "y": 360,
@@ -5127,7 +5170,7 @@
         {
           "type": "path",
           "id": "strawberry",
-          "name": "strawberry",
+          "name": "Lucide Lab / strawberry",
           "reusable": true,
           "x": 216,
           "y": 360,
@@ -5145,7 +5188,7 @@
         {
           "type": "path",
           "id": "strikethrough-square",
-          "name": "strikethrough-square",
+          "name": "Lucide Lab / strikethrough-square",
           "reusable": true,
           "x": 264,
           "y": 360,
@@ -5163,7 +5206,7 @@
         {
           "type": "path",
           "id": "stroller",
-          "name": "stroller",
+          "name": "Lucide Lab / stroller",
           "reusable": true,
           "x": 312,
           "y": 360,
@@ -5181,7 +5224,7 @@
         {
           "type": "path",
           "id": "sunlounger-parasol-sun",
-          "name": "sunlounger-parasol-sun",
+          "name": "Lucide Lab / sunlounger-parasol-sun",
           "reusable": true,
           "x": 360,
           "y": 360,
@@ -5199,7 +5242,7 @@
         {
           "type": "path",
           "id": "sunlounger-parasol-sun-palm-tree",
-          "name": "sunlounger-parasol-sun-palm-tree",
+          "name": "Lucide Lab / sunlounger-parasol-sun-palm-tree",
           "reusable": true,
           "x": 408,
           "y": 360,
@@ -5217,7 +5260,7 @@
         {
           "type": "path",
           "id": "sunlounger-parasol-table",
-          "name": "sunlounger-parasol-table",
+          "name": "Lucide Lab / sunlounger-parasol-table",
           "reusable": true,
           "x": 456,
           "y": 360,
@@ -5235,7 +5278,7 @@
         {
           "type": "path",
           "id": "surfboard",
-          "name": "surfboard",
+          "name": "Lucide Lab / surfboard",
           "reusable": true,
           "x": 504,
           "y": 360,
@@ -5253,7 +5296,7 @@
         {
           "type": "path",
           "id": "sushi",
-          "name": "sushi",
+          "name": "Lucide Lab / sushi",
           "reusable": true,
           "x": 552,
           "y": 360,
@@ -5271,7 +5314,7 @@
         {
           "type": "path",
           "id": "sushi-2",
-          "name": "sushi-2",
+          "name": "Lucide Lab / sushi-2",
           "reusable": true,
           "x": 600,
           "y": 360,
@@ -5289,7 +5332,7 @@
         {
           "type": "path",
           "id": "sushi-3",
-          "name": "sushi-3",
+          "name": "Lucide Lab / sushi-3",
           "reusable": true,
           "x": 648,
           "y": 360,
@@ -5307,7 +5350,7 @@
         {
           "type": "path",
           "id": "sushi-chopsticks",
-          "name": "sushi-chopsticks",
+          "name": "Lucide Lab / sushi-chopsticks",
           "reusable": true,
           "x": 696,
           "y": 360,
@@ -5325,7 +5368,7 @@
         {
           "type": "path",
           "id": "sweater",
-          "name": "sweater",
+          "name": "Lucide Lab / sweater",
           "reusable": true,
           "x": 744,
           "y": 360,
@@ -5343,7 +5386,7 @@
         {
           "type": "path",
           "id": "swiss-franc-circle",
-          "name": "swiss-franc-circle",
+          "name": "Lucide Lab / swiss-franc-circle",
           "reusable": true,
           "x": 792,
           "y": 360,
@@ -5361,7 +5404,7 @@
         {
           "type": "path",
           "id": "swiss-franc-square",
-          "name": "swiss-franc-square",
+          "name": "Lucide Lab / swiss-franc-square",
           "reusable": true,
           "x": 840,
           "y": 360,
@@ -5379,7 +5422,7 @@
         {
           "type": "path",
           "id": "tab",
-          "name": "tab",
+          "name": "Lucide Lab / tab",
           "reusable": true,
           "x": 888,
           "y": 360,
@@ -5397,7 +5440,7 @@
         {
           "type": "path",
           "id": "tab-arrow-down",
-          "name": "tab-arrow-down",
+          "name": "Lucide Lab / tab-arrow-down",
           "reusable": true,
           "x": 936,
           "y": 360,
@@ -5415,7 +5458,7 @@
         {
           "type": "path",
           "id": "tab-arrow-up-right",
-          "name": "tab-arrow-up-right",
+          "name": "Lucide Lab / tab-arrow-up-right",
           "reusable": true,
           "x": 984,
           "y": 360,
@@ -5433,7 +5476,7 @@
         {
           "type": "path",
           "id": "tab-dot",
-          "name": "tab-dot",
+          "name": "Lucide Lab / tab-dot",
           "reusable": true,
           "x": 1032,
           "y": 360,
@@ -5451,7 +5494,7 @@
         {
           "type": "path",
           "id": "tab-plus",
-          "name": "tab-plus",
+          "name": "Lucide Lab / tab-plus",
           "reusable": true,
           "x": 1080,
           "y": 360,
@@ -5469,7 +5512,7 @@
         {
           "type": "path",
           "id": "tab-slash",
-          "name": "tab-slash",
+          "name": "Lucide Lab / tab-slash",
           "reusable": true,
           "x": 1128,
           "y": 360,
@@ -5487,7 +5530,7 @@
         {
           "type": "path",
           "id": "tab-text",
-          "name": "tab-text",
+          "name": "Lucide Lab / tab-text",
           "reusable": true,
           "x": 1176,
           "y": 360,
@@ -5505,7 +5548,7 @@
         {
           "type": "path",
           "id": "tab-x",
-          "name": "tab-x",
+          "name": "Lucide Lab / tab-x",
           "reusable": true,
           "x": 1224,
           "y": 360,
@@ -5523,7 +5566,7 @@
         {
           "type": "path",
           "id": "target-arrow",
-          "name": "target-arrow",
+          "name": "Lucide Lab / target-arrow",
           "reusable": true,
           "x": 1272,
           "y": 360,
@@ -5541,7 +5584,7 @@
         {
           "type": "path",
           "id": "tennis-ball",
-          "name": "tennis-ball",
+          "name": "Lucide Lab / tennis-ball",
           "reusable": true,
           "x": 1320,
           "y": 360,
@@ -5559,7 +5602,7 @@
         {
           "type": "path",
           "id": "tennis-racket",
-          "name": "tennis-racket",
+          "name": "Lucide Lab / tennis-racket",
           "reusable": true,
           "x": 1368,
           "y": 360,
@@ -5577,7 +5620,7 @@
         {
           "type": "path",
           "id": "tie",
-          "name": "tie",
+          "name": "Lucide Lab / tie",
           "reusable": true,
           "x": 1416,
           "y": 360,
@@ -5595,7 +5638,7 @@
         {
           "type": "path",
           "id": "tie-bow",
-          "name": "tie-bow",
+          "name": "Lucide Lab / tie-bow",
           "reusable": true,
           "x": 1464,
           "y": 360,
@@ -5613,7 +5656,7 @@
         {
           "type": "path",
           "id": "tie-bow-ribbon",
-          "name": "tie-bow-ribbon",
+          "name": "Lucide Lab / tie-bow-ribbon",
           "reusable": true,
           "x": 1512,
           "y": 360,
@@ -5631,7 +5674,7 @@
         {
           "type": "path",
           "id": "tire",
-          "name": "tire",
+          "name": "Lucide Lab / tire",
           "reusable": true,
           "x": 1560,
           "y": 360,
@@ -5649,7 +5692,7 @@
         {
           "type": "path",
           "id": "toast",
-          "name": "toast",
+          "name": "Lucide Lab / toast",
           "reusable": true,
           "x": 1608,
           "y": 360,
@@ -5667,7 +5710,7 @@
         {
           "type": "path",
           "id": "toaster",
-          "name": "toaster",
+          "name": "Lucide Lab / toaster",
           "reusable": true,
           "x": 1656,
           "y": 360,
@@ -5685,7 +5728,7 @@
         {
           "type": "path",
           "id": "toilet-roll",
-          "name": "toilet-roll",
+          "name": "Lucide Lab / toilet-roll",
           "reusable": true,
           "x": 1704,
           "y": 360,
@@ -5703,7 +5746,7 @@
         {
           "type": "path",
           "id": "toolbox-2",
-          "name": "toolbox-2",
+          "name": "Lucide Lab / toolbox-2",
           "reusable": true,
           "x": 1752,
           "y": 360,
@@ -5721,7 +5764,7 @@
         {
           "type": "path",
           "id": "top-crop",
-          "name": "top-crop",
+          "name": "Lucide Lab / top-crop",
           "reusable": true,
           "x": 1800,
           "y": 360,
@@ -5739,7 +5782,7 @@
         {
           "type": "path",
           "id": "towel-folded",
-          "name": "towel-folded",
+          "name": "Lucide Lab / towel-folded",
           "reusable": true,
           "x": 1848,
           "y": 360,
@@ -5757,7 +5800,7 @@
         {
           "type": "path",
           "id": "trap",
-          "name": "trap",
+          "name": "Lucide Lab / trap",
           "reusable": true,
           "x": 1896,
           "y": 360,
@@ -5775,7 +5818,7 @@
         {
           "type": "path",
           "id": "tree-palm-island-sun",
-          "name": "tree-palm-island-sun",
+          "name": "Lucide Lab / tree-palm-island-sun",
           "reusable": true,
           "x": 24,
           "y": 408,
@@ -5793,7 +5836,7 @@
         {
           "type": "path",
           "id": "trees-forest",
-          "name": "trees-forest",
+          "name": "Lucide Lab / trees-forest",
           "reusable": true,
           "x": 72,
           "y": 408,
@@ -5811,7 +5854,7 @@
         {
           "type": "path",
           "id": "triangle-stripes",
-          "name": "triangle-stripes",
+          "name": "Lucide Lab / triangle-stripes",
           "reusable": true,
           "x": 120,
           "y": 408,
@@ -5829,7 +5872,7 @@
         {
           "type": "path",
           "id": "trousers",
-          "name": "trousers",
+          "name": "Lucide Lab / trousers",
           "reusable": true,
           "x": 168,
           "y": 408,
@@ -5847,7 +5890,7 @@
         {
           "type": "path",
           "id": "tuxedo",
-          "name": "tuxedo",
+          "name": "Lucide Lab / tuxedo",
           "reusable": true,
           "x": 216,
           "y": 408,
@@ -5865,7 +5908,7 @@
         {
           "type": "path",
           "id": "type-square",
-          "name": "type-square",
+          "name": "Lucide Lab / type-square",
           "reusable": true,
           "x": 264,
           "y": 408,
@@ -5883,7 +5926,7 @@
         {
           "type": "path",
           "id": "ufo",
-          "name": "ufo",
+          "name": "Lucide Lab / ufo",
           "reusable": true,
           "x": 312,
           "y": 408,
@@ -5901,7 +5944,7 @@
         {
           "type": "path",
           "id": "underline-square",
-          "name": "underline-square",
+          "name": "Lucide Lab / underline-square",
           "reusable": true,
           "x": 360,
           "y": 408,
@@ -5919,7 +5962,7 @@
         {
           "type": "path",
           "id": "unicorn-head",
-          "name": "unicorn-head",
+          "name": "Lucide Lab / unicorn-head",
           "reusable": true,
           "x": 408,
           "y": 408,
@@ -5937,7 +5980,7 @@
         {
           "type": "path",
           "id": "venn",
-          "name": "venn",
+          "name": "Lucide Lab / venn",
           "reusable": true,
           "x": 456,
           "y": 408,
@@ -5955,7 +5998,7 @@
         {
           "type": "path",
           "id": "vest",
-          "name": "vest",
+          "name": "Lucide Lab / vest",
           "reusable": true,
           "x": 504,
           "y": 408,
@@ -5973,7 +6016,7 @@
         {
           "type": "path",
           "id": "waffle",
-          "name": "waffle",
+          "name": "Lucide Lab / waffle",
           "reusable": true,
           "x": 552,
           "y": 408,
@@ -5991,7 +6034,7 @@
         {
           "type": "path",
           "id": "wardrobe",
-          "name": "wardrobe",
+          "name": "Lucide Lab / wardrobe",
           "reusable": true,
           "x": 600,
           "y": 408,
@@ -6009,7 +6052,7 @@
         {
           "type": "path",
           "id": "watch-activity",
-          "name": "watch-activity",
+          "name": "Lucide Lab / watch-activity",
           "reusable": true,
           "x": 648,
           "y": 408,
@@ -6027,7 +6070,7 @@
         {
           "type": "path",
           "id": "watch-alarm",
-          "name": "watch-alarm",
+          "name": "Lucide Lab / watch-alarm",
           "reusable": true,
           "x": 696,
           "y": 408,
@@ -6045,7 +6088,7 @@
         {
           "type": "path",
           "id": "watch-bars",
-          "name": "watch-bars",
+          "name": "Lucide Lab / watch-bars",
           "reusable": true,
           "x": 744,
           "y": 408,
@@ -6063,7 +6106,7 @@
         {
           "type": "path",
           "id": "watch-charging",
-          "name": "watch-charging",
+          "name": "Lucide Lab / watch-charging",
           "reusable": true,
           "x": 792,
           "y": 408,
@@ -6081,7 +6124,7 @@
         {
           "type": "path",
           "id": "watch-check",
-          "name": "watch-check",
+          "name": "Lucide Lab / watch-check",
           "reusable": true,
           "x": 840,
           "y": 408,
@@ -6099,7 +6142,7 @@
         {
           "type": "path",
           "id": "watch-loader",
-          "name": "watch-loader",
+          "name": "Lucide Lab / watch-loader",
           "reusable": true,
           "x": 888,
           "y": 408,
@@ -6117,7 +6160,7 @@
         {
           "type": "path",
           "id": "watch-music",
-          "name": "watch-music",
+          "name": "Lucide Lab / watch-music",
           "reusable": true,
           "x": 936,
           "y": 408,
@@ -6135,7 +6178,7 @@
         {
           "type": "path",
           "id": "watch-square",
-          "name": "watch-square",
+          "name": "Lucide Lab / watch-square",
           "reusable": true,
           "x": 984,
           "y": 408,
@@ -6153,7 +6196,7 @@
         {
           "type": "path",
           "id": "watch-square-alarm",
-          "name": "watch-square-alarm",
+          "name": "Lucide Lab / watch-square-alarm",
           "reusable": true,
           "x": 1032,
           "y": 408,
@@ -6171,7 +6214,7 @@
         {
           "type": "path",
           "id": "watch-text",
-          "name": "watch-text",
+          "name": "Lucide Lab / watch-text",
           "reusable": true,
           "x": 1080,
           "y": 408,
@@ -6189,7 +6232,7 @@
         {
           "type": "path",
           "id": "watermelon",
-          "name": "watermelon",
+          "name": "Lucide Lab / watermelon",
           "reusable": true,
           "x": 1128,
           "y": 408,
@@ -6207,7 +6250,7 @@
         {
           "type": "path",
           "id": "wave-circle",
-          "name": "wave-circle",
+          "name": "Lucide Lab / wave-circle",
           "reusable": true,
           "x": 1176,
           "y": 408,
@@ -6225,7 +6268,7 @@
         {
           "type": "path",
           "id": "waves-birds",
-          "name": "waves-birds",
+          "name": "Lucide Lab / waves-birds",
           "reusable": true,
           "x": 1224,
           "y": 408,
@@ -6243,7 +6286,7 @@
         {
           "type": "path",
           "id": "waves-shark-fin",
-          "name": "waves-shark-fin",
+          "name": "Lucide Lab / waves-shark-fin",
           "reusable": true,
           "x": 1272,
           "y": 408,
@@ -6261,7 +6304,7 @@
         {
           "type": "path",
           "id": "whale",
-          "name": "whale",
+          "name": "Lucide Lab / whale",
           "reusable": true,
           "x": 1320,
           "y": 408,
@@ -6279,7 +6322,7 @@
         {
           "type": "path",
           "id": "whale-narwhal",
-          "name": "whale-narwhal",
+          "name": "Lucide Lab / whale-narwhal",
           "reusable": true,
           "x": 1368,
           "y": 408,
@@ -6297,7 +6340,7 @@
         {
           "type": "path",
           "id": "wheel",
-          "name": "wheel",
+          "name": "Lucide Lab / wheel",
           "reusable": true,
           "x": 1416,
           "y": 408,
@@ -6315,7 +6358,7 @@
         {
           "type": "path",
           "id": "whisk",
-          "name": "whisk",
+          "name": "Lucide Lab / whisk",
           "reusable": true,
           "x": 1464,
           "y": 408,
@@ -6333,7 +6376,7 @@
         {
           "type": "path",
           "id": "whisk-fork-knife",
-          "name": "whisk-fork-knife",
+          "name": "Lucide Lab / whisk-fork-knife",
           "reusable": true,
           "x": 1512,
           "y": 408,
@@ -6351,7 +6394,7 @@
         {
           "type": "path",
           "id": "whisks",
-          "name": "whisks",
+          "name": "Lucide Lab / whisks",
           "reusable": true,
           "x": 1560,
           "y": 408,
@@ -6369,7 +6412,7 @@
         {
           "type": "path",
           "id": "windmill",
-          "name": "windmill",
+          "name": "Lucide Lab / windmill",
           "reusable": true,
           "x": 1608,
           "y": 408,
@@ -6387,7 +6430,7 @@
         {
           "type": "path",
           "id": "wine-glass-bottle",
-          "name": "wine-glass-bottle",
+          "name": "Lucide Lab / wine-glass-bottle",
           "reusable": true,
           "x": 1656,
           "y": 408,
@@ -6405,7 +6448,7 @@
         {
           "type": "path",
           "id": "yarn-ball",
-          "name": "yarn-ball",
+          "name": "Lucide Lab / yarn-ball",
           "reusable": true,
           "x": 1704,
           "y": 408,
@@ -6423,7 +6466,7 @@
         {
           "type": "path",
           "id": "yin-yang",
-          "name": "yin-yang",
+          "name": "Lucide Lab / yin-yang",
           "reusable": true,
           "x": 1752,
           "y": 408,

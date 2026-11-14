@@ -1,0 +1,3 @@
+# The tools this repository needs. `mise install` sets them up; CI uses the same versions.
+[tools]
+bun = "1.4.4"

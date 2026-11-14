@@ -1,8 +1,28 @@
 {
   "name": "@superbmeteor/lucide-pen",
-  "version": "0.1.0",
-  "description": "Lucide icons as a pen.dev component library (lucide.lib.pen), drawn as filled outlines",
+  "version": "0.2.0",
+  "description": "Lucide icons and Lucide lab icons as pen.dev component libraries, drawn as filled outlines",
+  "license": "MIT AND ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superbmeteor/lucide-pen.git"
+  },
+  "keywords": ["lucide", "icons", "pen.dev", "pen"],
   "private": true,
-  "files": ["lucide.lib.pen", "LICENSE-LUCIDE", "README.md"],
-  "lucide": { "release": "1.48.0" }
+  "files": [
+    "dist",
+    "LICENSE",
+    "LICENSE-LUCIDE"
+  ],
+  "scripts": {
+    "generate": "bun tools/generate.ts",
+    "check": "tsc && bun test && bun tools/generate.ts --check"
+  },
+  "devDependencies": {
+    "@lucide/lab": "0.13.0",
+    "@types/bun": "1.4.4",
+    "canvaskit-wasm": "0.42.0",
+    "lucide-static": "1.73.0",
+    "typescript": "7.0.2"
+  }
 }

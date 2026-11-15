@@ -9,9 +9,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       # Installs the tools in mise.toml (Bun), at the versions used locally.
-      - uses: jdx/mise-action@v2
+      - uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
       - run: bun install --frozen-lockfile
       # Type-checks and tests the generator, and fails if dist/ or LICENSE-LUCIDE is not
       # what the pinned Lucide releases generate.

@@ -48,7 +48,7 @@ Each library has an ids file beside it in `dist/`, `lucide.ids.json` and `lucide
 
 ## Updating to new Lucide releases
 
-The releases are the exact versions of the `lucide-static` and `@lucide/lab` dev dependencies. The generator needs only Bun, on any platform; [mise](https://mise.jdx.dev) installs the version in `mise.toml` (`mise install`), then `bun install` sets up the rest.
+The releases are the exact versions of the `lucide-static` and `@lucide/lab` dev dependencies. The generator needs only Bun, on any platform; [mise](https://mise.jdx.dev) installs the version in `mise.toml` (`mise install`), then `bun install` sets up the rest. Each script is also a mise task (`mise tasks` lists them; `mise run update`), which installs dependencies first.
 
 ```sh
 bun run update

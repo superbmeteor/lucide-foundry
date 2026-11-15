@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "generate": "bun tools/generate.ts",
+    "update": "bun tools/update.ts",
     "check": "tsc && bun test && bun tools/generate.ts --check"
   },
   "devDependencies": {

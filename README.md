@@ -51,18 +51,21 @@ Each library has an ids file beside it in `dist/`, `lucide.ids.json` and `lucide
 The releases are the exact versions of the `lucide-static` and `@lucide/lab` dev dependencies. The generator needs only Bun, on any platform; [mise](https://mise.jdx.dev) installs the version in `mise.toml` (`mise install`), then `bun install` sets up the rest.
 
 ```sh
-bun add -d --exact lucide-static@latest @lucide/lab@latest   # or specific versions
-bun run generate
+bun run update
 ```
 
-`generate` rewrites everything in `dist/` and `LICENSE-LUCIDE`; never edit them by hand. For each library it lists the icons added, the icons redrawn, and the ids that have become aliases or been retired. Bump `version` in `package.json`, update the status line above, and commit.
+`update` moves each package to its next release on npm and runs `bun run generate`. The next release is the newest release in the package's current major version, or, if the package is already on the last release of that major, the newest release of the next major. If the version in `package.json` already has a release tag, `update` bumps its minor version. To pick versions yourself, run `bun add -d --exact lucide-static@<version> @lucide/lab@<version>` and then `bun run generate`.
+
+`generate` rewrites everything in `dist/` and `LICENSE-LUCIDE`; never edit them by hand. For each library it lists the icons added, the icons redrawn, and the ids that have become aliases or been retired. Update the status line above and commit.
+
+The `update` workflow (`.github/workflows/update.yml`) runs `update` every day and from the Actions tab. When there's a new release, it runs `bun run check` and opens a pull request from the `update-lucide` branch, or refreshes the one already open. The pull request lists what `generate` reported. If `generate` stops on an id conflict, the workflow run fails, and GitHub emails whoever last edited the schedule.
 
 - Ids carry forward from the current libraries and ids files, so generate from the last release, not from a clean checkout of an older one.
 - Lucide drops old aliases at major versions. To keep following renames, update to the last release of each major version before moving to the next.
 - Update lab and Lucide together. When a lab icon graduates, its lab id becomes an alias only if the Lucide release being built already has the icon; otherwise the id is retired, and a retired id stays retired.
 - If a release reuses an alias or retired id as the name of a new icon, `generate` stops rather than change what that id draws. Decide which icon the id should draw and edit the ids file to match.
 
-`bun run check` type-checks the generator, runs its tests (`bun test`), and regenerates everything in memory, failing if any generated file differs. That catches hand edits and a dependency bump made without a regenerate.
+`bun run check` type-checks the tools, runs their tests (`bun test`), and regenerates everything in memory, failing if any generated file differs. That catches hand edits and a dependency bump made without a regenerate.
 
 ### How the outlines are made
 

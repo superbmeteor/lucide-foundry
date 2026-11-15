@@ -1,28 +1,45 @@
 {
-  "name": "@superbmeteor/lucide-pen",
-  "version": "0.2.0",
-  "description": "Lucide icons and Lucide lab icons as pen.dev component libraries, drawn as filled outlines",
-  "license": "MIT AND ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/superbmeteor/lucide-pen.git"
-  },
-  "keywords": ["lucide", "icons", "pen.dev", "pen"],
-  "private": true,
-  "files": [
-    "dist",
-    "LICENSE",
-    "LICENSE-LUCIDE"
-  ],
-  "scripts": {
-    "generate": "bun tools/generate.ts",
-    "check": "tsc && bun test && bun tools/generate.ts --check"
-  },
-  "devDependencies": {
-    "@lucide/lab": "0.13.0",
-    "@types/bun": "1.4.4",
-    "canvaskit-wasm": "0.42.0",
-    "lucide-static": "1.73.0",
-    "typescript": "7.0.2"
-  }
+	"name": "@superbmeteor/lucide-pen",
+	"version": "0.2.0",
+	"private": true,
+	"description": "Lucide icons and Lucide lab icons as pen.dev component libraries, drawn as filled outlines",
+	"keywords": [
+		"icons",
+		"lucide",
+		"pen",
+		"pen.dev"
+	],
+	"license": "MIT AND ISC",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/superbmeteor/lucide-pen.git"
+	},
+	"files": [
+		"dist",
+		"LICENSE",
+		"LICENSE-LUCIDE"
+	],
+	"scripts": {
+		"generate": "bun tools/generate.ts",
+		"generate:check": "bun tools/generate.ts --check",
+		"update": "bun tools/update.ts",
+		"format": "oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore .",
+		"format:check": "oxfmt --check --ignore-path .gitignore --ignore-path .oxfmtignore .",
+		"lint": "oxlint --deny-warnings",
+		"typecheck": "tsc",
+		"test": "bun test",
+		"test:watch": "bun test --watch",
+		"check": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run generate:check",
+		"hooks:install": "lefthook install"
+	},
+	"devDependencies": {
+		"@lucide/lab": "0.13.0",
+		"@types/bun": "1.4.4",
+		"canvaskit-wasm": "0.42.0",
+		"lefthook": "2.1.16",
+		"lucide-static": "1.73.0",
+		"oxfmt": "0.75.0",
+		"oxlint": "1.90.0",
+		"typescript": "7.0.2"
+	}
 }

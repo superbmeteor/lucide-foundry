@@ -1,3 +1,54 @@
 # The tools this repository needs. `mise install` sets them up; CI uses the same versions.
 [tools]
 bun = "1.4.4"
+
+# Each task calls the `bun run` script of the same name, so a command is defined once, in
+# package.json.
+
+[tasks.install]
+description = "Install dependencies"
+run = "bun install"
+
+[tasks.check]
+description = "Format check, lint, typecheck, tests and the generated files: the gate"
+depends = ["install"]
+run = "bun run check"
+
+[tasks.typecheck]
+description = "Type-check the tools"
+depends = ["install"]
+run = "bun run typecheck"
+
+[tasks.test]
+description = "Run the tests"
+depends = ["install"]
+run = "bun run test"
+
+[tasks."test:watch"]
+description = "Run the tests in watch mode"
+run = "bun run test:watch"
+
+[tasks.lint]
+description = "Lint with Oxlint"
+depends = ["install"]
+run = "bun run lint"
+
+[tasks.format]
+description = "Format with oxfmt"
+depends = ["install"]
+run = "bun run format"
+
+[tasks.generate]
+description = "Regenerate dist/ and LICENSE-LUCIDE from the pinned Lucide releases"
+depends = ["install"]
+run = "bun run generate"
+
+[tasks.update]
+description = "Move to the next Lucide releases on npm and regenerate"
+depends = ["install"]
+run = "bun run update"
+
+[tasks."hooks:install"]
+description = "Install the lefthook git hooks"
+depends = ["install"]
+run = "bun run hooks:install"

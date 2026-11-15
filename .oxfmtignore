@@ -1,0 +1,13 @@
+# Written by `bun run generate`, and checked byte for byte by `bun run check`: formatting
+# them would make the check fail. LICENSE-LUCIDE is copied from lucide-static as it is.
+dist/
+LICENSE-LUCIDE
+
+# Pen files are read and written by Pen, not by hand.
+*.pen
+
+bun.lock
+
+# Not this repository's source: agent and editor settings are owned elsewhere.
+.claude/
+.vscode/

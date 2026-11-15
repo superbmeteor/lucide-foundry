@@ -7,8 +7,10 @@
 		"noEmit": true,
 		"strict": true,
 		"noUncheckedIndexedAccess": true,
+		"allowJs": true,
+		"checkJs": true,
 		"skipLibCheck": true,
 		"types": ["bun"]
 	},
-	"include": ["tools"]
+	"include": ["cli", "tools"]
 }

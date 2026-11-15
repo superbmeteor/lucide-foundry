@@ -1,6 +1,7 @@
 # Git hooks. `pre-commit` is the gate: formatting, Oxlint with warnings treated as
 # failures and TypeScript type checking, then the tests and the check that the generated
-# files are what the pinned Lucide releases generate (all of what `bun run check` runs).
+# files are what the pinned Lucide releases generate, and that the sample is linked to them
+# (all of what `bun run check` runs).
 #
 # Install with `bun run hooks:install`.
 
@@ -23,3 +24,6 @@ pre-commit:
 
     - name: generated
       run: bun run generate:check
+
+    - name: linked
+      run: bun run link:check

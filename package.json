@@ -14,7 +14,11 @@
 		"type": "git",
 		"url": "git+https://github.com/superbmeteor/lucide-pen.git"
 	},
+	"bin": {
+		"lucide-pen": "cli/lucide-pen.js"
+	},
 	"files": [
+		"cli/lucide-pen.js",
 		"dist",
 		"LICENSE",
 		"LICENSE-LUCIDE"
@@ -22,6 +26,7 @@
 	"scripts": {
 		"generate": "bun tools/generate.ts",
 		"generate:check": "bun tools/generate.ts --check",
+		"link:check": "bun cli/lucide-pen.js link --check examples",
 		"update": "bun tools/update.ts",
 		"format": "oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore .",
 		"format:check": "oxfmt --check --ignore-path .gitignore --ignore-path .oxfmtignore .",
@@ -29,7 +34,7 @@
 		"typecheck": "tsc",
 		"test": "bun test",
 		"test:watch": "bun test --watch",
-		"check": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run generate:check",
+		"check": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run generate:check && bun run link:check",
 		"hooks:install": "lefthook install"
 	},
 	"devDependencies": {
@@ -41,5 +46,8 @@
 		"oxfmt": "0.75.0",
 		"oxlint": "1.90.0",
 		"typescript": "7.0.2"
+	},
+	"engines": {
+		"node": ">=22"
 	}
 }

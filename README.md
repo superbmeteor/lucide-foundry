@@ -14,25 +14,33 @@ Each icon is a reusable 24 × 24 `path` component whose id is its Lucide name (`
 The package isn't published to a registry, so install it from GitHub, pinned to a release tag (or a commit):
 
 ```sh
-bun add github:superbmeteor/lucide-pen#v0.2.0
+bun add -d github:superbmeteor/lucide-pen#v0.2.0   # or: npm install -D github:superbmeteor/lucide-pen#v0.2.0
 ```
 
-Then import the libraries from a Pen file with paths relative to that file:
+Then link your Pen files to the libraries. The CLI is plain JavaScript, so it runs with `npx`, `bunx` or `pnpm exec` (Node 22 or later, or Bun):
+
+```sh
+npx lucide-pen link designs/my-design.pen   # or a directory: every .pen file in it
+```
+
+`link` adds two imports to each file, with paths relative to the file, to the copy of the package in the nearest `node_modules` above it:
 
 ```json
 "imports": {
-  "f": "../../node_modules/@superbmeteor/lucide-pen/dist/lucide.lib.pen",
-  "lab": "../../node_modules/@superbmeteor/lucide-pen/dist/lucide-lab.lib.pen"
+  "lucide": "../../node_modules/@superbmeteor/lucide-pen/dist/lucide.lib.pen",
+  "lucide-lab": "../../node_modules/@superbmeteor/lucide-pen/dist/lucide-lab.lib.pen"
 }
 ```
 
-Refer to an icon as `f:<lucide-name>` or `lab:<lab-name>`. Pen reads libraries only when a file opens, so reopen importing files after upgrading the package.
+Refer to an icon as `lucide:<lucide-name>` or `lucide-lab:<lab-name>`, and to the colour variable as `$lucide:icon`. The aliases are the importing file's choice: `--lucide` and `--lab` pick others for new imports. If a file already uses an alias for some other library, `link` leaves that file as it is, says so and exits 1, and links the rest; pick another alias for it. A library a file already imports keeps its alias, since every instance names it, and `link` only corrects its path; run it again after moving a file. Pen reads imports only when it opens a file, so reopen linked files, and reopen importing files after upgrading the package.
+
+When Pen can't find an imported library, it silently turns the library's instances into local copies. `npx lucide-pen link --check designs` changes nothing and exits 1 if any file would change, so it can guard CI or a pre-commit hook against broken paths.
 
 Pen's components panel lists every imported library's components in one list, sorted by name. So that ours stay together, they're named by group: `Lucide / activity`, `Lucide Aliases / circle-alert`, `Lucide Lab / burger`. Names are only labels; instances refer to the permanent ids, so names can change between releases without breaking anything.
 
-To see which release a file is using, place an instance of a library's About component, which is first in its group: `Lucide` (id `f:About`) or `Lucide Lab` (id `lab:About`). It shows the lucide-pen version, the Lucide package and version with the date npm published it, and how many icons and aliases the library holds, and it updates when the library does.
+To see which release a file is using, place an instance of a library's About component, which is first in its group: `Lucide` (id `lucide:About`) or `Lucide Lab` (id `lucide-lab:About`). It shows the lucide-pen version, the Lucide package and version with the date npm published it, and how many icons and aliases the library holds, and it updates when the library does.
 
-[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and colour overrides. Pen named its imports `n` (core) and `4` (lab) there; an alias is whatever the importing file chooses.
+[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and colour overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
 
 ## Rules
 
@@ -65,7 +73,7 @@ The `update` workflow (`.github/workflows/update.yml`) runs `update` every day a
 - Update lab and Lucide together. When a lab icon graduates, its lab id becomes an alias only if the Lucide release being built already has the icon; otherwise the id is retired, and a retired id stays retired.
 - If a release reuses an alias or retired id as the name of a new icon, `generate` stops rather than change what that id draws. Decide which icon the id should draw and edit the ids file to match.
 
-`bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), and regenerates everything in memory, failing if any generated file differs. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
+`bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), regenerates everything in memory, failing if any generated file differs, and checks that the sample is linked. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
 
 ### How the outlines are made
 

@@ -1,0 +1,25 @@
+# Git hooks. `pre-commit` is the gate: formatting, Oxlint with warnings treated as
+# failures and TypeScript type checking, then the tests and the check that the generated
+# files are what the pinned Lucide releases generate (all of what `bun run check` runs).
+#
+# Install with `bun run hooks:install`.
+
+pre-commit:
+  parallel: false
+  jobs:
+    - name: format
+      run: bun run format:check
+
+    # `--deny-warnings` is what makes an Oxlint *warning* fail the commit, not just an
+    # error. `bun run lint` already carries the flag.
+    - name: lint
+      run: bun run lint
+
+    - name: typecheck
+      run: bun run typecheck
+
+    - name: test
+      run: bun run test
+
+    - name: generated
+      run: bun run generate:check

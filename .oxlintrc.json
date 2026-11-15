@@ -1,0 +1,20 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "unicorn", "oxc", "import", "promise"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "error",
+		"perf": "error"
+	},
+	"env": {
+		"node": true,
+		"es2024": true
+	},
+	"ignorePatterns": ["dist/**"],
+	"rules": {
+		"eslint/no-debugger": "warn",
+		// Off: a small helper beside the code it serves (a test's fixture, a
+		// closure in the generator) reads better there than hoisted away from it.
+		"unicorn/consistent-function-scoping": "off"
+	}
+}

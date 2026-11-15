@@ -65,7 +65,7 @@ The `update` workflow (`.github/workflows/update.yml`) runs `update` every day a
 - Update lab and Lucide together. When a lab icon graduates, its lab id becomes an alias only if the Lucide release being built already has the icon; otherwise the id is retired, and a retired id stays retired.
 - If a release reuses an alias or retired id as the name of a new icon, `generate` stops rather than change what that id draws. Decide which icon the id should draw and edit the ids file to match.
 
-`bun run check` type-checks the tools, runs their tests (`bun test`), and regenerates everything in memory, failing if any generated file differs. That catches hand edits and a dependency bump made without a regenerate.
+`bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), and regenerates everything in memory, failing if any generated file differs. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
 
 ### How the outlines are made
 

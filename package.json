@@ -2,12 +2,13 @@
 	"name": "@superbmeteor/lucide-foundry",
 	"version": "0.3.0",
 	"private": true,
-	"description": "Lucide icons and Lucide lab icons as pen.dev component libraries, drawn as filled outlines",
+	"description": "Lucide icons and Lucide lab icons as pen.dev component libraries and a Swift package, drawn as filled outlines",
 	"keywords": [
 		"icons",
 		"lucide",
 		"pen",
-		"pen.dev"
+		"pen.dev",
+		"swift"
 	],
 	"license": "MIT AND ISC",
 	"repository": {
@@ -28,6 +29,7 @@
 		"generate:check": "bun tools/generate.ts --check",
 		"link:check": "bun cli/lucide-foundry.js link --check examples",
 		"update": "bun tools/update.ts",
+		"swift:test": "swift build && swift test && xcodebuild test -quiet -scheme LucideFoundry-Package -destination platform=macOS",
 		"format": "oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore .",
 		"format:check": "oxfmt --check --ignore-path .gitignore --ignore-path .oxfmtignore .",
 		"lint": "oxlint --deny-warnings",

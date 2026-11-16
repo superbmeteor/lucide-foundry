@@ -16,3 +16,21 @@ jobs:
       # Checks formatting, lints, type-checks and tests the tools, and fails if dist/ or
       # LICENSE-LUCIDE is not what the pinned Lucide releases generate.
       - run: bun run check
+
+  swift:
+    # The Swift package. `swift build` copies the asset catalogues without compiling them, so
+    # `swift test` only checks that each icon has its SVG; xcodebuild compiles them, as an app's
+    # build does, and the same tests load and draw every icon, on macOS and in iOS's simulator.
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: xcodebuild -version && swift --version
+      - run: swift build
+      - run: swift test
+      - run: xcodebuild test -quiet -scheme LucideFoundry-Package -destination platform=macOS
+      - name: xcodebuild test (iOS simulator)
+        run: |
+          device=$(xcrun simctl list devices available --json | jq -r '[.devices | to_entries[]
+            | select(.key | contains("iOS")) | .value[] | select(.name | startswith("iPhone"))][0].udid')
+          echo "iOS simulator: $device"
+          xcodebuild test -quiet -scheme LucideFoundry-Package -destination "id=$device"

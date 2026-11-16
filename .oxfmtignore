@@ -11,3 +11,6 @@ bun.lock
 # Not this repository's source: agent and editor settings are owned elsewhere.
 .claude/
 .vscode/
+
+# The Swift package's modules are written by `bun run generate` too, and checked by it.
+Sources/

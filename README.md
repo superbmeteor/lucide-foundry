@@ -1,46 +1,50 @@
-# lucide-pen
+# lucide-foundry
 
 [Lucide](https://lucide.dev) icons as [pen.dev](https://pen.dev) component libraries for Pen files to import:
 
 - `dist/lucide.lib.pen`: Lucide's icons, from `lucide-static`.
 - `dist/lucide-lab.lib.pen`: Lucide's [lab](https://github.com/lucide-icons/lucide-lab) icons, from `@lucide/lab`. These are icons with unknown use cases that Lucide keeps out of its main set. Lab and Lucide reuse some names for different drawings, so lab is a library of its own.
 
-Each icon is a reusable 24 × 24 `path` component whose id is its Lucide name (`activity`, `circle-exclamation-point`), filled with the library's `icon` colour variable (black). Recolour an icon by overriding its instance's fill. The icons are filled outlines of Lucide's 2-pt strokes, so their weight scales with their size. A Pen path keeps its stroke width in points, so a stroked icon would look lighter as it grows.
+Each icon is a reusable 24 × 24 `path` component whose id is its Lucide name (`activity`, `circle-exclamation-point`), filled with the library's `icon` color variable (black). Recolor an icon by overriding its instance's fill. The icons are filled outlines of Lucide's 2-pt strokes, so their weight scales with their size. A Pen path keeps its stroke width in points, so a stroked icon would look lighter as it grows.
 
-**Status: experiment.** Version 0.2.0 holds Lucide 1.73.0's 2,055 icons, plus 34 aliases for ids Lucide has renamed since 1.48.0, and lab 0.13.0's 357 icons.
+This is an unofficial project. It is not affiliated with or endorsed by Lucide; it redistributes Lucide's icons under their license (see [License](#license)). It was called lucide-pen until 0.3.0.
+
+**Status: experiment.** Version 0.3.0 holds Lucide 1.73.0's 2,055 icons, plus 34 aliases for ids Lucide has renamed since 1.48.0, and lab 0.13.0's 357 icons.
 
 ## Using it
 
 The package isn't published to a registry, so install it from GitHub, pinned to a release tag (or a commit):
 
 ```sh
-bun add -d github:superbmeteor/lucide-pen#v0.2.0   # or: npm install -D github:superbmeteor/lucide-pen#v0.2.0
+bun add -d github:superbmeteor/lucide-foundry#v0.3.0   # or: npm install -D github:superbmeteor/lucide-foundry#v0.3.0
 ```
 
 Then link your Pen files to the libraries. The CLI is plain JavaScript, so it runs with `npx`, `bunx` or `pnpm exec` (Node 22 or later, or Bun):
 
 ```sh
-npx lucide-pen link designs/my-design.pen   # or a directory: every .pen file in it
+npx lucide-foundry link designs/my-design.pen   # or a directory: every .pen file in it
 ```
 
 `link` adds two imports to each file, with paths relative to the file, to the copy of the package in the nearest `node_modules` above it:
 
 ```json
 "imports": {
-  "lucide": "../../node_modules/@superbmeteor/lucide-pen/dist/lucide.lib.pen",
-  "lucide-lab": "../../node_modules/@superbmeteor/lucide-pen/dist/lucide-lab.lib.pen"
+  "lucide": "../../node_modules/@superbmeteor/lucide-foundry/dist/lucide.lib.pen",
+  "lucide-lab": "../../node_modules/@superbmeteor/lucide-foundry/dist/lucide-lab.lib.pen"
 }
 ```
 
-Refer to an icon as `lucide:<lucide-name>` or `lucide-lab:<lab-name>`, and to the colour variable as `$lucide:icon`. The aliases are the importing file's choice: `--lucide` and `--lab` pick others for new imports. If a file already uses an alias for some other library, `link` leaves that file as it is, says so and exits 1, and links the rest; pick another alias for it. A library a file already imports keeps its alias, since every instance names it, and `link` only corrects its path; run it again after moving a file. Pen reads imports only when it opens a file, so reopen linked files, and reopen importing files after upgrading the package.
+Refer to an icon as `lucide:<lucide-name>` or `lucide-lab:<lab-name>`, and to the color variable as `$lucide:icon`. The aliases are the importing file's choice: `--lucide` and `--lab` pick others for new imports. If a file already uses an alias for some other library, `link` leaves that file as it is, says so and exits 1, and links the rest; pick another alias for it. A library a file already imports keeps its alias, since every instance names it, and `link` only corrects its path; run it again after moving a file. Pen reads imports only when it opens a file, so reopen linked files, and reopen importing files after upgrading the package.
 
-When Pen can't find an imported library, it silently turns the library's instances into local copies. `npx lucide-pen link --check designs` changes nothing and exits 1 if any file would change, so it can guard CI or a pre-commit hook against broken paths.
+Moving from `@superbmeteor/lucide-pen` (0.2.0 or earlier) changes the folder the libraries are installed in, `node_modules/@superbmeteor/lucide-foundry`, but not the libraries' file names, ids or aliases. Install the new package, then run `npx lucide-foundry link` on your Pen files before opening them in Pen, so their imports point at the new folder; otherwise Pen detaches the instances.
+
+When Pen can't find an imported library, it silently turns the library's instances into local copies. `npx lucide-foundry link --check designs` changes nothing and exits 1 if any file would change, so it can guard CI or a pre-commit hook against broken paths.
 
 Pen's components panel lists every imported library's components in one list, sorted by name. So that ours stay together, they're named by group: `Lucide / activity`, `Lucide Aliases / circle-alert`, `Lucide Lab / burger`. Names are only labels; instances refer to the permanent ids, so names can change between releases without breaking anything.
 
-To see which release a file is using, place an instance of a library's About component, which is first in its group: `Lucide` (id `lucide:About`) or `Lucide Lab` (id `lucide-lab:About`). It shows the lucide-pen version, the Lucide package and version with the date npm published it, and how many icons and aliases the library holds, and it updates when the library does.
+To see which release a file is using, place an instance of a library's About component, which is first in its group: `Lucide` (id `lucide:About`) or `Lucide Lab` (id `lucide-lab:About`). It shows the lucide-foundry version, the Lucide package and version with the date npm published it, and how many icons and aliases the library holds, and it updates when the library does.
 
-[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and colour overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
+[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and color overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
 
 ## Rules
 
@@ -81,6 +85,6 @@ The `update` workflow (`.github/workflows/update.yml`) runs `update` every day a
 
 The only parts Lucide fills are dots of radius 1 or less, which the stroke already covers; the generator stops if a release fills anything larger. Lucide's renames come from `lucide-static`'s exports, which list every alias for each icon.
 
-## Licence
+## License
 
-The icon data is Lucide's, under the ISC licence, with some icons from Feather under the MIT licence; see `LICENSE-LUCIDE`, which covers both `lucide-static` and `@lucide/lab` (the generator stops if their licences ever differ). This repository's own code is under the MIT licence; see `LICENSE`.
+The icon data is Lucide's, under the ISC license, with some icons from Feather under the MIT license; see `LICENSE-LUCIDE`, which covers both `lucide-static` and `@lucide/lab` (the generator stops if their licenses ever differ). This repository's own code is under the MIT license; see `LICENSE`.

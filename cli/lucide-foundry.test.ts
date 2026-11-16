@@ -2,16 +2,16 @@ import { describe, expect, test } from 'bun:test'
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { findDist, LinkError, linkImports } from './lucide-pen.js'
+import { findDist, LinkError, linkImports } from './lucide-foundry.js'
 
-const DIST = '/repo/node_modules/@superbmeteor/lucide-pen/dist'
+const DIST = '/repo/node_modules/@superbmeteor/lucide-foundry/dist'
 const DIR = '/repo/designs/pen'
 const libraries = [
 	{ file: `${DIST}/lucide.lib.pen`, token: 'core', alias: 'lucide', option: 'lucide' },
 	{ file: `${DIST}/lucide-lab.lib.pen`, token: 'lab', alias: 'lucide-lab', option: 'lab' }
 ]
-const CORE = '../../node_modules/@superbmeteor/lucide-pen/dist/lucide.lib.pen'
-const LAB = '../../node_modules/@superbmeteor/lucide-pen/dist/lucide-lab.lib.pen'
+const CORE = '../../node_modules/@superbmeteor/lucide-foundry/dist/lucide.lib.pen'
+const LAB = '../../node_modules/@superbmeteor/lucide-foundry/dist/lucide-lab.lib.pen'
 
 /** The fileTokens of the files that exist, by absolute path. */
 const files =
@@ -81,9 +81,9 @@ describe('linkImports', () => {
 
 describe('findDist', () => {
 	test('finds the nearest installed copy above a directory', () => {
-		const root = mkdtempSync(join(tmpdir(), 'lucide-pen-'))
+		const root = mkdtempSync(join(tmpdir(), 'lucide-foundry-'))
 		try {
-			const dist = join(root, 'node_modules/@superbmeteor/lucide-pen/dist')
+			const dist = join(root, 'node_modules/@superbmeteor/lucide-foundry/dist')
 			mkdirSync(dist, { recursive: true })
 			writeFileSync(join(dist, 'lucide.lib.pen'), '{}')
 			mkdirSync(join(root, 'designs/pen'), { recursive: true })

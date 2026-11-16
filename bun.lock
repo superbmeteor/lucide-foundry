@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@superbmeteor/lucide-pen",
+      "name": "@superbmeteor/lucide-foundry",
       "devDependencies": {
         "@lucide/lab": "0.13.0",
         "@types/bun": "1.4.4",

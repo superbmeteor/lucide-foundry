@@ -18,7 +18,7 @@
           "type": "text",
           "id": "About-version",
           "name": "Version",
-          "content": "lucide-pen 0.2.0",
+          "content": "lucide-foundry 0.3.0",
           "fontFamily": "Inter",
           "fontSize": 16,
           "fill": "#000000",

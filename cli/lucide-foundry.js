@@ -2,8 +2,8 @@
 /**
  * Links Pen files to this package's icon libraries.
  *
- *     lucide-pen link <file.pen | dir>...           # add the imports, or repair their paths
- *     lucide-pen link --check <file.pen | dir>...   # exit 1 if `link` would change anything
+ *     lucide-foundry link <file.pen | dir>...           # add the imports, or repair their paths
+ *     lucide-foundry link --check <file.pen | dir>...   # exit 1 if `link` would change anything
  *
  * A Pen file imports a library under an alias, and every instance names its component through
  * it (`lucide:activity`). `link` gives each library an import, with a path relative to the Pen
@@ -39,7 +39,7 @@ const LIBRARIES = /** @type {const} */ ([
 	{ file: 'lucide-lab.lib.pen', option: 'lab', alias: 'lucide-lab' }
 ])
 
-const USAGE = `Usage: lucide-pen link [--check] [--lucide <alias>] [--lab <alias>] <file.pen | dir>...
+const USAGE = `Usage: lucide-foundry link [--check] [--lucide <alias>] [--lab <alias>] <file.pen | dir>...
 
 Imports ${NAME}'s libraries into each Pen file (a directory means every .pen file in it, other
 than libraries), or repairs the paths of imports it already has.
@@ -258,7 +258,9 @@ function main() {
 		console.log('Pen reads imports when it opens a file: reopen any of these that are open.')
 	}
 	const problems = [
-		values.check && changed.length ? `${changed.length} not linked; run \`lucide-pen link\`` : '',
+		values.check && changed.length
+			? `${changed.length} not linked; run \`lucide-foundry link\``
+			: '',
 		failed.length ? `${failed.length} couldn't be linked` : ''
 	].filter(Boolean)
 	if (problems.length) {
@@ -275,7 +277,7 @@ if (script && realpathSync(script) === realpathSync(fileURLToPath(import.meta.ur
 	} catch (e) {
 		const code = /** @type {{ code?: string }} */ (e).code ?? ''
 		if (!(e instanceof LinkError) && !code.startsWith('ERR_PARSE_ARGS')) throw e
-		console.error(`lucide-pen: ${/** @type {Error} */ (e).message}`)
+		console.error(`lucide-foundry: ${/** @type {Error} */ (e).message}`)
 		process.exit(e instanceof LinkError ? 1 : 2)
 	}
 }

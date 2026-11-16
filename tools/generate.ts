@@ -6,8 +6,8 @@
  *     bun tools/generate.ts --lucide DIR --lab DIR   # read other packages
  *
  * dist/lucide.lib.pen holds Lucide's icons, from lucide-static; dist/lucide-lab.lib.pen holds
- * Lucide's lab icons, from @lucide/lab. Their names overlap (lab's layout-grid-plus is not
- * Lucide's), so they are separate libraries. Each has an ids file in dist recording its aliases
+ * Lucide's lab icons, from @lucide/lab. Their names can overlap (lab's layout-grid-plus was not
+ * Lucide's until lab 0.14.0), so they are separate libraries. Each has an ids file in dist recording its aliases
  * and retired ids. The Swift package has a module for each, Sources/Lucide and
  * Sources/LucideLab, drawing the same outlines with the same ids (see swift.ts).
  *

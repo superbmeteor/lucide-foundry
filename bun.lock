@@ -5,7 +5,7 @@
     "": {
       "name": "@superbmeteor/lucide-foundry",
       "devDependencies": {
-        "@lucide/lab": "0.13.0",
+        "@lucide/lab": "0.14.0",
         "@types/bun": "1.4.4",
         "canvaskit-wasm": "0.42.0",
         "lefthook": "2.1.16",
@@ -17,7 +17,7 @@
     },
   },
   "packages": {
-    "@lucide/lab": ["@lucide/lab@0.13.0", "", {}, "sha512-M2xhsonyGKrIYYnZE3U97P756iuhxp6H2XRNT+X6y+z1lFSnsEMs/fwuCn2F3MQUGwwB4T9Uf716e/DTHhQkxQ=="],
+    "@lucide/lab": ["@lucide/lab@0.14.0", "", {}, "sha512-kiMKftHUVxeJdKQDKRSqFopkNv/rvHwu/3E0T7HVIYnrjmLeHIX9LT+HvuC4KFLTdj2fHG2qz7tZUePYg7FkNA=="],
 
     "@oxfmt/binding-android-arm-eabi": ["@oxfmt/binding-android-arm-eabi@0.75.0", "", { "os": "android", "cpu": "arm" }, "sha512-zHJ7LcTN46/5mtoLxsUu14pdF9ixFwDURtmxZ0CeNwqom5qB5NRVqU6o2GRZ7QPdNBW8G6j9UTJzQ+EDevMH0w=="],
 

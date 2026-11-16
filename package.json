@@ -1,6 +1,6 @@
 {
 	"name": "@superbmeteor/lucide-foundry",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"private": true,
 	"description": "Lucide icons and Lucide lab icons as pen.dev component libraries and a Swift package, drawn as filled outlines",
 	"keywords": [
@@ -40,7 +40,7 @@
 		"hooks:install": "lefthook install"
 	},
 	"devDependencies": {
-		"@lucide/lab": "0.13.0",
+		"@lucide/lab": "0.14.0",
 		"@types/bun": "1.4.4",
 		"canvaskit-wasm": "0.42.0",
 		"lefthook": "2.1.16",

@@ -23,7 +23,8 @@ final class IconTests: XCTestCase {
     }
 
     func testLucideAndLabAreSeparate() {
-        // Both have a layout-grid-plus, drawn differently.
+        // Lab's layout-grid-plus moved into Lucide in lab 0.14.0; LucideLab keeps the id, drawing
+        // Lucide's icon.
         XCTAssertEqual(Lucide.Icon.layoutGridPlus.rawValue, LucideLab.Icon.layoutGridPlus.rawValue)
         XCTAssertNotEqual(Lucide.Icon.bundle, LucideLab.Icon.bundle)
     }

@@ -34,3 +34,8 @@ jobs:
             | select(.key | contains("iOS")) | .value[] | select(.name | startswith("iPhone"))][0].udid')
           echo "iOS simulator: $device"
           xcodebuild test -quiet -scheme LucideFoundry-Package -destination "id=$device"
+      # Resolves this commit the way an app does, by its GitHub URL, from a scratch package
+      # outside the checkout, and builds it for macOS and iOS.
+      - name: Resolve from GitHub
+        run: >-
+          tools/swift-remote-check.sh "${{ github.server_url }}/${{ github.repository }}" "${{ github.event.pull_request.head.sha || github.sha }}"

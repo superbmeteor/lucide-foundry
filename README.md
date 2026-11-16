@@ -136,7 +136,7 @@ The `update` workflow (`.github/workflows/update.yml`) runs `update` every day a
 
 `bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), regenerates everything in memory, failing if any generated file differs (or a file in an asset catalogue isn't one it generates), and checks that the sample is linked. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
 
-`bun run swift:test` (macOS, with Xcode) builds and tests the Swift package: `swift build` and `swift test`, which check that each icon has its SVG, then `xcodebuild test`, which compiles the asset catalogues and checks that every icon in both modules loads as a 24 × 24 template image and draws, and that the aliases resolve. CI runs the same, and runs the tests in an iOS simulator too.
+`bun run swift:test` (macOS, with Xcode) builds and tests the Swift package: `swift build` and `swift test`, which check that each icon has its SVG, then `xcodebuild test`, which compiles the asset catalogues and checks that every icon in both modules loads as a 24 × 24 template image and draws, and that the aliases resolve. CI runs the same, and runs the tests in an iOS simulator too. `tools/swift-remote-check.sh` builds a scratch package outside the checkout that depends on this repository by its GitHub URL at the pushed `HEAD` (or a URL and revision you give it), for macOS and iOS; CI runs it on each commit.
 
 ### How the outlines are made
 

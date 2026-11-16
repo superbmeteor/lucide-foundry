@@ -5,20 +5,20 @@
 The Pen libraries are:
 
 - `dist/lucide.lib.pen`: Lucide's icons, from `lucide-static`.
-- `dist/lucide-lab.lib.pen`: Lucide's [lab](https://github.com/lucide-icons/lucide-lab) icons, from `@lucide/lab`. These are icons with unknown use cases that Lucide keeps out of its main set. Lab and Lucide reuse some names for different drawings, so lab is a library of its own.
+- `dist/lucide-lab.lib.pen`: Lucide's [lab](https://github.com/lucide-icons/lucide-lab) icons, from `@lucide/lab`. These are icons with unknown use cases that Lucide keeps out of its main set. Lab can use a name Lucide uses for a different drawing (lab's `layout-grid-plus` did until lab 0.14.0), so lab is a library of its own.
 
 Each icon is a reusable 24 × 24 `path` component whose id is its Lucide name (`activity`, `circle-exclamation-point`), filled with the library's `icon` color variable (black). Recolor an icon by overriding its instance's fill. The icons are filled outlines of Lucide's 2-pt strokes, so their weight scales with their size. A Pen path keeps its stroke width in points, so a stroked icon would look lighter as it grows.
 
 This is an unofficial project. It is not affiliated with or endorsed by Lucide; it redistributes Lucide's icons under their license (see [License](#license)). It was called lucide-pen until 0.3.0.
 
-**Status: experiment.** Version 0.3.0 holds Lucide 1.73.0's 2,055 icons, plus 34 aliases for ids Lucide has renamed since 1.48.0, and lab 0.13.0's 357 icons.
+**Status: experiment.** Version 0.4.0 holds Lucide 1.73.0's 2,055 icons, plus 34 aliases for ids Lucide has renamed since 1.48.0, and lab 0.14.0's 357 icons, plus 1 alias for a lab id that has moved into Lucide (`layout-grid-plus`).
 
 ## Using it in Pen
 
 The package isn't published to a registry, so install it from GitHub, pinned to a release tag (or a commit):
 
 ```sh
-bun add -d github:superbmeteor/lucide-foundry#v0.3.0   # or: npm install -D github:superbmeteor/lucide-foundry#v0.3.0
+bun add -d github:superbmeteor/lucide-foundry#v0.4.0   # or: npm install -D github:superbmeteor/lucide-foundry#v0.4.0
 ```
 
 Then link your Pen files to the libraries. The CLI is plain JavaScript, so it runs with `npx`, `bunx` or `pnpm exec` (Node 22 or later, or Bun):
@@ -46,17 +46,17 @@ Pen's components panel lists every imported library's components in one list, so
 
 To see which release a file is using, place an instance of a library's About component, which is first in its group: `Lucide` (id `lucide:About`) or `Lucide Lab` (id `lucide-lab:About`). It shows the lucide-foundry version, the Lucide package and version with the date npm published it, and how many icons and aliases the library holds, and it updates when the library does.
 
-[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and color overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
+[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, core and lab `layout-grid-plus` (two different icons until lab 0.14.0; lab's is now an alias of Lucide's), one icon from 16 to 96 points, and color overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
 
 ## Using it in Swift
 
-The Swift package, `LucideFoundry`, has two libraries, `Lucide` and `LucideLab`. They are separate modules because Lab and Lucide use some ids for different icons. Each icon is an image in the module's asset catalog: an SVG of the same filled outline the Pen library draws, 24 × 24 points. It's a template image, so it takes the color it's drawn in, and it keeps its vector data, so it stays sharp at any size. The package needs macOS 13 or iOS 16 or later.
+The Swift package, `LucideFoundry`, has two libraries, `Lucide` and `LucideLab`. They are separate modules because Lab can use an id Lucide uses for a different icon. Each icon is an image in the module's asset catalog: an SVG of the same filled outline the Pen library draws, 24 × 24 points. It's a template image, so it takes the color it's drawn in, and it keeps its vector data, so it stays sharp at any size. The package needs macOS 13 or iOS 16 or later.
 
-It isn't published to the Swift Package Index, so add it by its GitHub URL, pinned to a release tag. Pin the same release your Pen files use, so that the app and the designs draw the same icons. In Xcode, choose File › Add Package Dependencies…, enter `https://github.com/superbmeteor/lucide-foundry`, set the rule to Exact Version `0.3.0`, and add `Lucide`, `LucideLab` or both to your target. In `Package.swift`:
+It isn't published to the Swift Package Index, so add it by its GitHub URL, pinned to a release tag. Pin the same release your Pen files use, so that the app and the designs draw the same icons. In Xcode, choose File › Add Package Dependencies…, enter `https://github.com/superbmeteor/lucide-foundry`, set the rule to Exact Version `0.4.0`, and add `Lucide`, `LucideLab` or both to your target. In `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/superbmeteor/lucide-foundry", exact: "0.3.0"),
+    .package(url: "https://github.com/superbmeteor/lucide-foundry", exact: "0.4.0"),
 ],
 targets: [
     .target(name: "MyApp", dependencies: [
@@ -72,7 +72,7 @@ With XcodeGen, in `project.yml`:
 packages:
   LucideFoundry:
     url: https://github.com/superbmeteor/lucide-foundry
-    exactVersion: 0.3.0
+    exactVersion: 0.4.0
 targets:
   MyApp:
     dependencies:

@@ -8,7 +8,7 @@ let package = Package(
     name: "LucideFoundry",
     platforms: [.macOS(.v13), .iOS(.v16)],
     products: [
-        // Separate modules, because Lucide and Lucide Lab use some ids for different icons.
+        // Separate modules, because Lucide Lab can use an id Lucide uses for a different icon.
         .library(name: "Lucide", targets: ["Lucide"]),
         .library(name: "LucideLab", targets: ["LucideLab"]),
     ],

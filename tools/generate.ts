@@ -531,7 +531,7 @@ function library(
 		gap: 4,
 		padding: 16,
 		children: [
-			text('version', 'Version', `lucide-pen ${version}`, 16, '#000000', '600'),
+			text('version', 'Version', `lucide-foundry ${version}`, 16, '#000000', '600'),
 			text(
 				'release',
 				'Release',

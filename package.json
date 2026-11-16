@@ -1,6 +1,6 @@
 {
-	"name": "@superbmeteor/lucide-pen",
-	"version": "0.2.0",
+	"name": "@superbmeteor/lucide-foundry",
+	"version": "0.3.0",
 	"private": true,
 	"description": "Lucide icons and Lucide lab icons as pen.dev component libraries, drawn as filled outlines",
 	"keywords": [
@@ -12,13 +12,13 @@
 	"license": "MIT AND ISC",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/superbmeteor/lucide-pen.git"
+		"url": "git+https://github.com/superbmeteor/lucide-foundry.git"
 	},
 	"bin": {
-		"lucide-pen": "cli/lucide-pen.js"
+		"lucide-foundry": "cli/lucide-foundry.js"
 	},
 	"files": [
-		"cli/lucide-pen.js",
+		"cli/lucide-foundry.js",
 		"dist",
 		"LICENSE",
 		"LICENSE-LUCIDE"
@@ -26,7 +26,7 @@
 	"scripts": {
 		"generate": "bun tools/generate.ts",
 		"generate:check": "bun tools/generate.ts --check",
-		"link:check": "bun cli/lucide-pen.js link --check examples",
+		"link:check": "bun cli/lucide-foundry.js link --check examples",
 		"update": "bun tools/update.ts",
 		"format": "oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore .",
 		"format:check": "oxfmt --check --ignore-path .gitignore --ignore-path .oxfmtignore .",

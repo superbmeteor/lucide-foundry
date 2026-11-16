@@ -1,6 +1,8 @@
 # lucide-foundry
 
-[Lucide](https://lucide.dev) icons as [pen.dev](https://pen.dev) component libraries for Pen files to import:
+[Lucide](https://lucide.dev) icons, generated from Lucide's releases in two forms that draw the same icons: [pen.dev](https://pen.dev) component libraries for Pen files to import, and a [Swift package](#using-it-in-swift) for macOS and iOS apps. Keep a design and its app on the same release, and the app draws exactly what the design draws.
+
+The Pen libraries are:
 
 - `dist/lucide.lib.pen`: Lucide's icons, from `lucide-static`.
 - `dist/lucide-lab.lib.pen`: Lucide's [lab](https://github.com/lucide-icons/lucide-lab) icons, from `@lucide/lab`. These are icons with unknown use cases that Lucide keeps out of its main set. Lab and Lucide reuse some names for different drawings, so lab is a library of its own.
@@ -11,7 +13,7 @@ This is an unofficial project. It is not affiliated with or endorsed by Lucide; 
 
 **Status: experiment.** Version 0.3.0 holds Lucide 1.73.0's 2,055 icons, plus 34 aliases for ids Lucide has renamed since 1.48.0, and lab 0.13.0's 357 icons.
 
-## Using it
+## Using it in Pen
 
 The package isn't published to a registry, so install it from GitHub, pinned to a release tag (or a commit):
 
@@ -46,6 +48,61 @@ To see which release a file is using, place an instance of a library's About com
 
 [`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and color overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
 
+## Using it in Swift
+
+The Swift package, `LucideFoundry`, has two libraries, `Lucide` and `LucideLab`. They are separate modules because Lab and Lucide use some ids for different icons. Each icon is an image in the module's asset catalog: an SVG of the same filled outline the Pen library draws, 24 × 24 points. It's a template image, so it takes the color it's drawn in, and it keeps its vector data, so it stays sharp at any size. The package needs macOS 13 or iOS 16 or later.
+
+It isn't published to the Swift Package Index, so add it by its GitHub URL, pinned to a release tag. Pin the same release your Pen files use, so that the app and the designs draw the same icons. In Xcode, choose File › Add Package Dependencies…, enter `https://github.com/superbmeteor/lucide-foundry`, set the rule to Exact Version `0.3.0`, and add `Lucide`, `LucideLab` or both to your target. In `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/superbmeteor/lucide-foundry", exact: "0.3.0"),
+],
+targets: [
+    .target(name: "MyApp", dependencies: [
+        .product(name: "Lucide", package: "lucide-foundry"),
+        .product(name: "LucideLab", package: "lucide-foundry"),
+    ]),
+]
+```
+
+With XcodeGen, in `project.yml`:
+
+```yaml
+packages:
+  LucideFoundry:
+    url: https://github.com/superbmeteor/lucide-foundry
+    exactVersion: 0.3.0
+targets:
+  MyApp:
+    dependencies:
+      - package: LucideFoundry
+        product: Lucide
+      - package: LucideFoundry
+        product: LucideLab
+```
+
+Each module has an `Icon` enum with a case for each icon. Its raw value is the icon's Lucide id, and its name is the id in lower camel case: `circle-exclamation-point` is `.circleExclamationPoint`, `arrow-down-0-1` is `.arrowDown01`. Both modules call the enum `Icon`, so where both are imported, write `Lucide.Icon` and `LucideLab.Icon`.
+
+```swift
+import Lucide
+import LucideLab
+
+Image(lucide: .activity)                  // SwiftUI; takes the foreground style
+    .resizable()
+    .frame(width: 16, height: 16)
+Image(lucideLab: .tabPlus)
+
+Lucide.Icon.circleExclamationPoint.nsImage   // AppKit: a template NSImage
+Lucide.Icon.circleExclamationPoint.uiImage   // UIKit: an .alwaysTemplate UIImage
+
+Lucide.Icon(id: "circle-alert")           // by id or alias: .circleExclamationPoint
+```
+
+Lucide's aliases are deprecated members renamed to the icon they now draw, so `Lucide.Icon.circleAlert` still builds, with a warning and a fix-it, and `Lucide.Icon.aliases` maps each alias id to its icon. SwiftUI names an image's accessibility label after the icon's id, so give an icon that carries meaning an `.accessibilityLabel`, and hide one that's decorative.
+
+Xcode and `xcodebuild` compile the asset catalogs; `swift build` on the command line only copies them. So the images load in anything Xcode builds, but not in a binary built with `swift build`, where `nsImage` and `uiImage` stop the program with a message saying why.
+
 ## Rules
 
 - **Ids are permanent.** An id that has appeared in a release stays in every later release of its library and keeps drawing the icon it meant.
@@ -68,7 +125,7 @@ bun run update
 
 `update` moves each package to its next release on npm and runs `bun run generate`. The next release is the newest release in the package's current major version, or, if the package is already on the last release of that major, the newest release of the next major. If the version in `package.json` already has a release tag, `update` bumps its minor version. To pick versions yourself, run `bun add -d --exact lucide-static@<version> @lucide/lab@<version>` and then `bun run generate`.
 
-`generate` rewrites everything in `dist/` and `LICENSE-LUCIDE`; never edit them by hand. For each library it lists the icons added, the icons redrawn, and the ids that have become aliases or been retired. Update the status line above and commit.
+`generate` rewrites everything in `dist/` and `Sources/` and `LICENSE-LUCIDE`; never edit them by hand. For each library it lists the icons added, the icons redrawn, and the ids that have become aliases or been retired. Update the status line above and commit.
 
 The `update` workflow (`.github/workflows/update.yml`) runs `update` every day and from the Actions tab. When there's a new release, it runs `bun run check` and opens a pull request from the `update-lucide` branch, or refreshes the one already open. The pull request lists what `generate` reported. If `generate` stops on an id conflict, the workflow run fails, and GitHub emails whoever last edited the schedule.
 
@@ -77,14 +134,18 @@ The `update` workflow (`.github/workflows/update.yml`) runs `update` every day a
 - Update lab and Lucide together. When a lab icon graduates, its lab id becomes an alias only if the Lucide release being built already has the icon; otherwise the id is retired, and a retired id stays retired.
 - If a release reuses an alias or retired id as the name of a new icon, `generate` stops rather than change what that id draws. Decide which icon the id should draw and edit the ids file to match.
 
-`bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), regenerates everything in memory, failing if any generated file differs, and checks that the sample is linked. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
+`bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), regenerates everything in memory, failing if any generated file differs (or a file in an asset catalog isn't one it generates), and checks that the sample is linked. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
+
+`bun run swift:test` (macOS, with Xcode) builds and tests the Swift package: `swift build` and `swift test`, which check that each icon has its SVG, then `xcodebuild test`, which compiles the asset catalogs and checks that every icon in both modules loads as a 24 × 24 template image and draws, and that the aliases resolve. CI runs the same, and runs the tests in an iOS simulator too. `tools/swift-remote-check.sh` builds a scratch package outside the checkout that depends on this repository by its GitHub URL at the pushed `HEAD` (or a URL and revision you give it), for macOS and iOS; CI runs it on each commit.
 
 ### How the outlines are made
 
 `tools/generate.ts` reads each package's `icon-nodes.json`, and Skia (`canvaskit-wasm`, pinned like the icon packages) strokes each SVG element 2 wide with round caps and joins. The strokes become the icon's path, with Skia's quadratic and conic curves written as cubics. They overlap where elements meet, which draws correctly under the nonzero fill rule. Skia can merge them into one shape, but its path operations fail on some icons and fill in holes on others, so the generator doesn't.
 
+The Swift package's SVGs are the same paths, filled black, with the 24 × 24 grid as their view box. `tools/swift.ts` writes them, the asset catalogs and the Swift sources.
+
 The only parts Lucide fills are dots of radius 1 or less, which the stroke already covers; the generator stops if a release fills anything larger. Lucide's renames come from `lucide-static`'s exports, which list every alias for each icon.
 
 ## License
 
-The icon data is Lucide's, under the ISC license, with some icons from Feather under the MIT license; see `LICENSE-LUCIDE`, which covers both `lucide-static` and `@lucide/lab` (the generator stops if their licenses ever differ). This repository's own code is under the MIT license; see `LICENSE`.
+The icon data is Lucide's, under the ISC license, with some icons from Feather under the MIT license; see `LICENSE-LUCIDE`. That covers the Lab icons too: `@lucide/lab` declares the ISC license and ships the same license file as `lucide-static` (the generator stops if their licenses ever differ). It covers the icons in both the Pen libraries and the Swift package. This repository's own code is under the MIT license; see `LICENSE`.

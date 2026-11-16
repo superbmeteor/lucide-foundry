@@ -43,6 +43,10 @@ description = "Regenerate dist/ and LICENSE-LUCIDE from the pinned Lucide releas
 depends = ["install"]
 run = "bun run generate"
 
+[tasks."swift:test"]
+description = "Build and test the Swift package: swift build and swift test, then xcodebuild test, which compiles the asset catalogs and loads every icon (macOS, Xcode)"
+run = "bun run swift:test"
+
 [tasks.update]
 description = "Move to the next Lucide releases on npm and regenerate"
 depends = ["install"]

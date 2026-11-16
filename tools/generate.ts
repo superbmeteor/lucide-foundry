@@ -1,5 +1,5 @@
 /**
- * Generates the Pen libraries from the Lucide releases in node_modules.
+ * Generates the Pen libraries and the Swift package from the Lucide releases in node_modules.
  *
  *     bun tools/generate.ts            # rewrite the generated files
  *     bun tools/generate.ts --check    # exit 1 if they are not what this would write
@@ -8,7 +8,8 @@
  * dist/lucide.lib.pen holds Lucide's icons, from lucide-static; dist/lucide-lab.lib.pen holds
  * Lucide's lab icons, from @lucide/lab. Their names overlap (lab's layout-grid-plus is not
  * Lucide's), so they are separate libraries. Each has an ids file in dist recording its aliases
- * and retired ids.
+ * and retired ids. The Swift package has a module for each, Sources/Lucide and
+ * Sources/LucideLab, drawing the same outlines with the same ids (see swift.ts).
  *
  * Each icon becomes a reusable 24 x 24 path component, named and identified by its Lucide name,
  * filled with $icon. The path is a filled outline of Lucide's stroke: a Pen path keeps its
@@ -31,13 +32,15 @@
  */
 import CanvasKitInit from 'canvaskit-wasm'
 import type { CanvasKit, Path } from 'canvaskit-wasm'
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { parseArgs } from 'node:util'
+import { type Entry, moduleFiles, SwiftNameError } from './swift.ts'
 
 const ROOT = join(import.meta.dir, '..')
 const DIST = join(ROOT, 'dist') // what this writes, and reads back to carry ids forward
 const LICENSE = join(ROOT, 'LICENSE-LUCIDE')
+const SOURCES = join(ROOT, 'Sources') // the Swift package's modules
 
 const WIDTH = 2 // Lucide's stroke width, in 24 x 24 grid units
 // Skia flattens a stroke's offset curves to a tolerance in path units; scale it down for a 24 grid.
@@ -438,8 +441,9 @@ function grid(ids: string[], row: number, group: string, geometry: (id: string) 
 	return { nodes, next: row + Math.ceil(ids.length / COLUMNS) }
 }
 
-/** The text of a library and of its ids file: the release's icons, `outlines` of them, plus
- * every id the current library has released. Aliases copy `targets` outlines.
+/** The text of a library and of its ids file, and the library's ids for the Swift package: the
+ * release's icons, `outlines` of them, plus every id the current library has released. Aliases
+ * copy `targets` outlines.
  *
  * Instances find a component by its id, which is permanent; its name is only what Pen's
  * components panel shows, which lists every imported library's components together in one
@@ -458,7 +462,7 @@ function library(
 	outlines: Record<string, string>,
 	targets: Record<string, string>,
 	follow: Record<string, string>
-): Record<string, string> {
+): { files: Record<string, string>; entries: Entry[] } {
 	const fileName = libraryPath.slice(ROOT.length + 1)
 	const oldDoc: PenDoc = existsSync(libraryPath) ? readJson(libraryPath) : DEFAULT_DOC
 	const old = new Map(components(oldDoc.children).map((c) => [c.id, c]))
@@ -571,11 +575,31 @@ function library(
 		console.log(`  ${label} (${names.length}): ${shown.join(', ')}`)
 	}
 	const json = (value: unknown) => JSON.stringify(value, null, 2) + '\n'
+	// The same ids and outlines for the Swift package, in id order.
+	const entries = children
+		.map((c): Entry => {
+			const entry: Entry = { id: c.id, geometry: c.geometry }
+			if (c.id in aliases) entry.alias = aliases[c.id]
+			if (retired.includes(c.id)) entry.retired = true
+			return entry
+		})
+		.toSorted((a, b) => (a.id < b.id ? -1 : 1))
 	return {
-		[libraryPath]: json(doc),
-		[idsPath]: json({ package: release, released: published, aliases, retired })
+		files: {
+			[libraryPath]: json(doc),
+			[idsPath]: json({ package: release, released: published, aliases, retired })
+		},
+		entries
 	}
 }
+
+/** Every file under `dir`, however deep; none if it doesn't exist. */
+const filesUnder = (dir: string): string[] =>
+	existsSync(dir)
+		? readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+				e.isDirectory() ? filesUnder(join(dir, e.name)) : [join(dir, e.name)]
+			)
+		: []
 
 // --- Main -----------------------------------------------------------------------------------
 
@@ -601,49 +625,79 @@ async function main() {
 
 	const version = readJson<{ version: string }>(join(ROOT, 'package.json')).version
 	const [lucideIds, labIds] = [join(DIST, 'lucide.ids.json'), join(DIST, 'lucide-lab.ids.json')]
+	const core = library(
+		join(DIST, 'lucide.lib.pen'),
+		lucideIds,
+		'Lucide',
+		lucide.release,
+		await releaseDate(lucide.name, lucide.version, lucideIds),
+		version,
+		outlines,
+		outlines,
+		renamed
+	)
+	// A lab id that leaves lab follows the Lucide icon of its name, wherever Lucide has it.
+	const labLibrary = library(
+		join(DIST, 'lucide-lab.lib.pen'),
+		labIds,
+		'Lucide Lab',
+		lab.release,
+		await releaseDate(lab.name, lab.version, labIds),
+		version,
+		labOutlines,
+		outlines,
+		{ ...Object.fromEntries(Object.keys(lucide.icons).map((n) => [n, n])), ...renamed }
+	)
+	// The Swift package: a module for each library. Each module's asset catalog is generated
+	// whole, so a file in it that this doesn't write is stale too.
+	const modules = [
+		{ name: 'Lucide', release: lucide.release, entries: core.entries, ownAliases: true },
+		{ name: 'LucideLab', release: lab.release, entries: labLibrary.entries, ownAliases: false }
+	]
 	const outputs: Record<string, string> = {
-		...library(
-			join(DIST, 'lucide.lib.pen'),
-			lucideIds,
-			'Lucide',
-			lucide.release,
-			await releaseDate(lucide.name, lucide.version, lucideIds),
-			version,
-			outlines,
-			outlines,
-			renamed
-		),
-		// A lab id that leaves lab follows the Lucide icon of its name, wherever Lucide has it.
-		...library(
-			join(DIST, 'lucide-lab.lib.pen'),
-			labIds,
-			'Lucide Lab',
-			lab.release,
-			await releaseDate(lab.name, lab.version, labIds),
-			version,
-			labOutlines,
-			outlines,
-			{ ...Object.fromEntries(Object.keys(lucide.icons).map((n) => [n, n])), ...renamed }
-		),
-		[LICENSE]: lucide.license
+		...core.files,
+		...labLibrary.files,
+		[LICENSE]: lucide.license,
+		...Object.assign({}, ...modules.map((m) => moduleFiles(join(SOURCES, m.name), m)))
 	}
+	const extra = modules
+		.flatMap((m) => filesUnder(join(SOURCES, m.name, `${m.name}.xcassets`)))
+		.filter((p) => !(p in outputs))
 
-	const names = (paths: string[]) => paths.map((p) => p.slice(ROOT.length + 1)).join(', ')
+	const relative = (p: string) => p.slice(ROOT.length + 1)
+	/** A list of paths, shortened to a count past the first few. */
+	const names = (paths: string[]) =>
+		paths.length > 5
+			? `${paths.slice(0, 5).map(relative).join(', ')} and ${paths.length - 5} more`
+			: paths.map(relative).join(', ')
 	const stale = Object.keys(outputs).filter(
 		(p) => !existsSync(p) || readFileSync(p, 'utf8') !== outputs[p]
 	)
 	if (args.check) {
-		if (stale.length) fail(`${names(stale)} out of date; run \`bun run generate\``)
+		const problems = [
+			stale.length ? `${names(stale)} out of date` : '',
+			extra.length ? `${names(extra)} not generated` : ''
+		].filter(Boolean)
+		if (problems.length) fail(`${problems.join('; ')}; run \`bun run generate\``)
 		console.log('generated files are up to date')
 	} else {
-		for (const [path, text] of Object.entries(outputs)) writeFileSync(path, text)
-		console.log(`wrote ${names(Object.keys(outputs))}`)
+		for (const path of stale) {
+			mkdirSync(dirname(path), { recursive: true })
+			writeFileSync(path, outputs[path]!)
+		}
+		for (const path of extra) {
+			rmSync(path)
+			// An imageset left empty goes too.
+			if (!readdirSync(dirname(path)).length) rmSync(dirname(path), { recursive: true })
+		}
+		const wrote = stale.length ? `wrote ${names(stale)}` : 'every generated file was up to date'
+		console.log(wrote + (extra.length ? `; removed ${names(extra)}` : ''))
 	}
 }
 
 if (import.meta.main) {
 	await main().catch((e) => {
-		if (!(e instanceof GenerateError)) throw e
+		if (!(e instanceof GenerateError) && !(e instanceof SwiftNameError)) throw e
 		console.error(`generate: ${e.message}`)
 		process.exit(1)
 	})

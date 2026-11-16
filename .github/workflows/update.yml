@@ -25,11 +25,24 @@ jobs:
       # A pull request opened with the workflow's token doesn't trigger check.yml, so check here.
       - if: steps.update.outputs.title
         run: bun run check
+      # Commits the regenerated files to update-lucide on top of the base branch, replacing what was
+      # there, then opens the pull request or, if one is already open, refreshes its title and body.
       - if: steps.update.outputs.title
-        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
-        with:
-          branch: update-lucide
-          delete-branch: true
-          commit-message: ${{ steps.update.outputs.title }}
-          title: ${{ steps.update.outputs.title }}
-          body: ${{ steps.update.outputs.body }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE: ${{ github.ref_name }}
+          TITLE: ${{ steps.update.outputs.title }}
+          BODY: ${{ steps.update.outputs.body }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -C update-lucide
+          git add -A
+          git commit -m "$TITLE"
+          git push --force origin update-lucide
+          pr=$(gh pr list --head update-lucide --base "$BASE" --state open --json number --jq '.[0].number')
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --title "$TITLE" --body "$BODY"
+          else
+            gh pr create --head update-lucide --base "$BASE" --title "$TITLE" --body "$BODY"
+          fi

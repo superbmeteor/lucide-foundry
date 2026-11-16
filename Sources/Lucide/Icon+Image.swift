@@ -11,7 +11,7 @@ import UIKit
 #endif
 
 extension Icon {
-    /// The bundle holding the module's asset catalogue.
+    /// The bundle holding the module's asset catalog.
     static var bundle: Bundle { .module }
 
     #if canImport(AppKit)
@@ -46,8 +46,8 @@ extension Image {
 }
 #endif
 
-/// Why an icon's image is missing: only a build that doesn't compile asset catalogues loses one.
+/// Why an icon's image is missing: only a build that doesn't compile asset catalogs loses one.
 private func missing(_ id: String) -> String {
-    "Lucide: no image for \(id). Asset catalogues are compiled by Xcode and xcodebuild, " +
+    "Lucide: no image for \(id). Asset catalogs are compiled by Xcode and xcodebuild, " +
         "not by `swift build`."
 }

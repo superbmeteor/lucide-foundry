@@ -10,16 +10,16 @@ import AppKit
 import UIKit
 #endif
 
-/// `swift build` copies an asset catalogue into the module's bundle without compiling it, so
+/// `swift build` copies an asset catalog into the module's bundle without compiling it, so
 /// under `swift test` these check that each icon has its SVG, and under Xcode or `xcodebuild test`,
-/// which compile the catalogue, that each icon loads and draws as a 24 × 24 template image.
+/// which compile the catalog, that each icon loads and draws as a 24 × 24 template image.
 final class IconTests: XCTestCase {
     func testLucideIcons() throws {
-        try check(Lucide.Icon.allCases, bundle: Lucide.Icon.bundle, catalogue: "Lucide")
+        try check(Lucide.Icon.allCases, bundle: Lucide.Icon.bundle, catalog: "Lucide")
     }
 
     func testLucideLabIcons() throws {
-        try check(LucideLab.Icon.allCases, bundle: LucideLab.Icon.bundle, catalogue: "LucideLab")
+        try check(LucideLab.Icon.allCases, bundle: LucideLab.Icon.bundle, catalog: "LucideLab")
     }
 
     func testLucideAndLabAreSeparate() {
@@ -51,7 +51,7 @@ final class IconTests: XCTestCase {
     }
 
     private func check<Icon: RawRepresentable & Hashable>(
-        _ icons: [Icon], bundle: Bundle, catalogue: String
+        _ icons: [Icon], bundle: Bundle, catalog: String
     ) throws where Icon.RawValue == String {
         XCTAssertFalse(icons.isEmpty)
         XCTAssertEqual(Set(icons.map(\.rawValue)).count, icons.count)
@@ -61,11 +61,11 @@ final class IconTests: XCTestCase {
                 XCTAssertNotNil(
                     bundle.url(
                         forResource: id, withExtension: "svg",
-                        subdirectory: "\(catalogue).xcassets/\(id).imageset"),
-                    "\(id) has no SVG in \(catalogue).xcassets")
+                        subdirectory: "\(catalog).xcassets/\(id).imageset"),
+                    "\(id) has no SVG in \(catalog).xcassets")
             }
             throw XCTSkip(
-                "The asset catalogue isn't compiled (swift build doesn't), so only its SVGs were "
+                "The asset catalog isn't compiled (swift build doesn't), so only its SVGs were "
                     + "checked; run xcodebuild test to load the images")
         }
         for icon in icons { try checkLoads(icon.rawValue, bundle: bundle) }
@@ -106,10 +106,10 @@ final class IconTests: XCTestCase {
     }
 
     func testPublicAccessorsAreTemplates() throws {
-        // Without a compiled catalogue the accessors stop the program, by design.
+        // Without a compiled catalog the accessors stop the program, by design.
         try XCTSkipIf(
             Lucide.Icon.bundle.url(forResource: "Assets", withExtension: "car") == nil,
-            "The asset catalogue isn't compiled (swift build doesn't)")
+            "The asset catalog isn't compiled (swift build doesn't)")
         #if canImport(AppKit)
         XCTAssertTrue(Lucide.Icon.activity.nsImage.isTemplate)
         XCTAssertTrue(LucideLab.Icon.burger.nsImage.isTemplate)

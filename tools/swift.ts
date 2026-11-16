@@ -1,10 +1,10 @@
 /**
  * The Swift package's generated files: for each library, a Swift module with an `Icon` enum and
- * an asset catalogue holding each icon as an SVG.
+ * an asset catalog holding each icon as an SVG.
  *
  * The SVGs are the same filled outlines the Pen libraries draw, 24 x 24 and filled black, marked
  * as template images that keep their vector data, so an app draws what the designs draw at any
- * size. Each case of `Icon` is an id of the library, with the id as its raw value; the catalogue
+ * size. Each case of `Icon` is an id of the library, with the id as its raw value; the catalog
  * names its image by the id too.
  *
  * - An icon of the release, and a retired id (it keeps the outline it last had), is a case with
@@ -12,7 +12,7 @@
  * - A Lucide alias is a deprecated static member, renamed to the case of the icon it copies,
  *   so Xcode offers to rename uses of it. It has no image of its own.
  * - A lab alias copies a Lucide icon, which is in the other module, so it is a case with an image
- *   of its own, a copy of the Lucide icon's. Deprecated cases would stop Swift synthesising
+ *   of its own, a copy of the Lucide icon's. Deprecated cases would stop Swift synthesizing
  *   CaseIterable, so it is not deprecated; its comment says where the icon went.
  */
 import { join } from 'node:path'
@@ -81,7 +81,7 @@ function checkNames(module: Module) {
 	}
 }
 
-/** The argument label of the module's SwiftUI Image initialiser: Lucide's is `lucide`. */
+/** The argument label of the module's SwiftUI Image initializer: Lucide's is `lucide`. */
 export const label = (module: Module) => module.name[0]!.toLowerCase() + module.name.slice(1)
 
 const count = (n: number) => n.toLocaleString('en-US')
@@ -98,7 +98,7 @@ export function iconSwift(module: Module): string {
 		"/// Lucide's 2-point strokes, so their weight scales with their size.",
 		'///',
 		"/// The raw value is the icon's Lucide id, which is also its name in the module's asset",
-		'/// catalogue. Ids are permanent: a later release keeps every case, and an id Lucide renames',
+		'/// catalog. Ids are permanent: a later release keeps every case, and an id Lucide renames',
 		'/// stays as a deprecated alias of the icon it was renamed to.',
 		'public enum Icon: String, CaseIterable, Identifiable, Sendable {'
 	]
@@ -164,7 +164,7 @@ import UIKit
 #endif
 
 extension Icon {
-    /// The bundle holding the module's asset catalogue.
+    /// The bundle holding the module's asset catalog.
     static var bundle: Bundle { .module }
 
     #if canImport(AppKit)
@@ -199,15 +199,15 @@ extension Image {
 }
 #endif
 
-/// Why an icon's image is missing: only a build that doesn't compile asset catalogues loses one.
+/// Why an icon's image is missing: only a build that doesn't compile asset catalogs loses one.
 private func missing(_ id: String) -> String {
-    "${module.name}: no image for \\(id). Asset catalogues are compiled by Xcode and xcodebuild, " +
+    "${module.name}: no image for \\(id). Asset catalogs are compiled by Xcode and xcodebuild, " +
         "not by \`swift build\`."
 }
 `
 }
 
-/** The Contents.json of an asset catalogue folder, laid out the way Xcode writes it: keys in
+/** The Contents.json of an asset catalog folder, laid out the way Xcode writes it: keys in
  * order, with a space before each colon. */
 const contents = (folder: { images?: unknown[]; properties?: Record<string, unknown> } = {}) =>
 	JSON.stringify(ordered({ ...folder, info: { author: 'xcode', version: 1 } }), null, 2)
@@ -232,15 +232,15 @@ export const svg = (geometry: string) =>
 
 /** Every generated file of the module {path: text}, under `dir` (Sources/<name>). */
 export function moduleFiles(dir: string, module: Module): Record<string, string> {
-	const catalogue = join(dir, `${module.name}.xcassets`)
+	const catalog = join(dir, `${module.name}.xcassets`)
 	const files: Record<string, string> = {
 		[join(dir, 'Icon.swift')]: iconSwift(module),
 		[join(dir, 'Icon+Image.swift')]: imageSwift(module),
-		[join(catalogue, 'Contents.json')]: contents()
+		[join(catalog, 'Contents.json')]: contents()
 	}
 	for (const e of module.entries) {
 		if (module.ownAliases && e.alias) continue
-		const set = join(catalogue, `${e.id}.imageset`)
+		const set = join(catalog, `${e.id}.imageset`)
 		files[join(set, 'Contents.json')] = contents({
 			images: [{ filename: `${e.id}.svg`, idiom: 'universal' }],
 			properties: {

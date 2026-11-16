@@ -48,7 +48,7 @@ const PRECISION = 64
 const DECIMALS = 3 // coordinates are written to 0.001 of a grid unit
 const COLUMNS = 40,
 	PITCH = 48 // the grid: one icon every 48 points, 40 to a row
-// Every icon is filled with the library's one colour variable. An importing file sees it under
+// Every icon is filled with the library's one color variable. An importing file sees it under
 // its import alias (f:icon), so the short name cannot collide with the file's own variables.
 const FILL = '$icon'
 const VARIABLES = { icon: { type: 'color', value: '#000000' } }
@@ -134,7 +134,7 @@ const sorted = (names: Iterable<string>) => [...names].toSorted()
 
 // --- Lucide's data --------------------------------------------------------------------------
 
-/** A package's name@version, its icons {name: [[element, attributes]]} and its licence.
+/** A package's name@version, its icons {name: [[element, attributes]]} and its license.
  * lucide-static and @lucide/lab both ship icon-nodes.json. */
 function readPackage(dir: string) {
 	for (const file of ['package.json', 'icon-nodes.json', 'LICENSE']) {
@@ -147,7 +147,7 @@ function readPackage(dir: string) {
 		version: meta.version,
 		release: `${meta.name}@${meta.version}`,
 		icons: readJson<IconNodes>(join(dir, 'icon-nodes.json')),
-		licence: readFileSync(join(dir, 'LICENSE'), 'utf8')
+		license: readFileSync(join(dir, 'LICENSE'), 'utf8')
 	}
 }
 
@@ -615,8 +615,8 @@ async function main() {
 	const lucide = readPackage(args.lucide)
 	const renamed = readLucideAliases(args.lucide, lucide.icons)
 	const lab = readPackage(args.lab)
-	if (lab.licence !== lucide.licence) {
-		fail("@lucide/lab's licence differs from lucide-static's; it needs its own licence file")
+	if (lab.license !== lucide.license) {
+		fail("@lucide/lab's license differs from lucide-static's; it needs its own license file")
 	}
 
 	const ck = await CanvasKitInit()
@@ -648,7 +648,7 @@ async function main() {
 		outlines,
 		{ ...Object.fromEntries(Object.keys(lucide.icons).map((n) => [n, n])), ...renamed }
 	)
-	// The Swift package: a module for each library. Each module's asset catalogue is generated
+	// The Swift package: a module for each library. Each module's asset catalog is generated
 	// whole, so a file in it that this doesn't write is stale too.
 	const modules = [
 		{ name: 'Lucide', release: lucide.release, entries: core.entries, ownAliases: true },
@@ -657,7 +657,7 @@ async function main() {
 	const outputs: Record<string, string> = {
 		...core.files,
 		...labLibrary.files,
-		[LICENSE]: lucide.licence,
+		[LICENSE]: lucide.license,
 		...Object.assign({}, ...modules.map((m) => moduleFiles(join(SOURCES, m.name), m)))
 	}
 	const extra = modules

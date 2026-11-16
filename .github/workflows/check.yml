@@ -18,7 +18,7 @@ jobs:
       - run: bun run check
 
   swift:
-    # The Swift package. `swift build` copies the asset catalogues without compiling them, so
+    # The Swift package. `swift build` copies the asset catalogs without compiling them, so
     # `swift test` only checks that each icon has its SVG; xcodebuild compiles them, as an app's
     # build does, and the same tests load and draw every icon, on macOS and in iOS's simulator.
     runs-on: macos-26

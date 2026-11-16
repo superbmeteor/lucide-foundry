@@ -66,7 +66,7 @@ describe('iconSwift', () => {
 	})
 })
 
-test('the SwiftUI initialiser is labelled for its module', () => {
+test('the SwiftUI initializer is labeled for its module', () => {
 	expect(imageSwift(module('Lucide', true))).toContain('public init(lucide icon: Icon)')
 	expect(imageSwift(module('LucideLab', false))).toContain('public init(lucideLab icon: Icon)')
 })

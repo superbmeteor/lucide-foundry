@@ -4,7 +4,7 @@
 /// Lucide's 2-point strokes, so their weight scales with their size.
 ///
 /// The raw value is the icon's Lucide id, which is also its name in the module's asset
-/// catalogue. Ids are permanent: a later release keeps every case, and an id Lucide renames
+/// catalog. Ids are permanent: a later release keeps every case, and an id Lucide renames
 /// stays as a deprecated alias of the icon it was renamed to.
 public enum Icon: String, CaseIterable, Identifiable, Sendable {
     case aArrowDown = "a-arrow-down"

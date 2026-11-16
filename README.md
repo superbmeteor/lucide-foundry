@@ -7,9 +7,9 @@ The Pen libraries are:
 - `dist/lucide.lib.pen`: Lucide's icons, from `lucide-static`.
 - `dist/lucide-lab.lib.pen`: Lucide's [lab](https://github.com/lucide-icons/lucide-lab) icons, from `@lucide/lab`. These are icons with unknown use cases that Lucide keeps out of its main set. Lab and Lucide reuse some names for different drawings, so lab is a library of its own.
 
-Each icon is a reusable 24 × 24 `path` component whose id is its Lucide name (`activity`, `circle-exclamation-point`), filled with the library's `icon` colour variable (black). Recolour an icon by overriding its instance's fill. The icons are filled outlines of Lucide's 2-pt strokes, so their weight scales with their size. A Pen path keeps its stroke width in points, so a stroked icon would look lighter as it grows.
+Each icon is a reusable 24 × 24 `path` component whose id is its Lucide name (`activity`, `circle-exclamation-point`), filled with the library's `icon` color variable (black). Recolor an icon by overriding its instance's fill. The icons are filled outlines of Lucide's 2-pt strokes, so their weight scales with their size. A Pen path keeps its stroke width in points, so a stroked icon would look lighter as it grows.
 
-This is an unofficial project. It is not affiliated with or endorsed by Lucide; it redistributes Lucide's icons under their licence (see [Licence](#licence)). It was called lucide-pen until 0.3.0.
+This is an unofficial project. It is not affiliated with or endorsed by Lucide; it redistributes Lucide's icons under their license (see [License](#license)). It was called lucide-pen until 0.3.0.
 
 **Status: experiment.** Version 0.3.0 holds Lucide 1.73.0's 2,055 icons, plus 34 aliases for ids Lucide has renamed since 1.48.0, and lab 0.13.0's 357 icons.
 
@@ -36,7 +36,7 @@ npx lucide-foundry link designs/my-design.pen   # or a directory: every .pen fil
 }
 ```
 
-Refer to an icon as `lucide:<lucide-name>` or `lucide-lab:<lab-name>`, and to the colour variable as `$lucide:icon`. The aliases are the importing file's choice: `--lucide` and `--lab` pick others for new imports. If a file already uses an alias for some other library, `link` leaves that file as it is, says so and exits 1, and links the rest; pick another alias for it. A library a file already imports keeps its alias, since every instance names it, and `link` only corrects its path; run it again after moving a file. Pen reads imports only when it opens a file, so reopen linked files, and reopen importing files after upgrading the package.
+Refer to an icon as `lucide:<lucide-name>` or `lucide-lab:<lab-name>`, and to the color variable as `$lucide:icon`. The aliases are the importing file's choice: `--lucide` and `--lab` pick others for new imports. If a file already uses an alias for some other library, `link` leaves that file as it is, says so and exits 1, and links the rest; pick another alias for it. A library a file already imports keeps its alias, since every instance names it, and `link` only corrects its path; run it again after moving a file. Pen reads imports only when it opens a file, so reopen linked files, and reopen importing files after upgrading the package.
 
 Moving from `@superbmeteor/lucide-pen` (0.2.0 or earlier) changes the folder the libraries are installed in, `node_modules/@superbmeteor/lucide-foundry`, but not the libraries' file names, ids or aliases. Install the new package, then run `npx lucide-foundry link` on your Pen files before opening them in Pen, so their imports point at the new folder; otherwise Pen detaches the instances.
 
@@ -46,11 +46,11 @@ Pen's components panel lists every imported library's components in one list, so
 
 To see which release a file is using, place an instance of a library's About component, which is first in its group: `Lucide` (id `lucide:About`) or `Lucide Lab` (id `lucide-lab:About`). It shows the lucide-foundry version, the Lucide package and version with the date npm published it, and how many icons and aliases the library holds, and it updates when the library does.
 
-[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and colour overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
+[`examples/sample.pen`](examples/sample.pen) imports both libraries from this repository and shows core and lab icons, renamed ids drawn through their aliases, the two different `layout-grid-plus` icons, one icon from 16 to 96 points, and color overrides. Pen named its imports `n` (core) and `4` (lab) there, when they were added in Pen's UI; `bun run check` checks that they're linked.
 
 ## Using it in Swift
 
-The Swift package, `LucideFoundry`, has two libraries, `Lucide` and `LucideLab`. They are separate modules because Lab and Lucide use some ids for different icons. Each icon is an image in the module's asset catalogue: an SVG of the same filled outline the Pen library draws, 24 × 24 points. It's a template image, so it takes the colour it's drawn in, and it keeps its vector data, so it stays sharp at any size. The package needs macOS 13 or iOS 16 or later.
+The Swift package, `LucideFoundry`, has two libraries, `Lucide` and `LucideLab`. They are separate modules because Lab and Lucide use some ids for different icons. Each icon is an image in the module's asset catalog: an SVG of the same filled outline the Pen library draws, 24 × 24 points. It's a template image, so it takes the color it's drawn in, and it keeps its vector data, so it stays sharp at any size. The package needs macOS 13 or iOS 16 or later.
 
 It isn't published to the Swift Package Index, so add it by its GitHub URL, pinned to a release tag. Pin the same release your Pen files use, so that the app and the designs draw the same icons. In Xcode, choose File › Add Package Dependencies…, enter `https://github.com/superbmeteor/lucide-foundry`, set the rule to Exact Version `0.3.0`, and add `Lucide`, `LucideLab` or both to your target. In `Package.swift`:
 
@@ -101,7 +101,7 @@ Lucide.Icon(id: "circle-alert")           // by id or alias: .circleExclamationP
 
 Lucide's aliases are deprecated members renamed to the icon they now draw, so `Lucide.Icon.circleAlert` still builds, with a warning and a fix-it, and `Lucide.Icon.aliases` maps each alias id to its icon. SwiftUI names an image's accessibility label after the icon's id, so give an icon that carries meaning an `.accessibilityLabel`, and hide one that's decorative.
 
-Xcode and `xcodebuild` compile the asset catalogues; `swift build` on the command line only copies them. So the images load in anything Xcode builds, but not in a binary built with `swift build`, where `nsImage` and `uiImage` stop the program with a message saying why.
+Xcode and `xcodebuild` compile the asset catalogs; `swift build` on the command line only copies them. So the images load in anything Xcode builds, but not in a binary built with `swift build`, where `nsImage` and `uiImage` stop the program with a message saying why.
 
 ## Rules
 
@@ -134,18 +134,18 @@ The `update` workflow (`.github/workflows/update.yml`) runs `update` every day a
 - Update lab and Lucide together. When a lab icon graduates, its lab id becomes an alias only if the Lucide release being built already has the icon; otherwise the id is retired, and a retired id stays retired.
 - If a release reuses an alias or retired id as the name of a new icon, `generate` stops rather than change what that id draws. Decide which icon the id should draw and edit the ids file to match.
 
-`bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), regenerates everything in memory, failing if any generated file differs (or a file in an asset catalogue isn't one it generates), and checks that the sample is linked. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
+`bun run check` checks the formatting (oxfmt; `bun run format` fixes it), lints (oxlint), type-checks the tools, runs their tests (`bun test`), regenerates everything in memory, failing if any generated file differs (or a file in an asset catalog isn't one it generates), and checks that the sample is linked. That catches hand edits and a dependency bump made without a regenerate. CI runs it on every push and pull request; `bun run hooks:install` sets up lefthook to run it before each commit.
 
-`bun run swift:test` (macOS, with Xcode) builds and tests the Swift package: `swift build` and `swift test`, which check that each icon has its SVG, then `xcodebuild test`, which compiles the asset catalogues and checks that every icon in both modules loads as a 24 × 24 template image and draws, and that the aliases resolve. CI runs the same, and runs the tests in an iOS simulator too. `tools/swift-remote-check.sh` builds a scratch package outside the checkout that depends on this repository by its GitHub URL at the pushed `HEAD` (or a URL and revision you give it), for macOS and iOS; CI runs it on each commit.
+`bun run swift:test` (macOS, with Xcode) builds and tests the Swift package: `swift build` and `swift test`, which check that each icon has its SVG, then `xcodebuild test`, which compiles the asset catalogs and checks that every icon in both modules loads as a 24 × 24 template image and draws, and that the aliases resolve. CI runs the same, and runs the tests in an iOS simulator too. `tools/swift-remote-check.sh` builds a scratch package outside the checkout that depends on this repository by its GitHub URL at the pushed `HEAD` (or a URL and revision you give it), for macOS and iOS; CI runs it on each commit.
 
 ### How the outlines are made
 
 `tools/generate.ts` reads each package's `icon-nodes.json`, and Skia (`canvaskit-wasm`, pinned like the icon packages) strokes each SVG element 2 wide with round caps and joins. The strokes become the icon's path, with Skia's quadratic and conic curves written as cubics. They overlap where elements meet, which draws correctly under the nonzero fill rule. Skia can merge them into one shape, but its path operations fail on some icons and fill in holes on others, so the generator doesn't.
 
-The Swift package's SVGs are the same paths, filled black, with the 24 × 24 grid as their view box. `tools/swift.ts` writes them, the asset catalogues and the Swift sources.
+The Swift package's SVGs are the same paths, filled black, with the 24 × 24 grid as their view box. `tools/swift.ts` writes them, the asset catalogs and the Swift sources.
 
 The only parts Lucide fills are dots of radius 1 or less, which the stroke already covers; the generator stops if a release fills anything larger. Lucide's renames come from `lucide-static`'s exports, which list every alias for each icon.
 
-## Licence
+## License
 
-The icon data is Lucide's, under the ISC licence, with some icons from Feather under the MIT licence; see `LICENSE-LUCIDE`. That covers the Lab icons too: `@lucide/lab` declares the ISC licence and ships the same licence file as `lucide-static` (the generator stops if their licences ever differ). It covers the icons in both the Pen libraries and the Swift package. This repository's own code is under the MIT licence; see `LICENSE`.
+The icon data is Lucide's, under the ISC license, with some icons from Feather under the MIT license; see `LICENSE-LUCIDE`. That covers the Lab icons too: `@lucide/lab` declares the ISC license and ships the same license file as `lucide-static` (the generator stops if their licenses ever differ). It covers the icons in both the Pen libraries and the Swift package. This repository's own code is under the MIT license; see `LICENSE`.

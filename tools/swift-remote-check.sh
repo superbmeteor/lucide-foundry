@@ -2,7 +2,7 @@
 # Builds a scratch package, outside this checkout, that depends on the Swift package the way an
 # app does: by its Git URL, at one pushed revision. It shows that the committed sources resolve
 # and build with only Swift and Git (no Bun, no generate step), and that Xcode compiles the asset
-# catalogues for macOS and iOS.
+# catalogs for macOS and iOS.
 #
 #     tools/swift-remote-check.sh [url] [revision]
 #
@@ -63,6 +63,6 @@ xcodebuild build -quiet -scheme Consumer-Package -destination 'generic/platform=
 	-derivedDataPath .dd
 for bundle in LucideFoundry_Lucide LucideFoundry_LucideLab; do
 	test -n "$(find .dd/Build/Products -path "*/$bundle.bundle/*Assets.car")" ||
-		{ echo "$bundle has no compiled asset catalogue" >&2; exit 1; }
+		{ echo "$bundle has no compiled asset catalog" >&2; exit 1; }
 done
 echo "Resolved and built $url at $revision"

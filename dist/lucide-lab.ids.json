@@ -1,7 +1,8 @@
 {
-  "package": "@lucide/lab@0.14.0",
-  "released": "2026-11-16",
+  "package": "@lucide/lab@0.17.0",
+  "released": "2026-11-19",
   "aliases": {
+    "jacket": "jacket",
     "layout-grid-plus": "layout-grid-plus"
   },
   "retired": []

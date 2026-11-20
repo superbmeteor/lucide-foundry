@@ -1,6 +1,6 @@
 {
-  "package": "lucide-static@1.73.0",
-  "released": "2026-11-14",
+  "package": "lucide-static@1.77.0",
+  "released": "2026-11-20",
   "aliases": {
     "archive-restore": "archive-arrow-up",
     "badge-alert": "badge-exclamation-point",
@@ -17,6 +17,8 @@
     "clock-alert": "clock-exclamation-point",
     "cloud-alert": "cloud-exclamation-point",
     "copyright": "circle-letter-c",
+    "fold-horizontal": "arrows-to-axis-dashed-vertical",
+    "fold-vertical": "arrows-to-axis-dashed-horizontal",
     "heading": "letter-h",
     "mail-warning": "mail-exclamation-point",
     "message-circle-warning": "message-circle-exclamation-point",
@@ -32,10 +34,16 @@
     "square-arrow-out-down-right": "square-arrow-down-right-exit",
     "square-arrow-out-up-left": "square-arrow-up-left-exit",
     "square-arrow-out-up-right": "square-arrow-up-right-exit",
+    "square-centerline-dashed-horizontal": "square-axis-dashed-vertical",
+    "square-centerline-dashed-vertical": "square-axis-dashed-horizontal",
     "square-m": "square-letter-m",
     "square-parking": "square-letter-p",
     "square-parking-off": "square-letter-p-off",
-    "triangle-alert": "triangle-exclamation-point"
+    "triangle-alert": "triangle-exclamation-point",
+    "triangles-centerline-dashed-horizontal": "carets-to-axis-dashed-horizontal",
+    "triangles-centerline-dashed-vertical": "carets-to-axis-dashed-vertical",
+    "unfold-horizontal": "arrows-from-axis-dashed-vertical",
+    "unfold-vertical": "arrows-from-axis-dashed-horizontal"
   },
   "retired": []
 }

@@ -5,11 +5,11 @@
     "": {
       "name": "@superbmeteor/lucide-foundry",
       "devDependencies": {
-        "@lucide/lab": "0.14.0",
+        "@lucide/lab": "0.19.0",
         "@types/bun": "1.4.4",
         "canvaskit-wasm": "0.42.0",
         "lefthook": "2.1.16",
-        "lucide-static": "1.73.0",
+        "lucide-static": "1.83.0",
         "oxfmt": "0.75.0",
         "oxlint": "1.90.0",
         "typescript": "7.0.2",
@@ -17,7 +17,7 @@
     },
   },
   "packages": {
-    "@lucide/lab": ["@lucide/lab@0.14.0", "", {}, "sha512-kiMKftHUVxeJdKQDKRSqFopkNv/rvHwu/3E0T7HVIYnrjmLeHIX9LT+HvuC4KFLTdj2fHG2qz7tZUePYg7FkNA=="],
+    "@lucide/lab": ["@lucide/lab@0.19.0", "", {}, "sha512-y7rEx3SHKyjeXxAnUX34M/IdwQZy6hRssTNj0oiYpcn7iREHIFFwRYguIyo4meGN4SB1NE2j7/pClyCECPUwBQ=="],
 
     "@oxfmt/binding-android-arm-eabi": ["@oxfmt/binding-android-arm-eabi@0.75.0", "", { "os": "android", "cpu": "arm" }, "sha512-zHJ7LcTN46/5mtoLxsUu14pdF9ixFwDURtmxZ0CeNwqom5qB5NRVqU6o2GRZ7QPdNBW8G6j9UTJzQ+EDevMH0w=="],
 
@@ -167,7 +167,7 @@
 
     "lefthook-windows-x64": ["lefthook-windows-x64@2.1.16", "", { "os": "win32", "cpu": "x64" }, "sha512-mQVpfaagdIZPJCGDeedRnslyd9JTc13vjmp02uu4X7cr/VZK94obwk96dhgsRp9+LL1XMhX5zTcb0zNLo1hC+A=="],
 
-    "lucide-static": ["lucide-static@1.73.0", "", {}, "sha512-/FfzdRThAPnDVMk643pzENqYUnxudEON/fyOdh31ZiPiw/seE9VoYeIJPRDTCLDNtnF+5pK6CNwf6IkQMfrJ5w=="],
+    "lucide-static": ["lucide-static@1.83.0", "", {}, "sha512-GOJktV2eBckh8MAHAOajiW+DErsADmQrGHNoyT57Un6F/Xrq2MP3IwIhgIUHaekyCtKNawJjSCXMI5ND3yRxbQ=="],
 
     "oxfmt": ["oxfmt@0.75.0", "", { "dependencies": { "tinypool": "2.2.0" }, "optionalDependencies": { "@oxfmt/binding-android-arm-eabi": "0.75.0", "@oxfmt/binding-android-arm64": "0.75.0", "@oxfmt/binding-darwin-arm64": "0.75.0", "@oxfmt/binding-darwin-x64": "0.75.0", "@oxfmt/binding-freebsd-x64": "0.75.0", "@oxfmt/binding-linux-arm-gnueabihf": "0.75.0", "@oxfmt/binding-linux-arm-musleabihf": "0.75.0", "@oxfmt/binding-linux-arm64-gnu": "0.75.0", "@oxfmt/binding-linux-arm64-musl": "0.75.0", "@oxfmt/binding-linux-ppc64-gnu": "0.75.0", "@oxfmt/binding-linux-riscv64-gnu": "0.75.0", "@oxfmt/binding-linux-riscv64-musl": "0.75.0", "@oxfmt/binding-linux-s390x-gnu": "0.75.0", "@oxfmt/binding-linux-x64-gnu": "0.75.0", "@oxfmt/binding-linux-x64-musl": "0.75.0", "@oxfmt/binding-openharmony-arm64": "0.75.0", "@oxfmt/binding-win32-arm64-msvc": "0.75.0", "@oxfmt/binding-win32-ia32-msvc": "0.75.0", "@oxfmt/binding-win32-x64-msvc": "0.75.0" }, "peerDependencies": { "@astrojs/compiler-rs": "^0.5.0", "svelte": "^5.0.0", "vite-plus": "*" }, "optionalPeers": ["@astrojs/compiler-rs", "svelte", "vite-plus"], "bin": { "oxfmt": "bin/oxfmt" } }, "sha512-/ZKvY5asfsVi9hdkOmRIumqOPu6kxlTgiJSZf54uq29kKew+Gu1FFAnEkGePyvLVW+MAYu41D6XggnzoElQzPw=="],
 

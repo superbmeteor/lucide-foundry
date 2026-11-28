@@ -1,8 +1,28 @@
 {
-  "package": "@lucide/lab@0.14.0",
-  "released": "2026-11-16",
+  "package": "@lucide/lab@0.19.0",
+  "released": "2026-11-28",
   "aliases": {
-    "layout-grid-plus": "layout-grid-plus"
+    "bowl-chopsticks": "bowl-chopsticks",
+    "jacket": "jacket",
+    "layout-grid-plus": "layout-grid-plus",
+    "stairs-arrow-down-left": "stairs-arrow-down-left",
+    "stairs-arrow-up-right": "stairs-arrow-up-right",
+    "steering-wheel": "steering-wheel"
   },
-  "retired": []
+  "retired": [
+    "baseball",
+    "basketball",
+    "bat-ball",
+    "beach-ball",
+    "bowling",
+    "burger",
+    "card-credit",
+    "football",
+    "football-helmet",
+    "ice-hockey",
+    "ice-skate",
+    "pac-man-ghost",
+    "soccer-ball",
+    "tennis-ball"
+  ]
 }
